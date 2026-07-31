@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://c4x1k8v3m7n2p"]
+
+[ext_resource type="Script" uid="uid://dmbptfs0ryoh" path="res://scripts/Engine/VNCore.cs" id="1_vncore"]
+[ext_resource type="Script" uid="uid://dqdxnis1vwu0v" path="res://scripts/UI/DialogueBox.cs" id="2_dialogue"]
+[ext_resource type="Script" uid="uid://doixilu1usdda" path="res://scripts/UI/UIManager.cs" id="4_ui"]
+[ext_resource type="Script" path="res://scripts/UI/WebUI.cs" id="5_webui"]
+
+[node name="Main" type="Node2D" unique_id=193836397]
+script = ExtResource("1_vncore")
+
+[node name="Stage" type="CanvasLayer" parent="." unique_id=414524121]
+layer = 0
+
+[node name="Background" type="TextureRect" parent="Stage" unique_id=415152379]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="Characters" type="Node2D" parent="Stage" unique_id=488325852]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=241795771]
+
+[node name="DialogueBox" type="Control" parent="UI" unique_id=626638164]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -220.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("2_dialogue")
+CharactersPerSecond = 40.0
+
+[node name="UIManager" type="Control" parent="UI" unique_id=2043353406]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+script = ExtResource("4_ui")
+
+[node name="WebUI" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("5_webui")
+
+[node name="WebView" type="WebView" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+url = "res://webui/index.html"
+transparent = true
+devtools = true
+forward_input_events = false

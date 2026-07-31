@@ -1,0 +1,26 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Godot-generated tools / 编辑器生成文件
+.import/
+export.cfg
+export_presets.cfg
+
+# Mono / .NET（Godot C#）
+.mono/
+data_*/
+bin/
+obj/
+*.csproj.user
+
+# 备份与临时文件
+*.tmp
+*.translation
+*.old
+*~
+
+# 系统文件
+Thumbs.db
+.DS_Store
+desktop.ini

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>交互式文本 UI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 顶部菜单按钮栏 -->
+  <div id="topbar">
+    <div id="auto-indicator" class="hidden">▶ 自动</div>
+    <button class="top-btn" data-panel="history">历史 <span class="key">H</span></button>
+    <button class="top-btn" data-panel="save">存档</button>
+    <button class="top-btn" data-panel="load">读档</button>
+    <button class="top-btn" data-panel="settings">设置</button>
+    <button class="top-btn" data-panel="gallery">鉴赏</button>
+  </div>
+
+  <!-- 选择支 -->
+  <div id="choices" class="hidden"></div>
+
+  <!-- 对话框 -->
+  <div id="dialogue-box">
+    <div id="speaker-name" class="hidden"><span id="speaker-text"></span></div>
+    <div id="dialogue-text"></div>
+    <div id="advance-hint" class="hidden">▼</div>
+  </div>
+
+  <!-- 全屏面板容器 -->
+  <div id="panel-overlay" class="hidden">
+    <div id="panel">
+      <div id="panel-header">
+        <span id="panel-title"></span>
+        <button id="panel-close">✕</button>
+      </div>
+      <div id="panel-body"></div>
+    </div>
+  </div>
+
+  <!-- 右键菜单 -->
+  <div id="context-menu" class="hidden">
+    <div class="ctx-item" data-action="history">历史记录</div>
+    <div class="ctx-item" data-action="save">存档</div>
+    <div class="ctx-item" data-action="load">读档</div>
+    <div class="ctx-item" data-action="settings">设置</div>
+    <div class="ctx-item" data-action="gallery">鉴赏</div>
+    <div class="ctx-sep"></div>
+    <div class="ctx-item" data-action="auto"><span id="ctx-auto-check"></span>自动模式</div>
+    <div class="ctx-item" data-action="close">关闭菜单</div>
+  </div>
+
+  <script src="ui.js"></script>
+</body>
+</html>

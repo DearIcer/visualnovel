@@ -1,0 +1,68 @@
+{
+  "characters": {
+	"shiori": {
+	  "displayName": "千织",
+	  "color": "#d63384",
+	  "defaultPosition": "center"
+	}
+  },
+  "scenes": {
+	"start": {
+	  "commands": [
+		{ "cmd": "bg", "asset": "school_dusk", "fade": 1.0 },
+		{ "cmd": "bgm", "action": "play", "track": "gentle_piano", "fade": 1.5 },
+		{ "cmd": "narrate", "text": "夕阳把天空染成了温柔的橘红色，放学的路上，我低着头往前走，却突然撞上了什么人。" },
+		{ "cmd": "se", "sound": "collision_whoosh", "volume": 0.8 },
+		{ "cmd": "show", "character": "shiori", "position": "center", "emotion": "normal" },
+		{ "cmd": "say", "character": "shiori", "text": "呜……好痛。" },
+		{ "cmd": "say", "character": "shiori", "text": "那个……你没事吧？是我没看路。" },
+		{ "cmd": "narrate", "text": "她揉了揉额头，抬起头看向我。那是一张精致得不像话的脸，黑色的长发被丝带随意地扎成侧马尾，黑白格纹的裙子在晚风里轻轻晃动。" },
+		{ "cmd": "say", "character": "shiori", "text": "我叫千织。那个……你的书包带子松了哦。" },
+		{ "cmd": "show", "character": "shiori", "position": "center", "emotion": "smile" },
+		{ "cmd": "say", "character": "shiori", "text": "来，我帮你系好……" },
+		{ "cmd": "narrate", "text": "她突然凑得很近，那双漂亮的大眼睛专心致志地盯着我的包带，手指灵巧地帮我把散落的带子重新系好。微风带起她发间的香气。" },
+		{ "cmd": "say", "character": "shiori", "text": "系好了哦！这样就不会掉了。以后要是你掉了什么东西，或者……不见了，我会很伤心的。" },
+		{ "cmd": "narrate", "text": "她笑着说出了这句话，虽然语气甜美，但那双黑色的眼眸深处，似乎掠过一丝让我脊背发凉的执着。" },
+		{
+		  "cmd": "choice",
+		  "options": [
+			{ "text": "“谢谢你，千织。下周见。”", "target": "sweet_path" },
+			{ "text": "“那……你要不要一直和我在一起？”", "target": "yandere_path" }
+		  ]
+		}
+	  ]
+	},
+	"sweet_path": {
+	  "commands": [
+		{ "cmd": "bg", "asset": "night_street", "fade": 1.0 },
+		{ "cmd": "show", "character": "shiori", "emotion": "smile" },
+		{ "cmd": "say", "character": "shiori", "text": "嗯！下周见！……不过你跑不掉的哦~" },
+		{ "cmd": "narrate", "text": "她站在路灯下朝我挥了挥手，昏黄的灯光把她的侧脸照得格外温柔，但那句话里的弦外之音，让我莫名心跳加速。" },
+		{ "cmd": "set", "name": "affection_shiori", "value": 5 },
+		{ "cmd": "cg", "id": "cg_first_meet_sweet" },
+		{ "cmd": "jump", "target": "ending_intro" }
+	  ]
+	},
+	"yandere_path": {
+	  "commands": [
+		{ "cmd": "bg", "asset": "river_bank_night", "fade": 1.0 },
+		{ "cmd": "show", "character": "shiori", "emotion": "normal" },
+		{ "cmd": "say", "character": "shiori", "text": "诶……？" },
+		{ "cmd": "show", "character": "shiori", "emotion": "smile" },
+		{ "cmd": "say", "character": "shiori", "text": "这可是你说的哦？说话要算数哦？" },
+		{ "cmd": "narrate", "text": "她轻轻歪了歪头，笑容甜得像能挤出蜜来，但那双黑眼睛却异常认真地盯着我，仿佛要隔着夜色把我整个人锁进她的视野里。" },
+		{ "cmd": "set", "name": "affection_shiori", "value": 8 },
+		{ "cmd": "cg", "id": "cg_first_meet_yandere" },
+		{ "cmd": "jump", "target": "ending_intro" }
+	  ]
+	},
+	"ending_intro": {
+	  "commands": [
+		{ "cmd": "bg", "asset": "starry_sky", "fade": 1.0 },
+		{ "cmd": "bgm", "action": "crossfade", "track": "echo_memory", "fade": 2.0 },
+		{ "cmd": "narrate", "text": "夜色完全降临，星光铺满天空。那份初见时萌芽的羁绊，无论是甜是苦，都已经悄悄缠上了我的心脏。" },
+		{ "cmd": "narrate", "text": "属于我们的故事，才刚刚开始。" }
+	  ]
+	}
+  }
+}
