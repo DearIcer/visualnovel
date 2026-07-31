@@ -11,9 +11,10 @@ namespace 交互式文本.Audio
 		private AudioStreamPlayer _trackA;
 		private AudioStreamPlayer _trackB;
 		private AudioStreamPlayer _current;
-		private AudioStreamPlayer _previous;
 
 		private string _currentTrack = string.Empty;
+		private bool _currentLoop = true;
+		private Tween _fadeTween;
 
 		public override void _Ready()
 		{
@@ -30,63 +31,105 @@ namespace 交互式文本.Audio
 			return player;
 		}
 
-		public void Play(string track, float fade = 1.0f, bool loop = true)
+		public bool Play(string track, float fade = 1.0f, bool loop = true, float fromPosition = 0f)
 		{
-			if (_currentTrack == track && _current.Playing)
-				return;
+			if (string.IsNullOrWhiteSpace(track))
+			{
+				GD.PushWarning("BGM 轨道名为空");
+				return false;
+			}
 
-			_previous = _current;
-			_current = _current == _trackA ? _trackB : _trackA;
-			_currentTrack = track;
+			if (_currentTrack == track && _current.Playing)
+				return true;
 
 			string path = $"res://assets/bgm/{track}.ogg";
 			if (!ResourceLoader.Exists(path))
 			{
 				GD.PushWarning($"BGM 资源未找到: {track}");
-				return;
+				return false;
 			}
 
 			var stream = GD.Load<AudioStream>(path);
 			if (stream == null)
 			{
 				GD.PushWarning($"BGM 加载失败: {track}");
-				return;
+				return false;
 			}
 
 			if (stream is AudioStreamOggVorbis ogg)
 				ogg.Loop = loop;
 
+			var previous = _current;
+			_current = _current == _trackA ? _trackB : _trackA;
+			_currentTrack = track;
+			_currentLoop = loop;
+
+			_fadeTween?.Kill();
 			_current.Stream = stream;
 			_current.VolumeDb = AudioManager.LinearToDb(0f);
-			_current.Play();
+			_current.Play(Mathf.Max(0f, fromPosition));
 
+			float duration = Mathf.Max(0f, fade);
 			var tween = CreateTween();
+			_fadeTween = tween;
 			tween.SetParallel(true);
-			tween.TweenProperty(_current, "volume_db", AudioManager.LinearToDb(1f), fade);
+			tween.TweenProperty(_current, "volume_db", AudioManager.LinearToDb(1f), duration);
 
-			if (_previous.Playing)
+			if (previous != null && previous.Playing)
 			{
-				tween.TweenProperty(_previous, "volume_db", AudioManager.LinearToDb(0f), fade);
-				tween.Chain().TweenCallback(Callable.From(() => _previous.Stop()));
+				tween.TweenProperty(previous, "volume_db", AudioManager.LinearToDb(0f), duration);
+				tween.Chain().TweenCallback(Callable.From(() => previous.Stop()));
 			}
+
+			return true;
 		}
 
-		public void Crossfade(string track, float fade = 1.5f, bool loop = true)
+		public bool Crossfade(string track, float fade = 1.5f, bool loop = true, float fromPosition = 0f)
 		{
-			Play(track, fade, loop);
+			return Play(track, fade, loop, fromPosition);
 		}
 
 		public void Stop(float fade = 1.0f)
 		{
-			if (!_current.Playing) return;
+			_fadeTween?.Kill();
+
+			if (!_trackA.Playing && !_trackB.Playing)
+			{
+				_currentTrack = string.Empty;
+				_currentLoop = true;
+				return;
+			}
+
+			float duration = Mathf.Max(0f, fade);
+			if (duration <= 0f)
+			{
+				_trackA.Stop();
+				_trackB.Stop();
+				_currentTrack = string.Empty;
+				_currentLoop = true;
+				return;
+			}
 
 			var tween = CreateTween();
-			tween.TweenProperty(_current, "volume_db", AudioManager.LinearToDb(0f), fade);
-			tween.Chain().TweenCallback(Callable.From(() => _current.Stop()));
+			_fadeTween = tween;
+			tween.SetParallel(true);
+			if (_trackA.Playing)
+				tween.TweenProperty(_trackA, "volume_db", AudioManager.LinearToDb(0f), duration);
+			if (_trackB.Playing)
+				tween.TweenProperty(_trackB, "volume_db", AudioManager.LinearToDb(0f), duration);
+			tween.Chain().TweenCallback(Callable.From(() =>
+			{
+				_trackA.Stop();
+				_trackB.Stop();
+			}));
 			_currentTrack = string.Empty;
+			_currentLoop = true;
 		}
 
 		public AudioStreamPlayer CurrentPlayer => _current;
 		public string CurrentTrack => _currentTrack;
+		public bool CurrentLoop => _currentLoop;
+		public bool IsPlaying => (_trackA?.Playing ?? false) || (_trackB?.Playing ?? false);
+		public float CurrentPosition => _current?.GetPlaybackPosition() ?? 0f;
 	}
 }

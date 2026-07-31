@@ -16,6 +16,13 @@ const panelTitle = $("panel-title");
 const panelBody = $("panel-body");
 const ctxMenu = $("context-menu");
 const autoIndicator = $("auto-indicator");
+const storyBar = $("story-bar");
+const storyPosition = $("story-position");
+const storyProgress = $("story-progress");
+const storyTotal = $("story-total");
+const storySceneSelect = $("story-scene-select");
+const storyJumpScene = $("story-jump-scene");
+const storyCommandLabel = $("story-command-label");
 
 // ========== 状态 ==========
 let cps = 40;               // 打字速度（字符/秒）
@@ -29,6 +36,10 @@ let currentPanel = null;    // 当前打开的面板名
 let panelData = {};         // 各面板最新数据缓存
 let saveLoadMode = "save";  // 存读档面板模式
 let galleryTab = "cgs";
+let storyBarVisible = false;
+let storyScenes = [];
+let storyState = null;
+let storyScrubbing = false;
 
 // ========== 打字机 ==========
 function startDialogue(speaker, text, color) {
@@ -75,6 +86,17 @@ function finishTyping() {
   }
   advanceHint.classList.remove("hidden");
   send("typing_complete");
+}
+
+function clearDialogue() {
+  typing = false;
+  if (typeTimer) { clearInterval(typeTimer); typeTimer = null; }
+  fullText = "";
+  shownCount = 0;
+  typeAcc = 0;
+  dialogueText.textContent = "";
+  speakerName.classList.add("hidden");
+  advanceHint.classList.add("hidden");
 }
 
 // ========== 选择支 ==========
@@ -266,6 +288,104 @@ function renderGallery() {
   panelBody.appendChild(grid);
 }
 
+// ========== 剧情调试管理器 ==========
+function findStoryPoint(index) {
+  for (let i = storyScenes.length - 1; i >= 0; i--) {
+    const scene = storyScenes[i];
+    const startIndex = scene.startIndex || 0;
+    if (index >= startIndex) {
+      return { sceneId: scene.id, commandIndex: index - startIndex };
+    }
+  }
+  return null;
+}
+
+function renderStoryScenes() {
+  const current = storySceneSelect.value;
+  storySceneSelect.innerHTML = "";
+  storyScenes.forEach((scene) => {
+    const opt = document.createElement("option");
+    opt.value = scene.id;
+    opt.textContent = scene.id + "（" + scene.commandCount + "）";
+    storySceneSelect.appendChild(opt);
+  });
+  if (current) storySceneSelect.value = current;
+}
+
+function updateStoryProgressFill() {
+  const max = Number(storyProgress.max) || 0;
+  const value = Number(storyProgress.value) || 0;
+  const pct = max > 0 ? (value / max) * 100 : 0;
+  storyProgress.style.setProperty("--fill", pct + "%");
+}
+
+function updateStoryBar() {
+  const total = storyState?.totalCommands || 0;
+  const max = Math.max(0, total - 1);
+  storyProgress.max = max;
+  storyProgress.disabled = max < 1;
+
+  if (storyState && !storyScrubbing) {
+    storyProgress.value = Math.min(storyState.globalIndex || 0, max);
+    storyPosition.textContent = storyState.sceneId + " #" + storyState.commandIndex;
+    storyTotal.textContent = storyState.commandCount > 0 && storyState.commandIndex < storyState.commandCount
+      ? (storyState.globalIndex + 1) + " / " + (storyState.totalCommands || 0)
+      : "场景结束";
+    storyCommandLabel.textContent = storyState.commandLabel || "";
+  }
+
+  updateStoryProgressFill();
+  if (storySceneSelect.value !== (storyState?.sceneId || "")) {
+    storySceneSelect.value = storyState?.sceneId || "";
+  }
+}
+
+function storyPreviewAt(value) {
+  const index = Number(value) || 0;
+  const point = findStoryPoint(index);
+  storyPosition.textContent = point ? point.sceneId + " #" + point.commandIndex : "";
+  storyTotal.textContent = "定位 " + (index + 1) + " / " + (storyState?.totalCommands || 0);
+  storyCommandLabel.textContent = "";
+}
+
+function toggleStoryBar() {
+  storyBarVisible = !storyBarVisible;
+  storyBar.classList.toggle("hidden", !storyBarVisible);
+  if (storyBarVisible) updateStoryBar();
+}
+
+function jumpToSelectedScene() {
+  const sceneId = storySceneSelect.value;
+  if (sceneId) send("story_seek", { sceneId: sceneId, commandIndex: 0 });
+}
+
+storyProgress.addEventListener("input", () => {
+  storyScrubbing = true;
+  storyPreviewAt(storyProgress.value);
+  updateStoryProgressFill();
+});
+
+storyProgress.addEventListener("change", () => {
+  const index = Number(storyProgress.value) || 0;
+  storyScrubbing = false;
+  send("story_seek_global", { index: index });
+});
+
+storyJumpScene.addEventListener("click", (e) => {
+  e.stopPropagation();
+  jumpToSelectedScene();
+});
+
+$("story-close").addEventListener("click", (e) => {
+  e.stopPropagation();
+  toggleStoryBar();
+});
+
+$("story-toggle").addEventListener("click", (e) => {
+  e.stopPropagation();
+  toggleStoryBar();
+});
+
 // ========== 右键菜单 ==========
 function showContextMenu(x, y) {
   $("ctx-auto-check").textContent = autoOn ? "✓ " : "";
@@ -283,6 +403,7 @@ ctxMenu.querySelectorAll(".ctx-item").forEach((item) => {
     hideContextMenu();
     if (action === "close") return;
     if (action === "auto") { send("toggle_auto"); return; }
+    if (action === "story") { toggleStoryBar(); return; }
     send("open_panel", { panel: action });
   };
 });
@@ -301,11 +422,13 @@ function handleAdvance() {
 document.addEventListener("click", (e) => {
   if (overlay.contains(e.target) || ctxMenu.contains(e.target)) return;
   if (e.target.closest("#topbar")) return;
+  if (e.target.closest("#story-bar")) return;
   handleAdvance();
 });
 
 document.addEventListener("wheel", (e) => {
   if (currentPanel) return;
+  if (e.target.closest("#story-bar")) return;
   if (e.deltaY > 0) handleAdvance();
 });
 
@@ -322,6 +445,7 @@ document.addEventListener("keydown", (e) => {
     case " ":
     case "Enter":
       e.preventDefault();
+      if (e.target.closest("#story-bar")) break;
       if (!currentPanel) handleAdvance();
       break;
     case "Escape":
@@ -345,7 +469,7 @@ document.addEventListener("keyup", (e) => {
 });
 
 // 顶部按钮
-document.querySelectorAll(".top-btn").forEach((btn) => {
+document.querySelectorAll(".top-btn:not(#story-toggle)").forEach((btn) => {
   btn.onclick = (e) => {
     e.stopPropagation();
     send("open_panel", { panel: btn.dataset.panel });
@@ -376,12 +500,28 @@ document.addEventListener("message", (e) => {
     case "clear_choices":
       clearChoices();
       break;
+    case "clear_dialogue":
+      clearDialogue();
+      break;
     case "skip_typing":
       finishTyping();
       break;
     case "auto_state":
       autoOn = !!msg.on;
       autoIndicator.classList.toggle("hidden", !autoOn);
+      break;
+    case "story_meta":
+      storyScenes = msg.scenes || [];
+      storyState = msg.progress || storyState;
+      renderStoryScenes();
+      updateStoryBar();
+      break;
+    case "story_progress":
+      storyState = msg;
+      updateStoryBar();
+      break;
+    case "toggle_story_bar":
+      toggleStoryBar();
       break;
     case "history":
     case "save_slots":

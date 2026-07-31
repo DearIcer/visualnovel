@@ -27,6 +27,7 @@ namespace 交互式文本.Engine
         public static void Save(int slot, VNCore core)
         {
             EnsureDirectory();
+            core.CaptureAudioSnapshot();
 
             var data = new Data.SaveData
             {

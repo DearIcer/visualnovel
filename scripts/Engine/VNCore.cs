@@ -35,6 +35,11 @@ namespace 交互式文本.Engine
         private bool _advanceRequested = false;
         private double _autoTimer = 0.0;
         private double _skipTimer = 0.0;
+        private bool _redirectRequested = false;
+        private bool _runScheduled = false;
+        private bool _skipNextCommand = false;
+        private Tween _backgroundTransitionTween;
+        private int _transitionGeneration = 0;
 
         public override void _Ready()
         {
@@ -53,10 +58,13 @@ namespace 交互式文本.Engine
                 return;
             }
 
+            ValidateStoryAssets();
+
             State.CurrentSceneId = StartSceneId;
             State.CurrentCommandIndex = 0;
 
             ApplyVolumes();
+            WebUI.Instance?.SendStoryMeta();
             RunNextCommand();
         }
 
@@ -145,6 +153,9 @@ namespace 交互式文本.Engine
 
         public void RunNextCommand()
         {
+            _runScheduled = false;
+            _redirectRequested = false;
+
             if (!Parser.Scenes.TryGetValue(State.CurrentSceneId, out var scene))
             {
                 GD.PushError($"未找到场景: {State.CurrentSceneId}");
@@ -153,30 +164,56 @@ namespace 交互式文本.Engine
 
             if (State.CurrentCommandIndex >= scene.Commands.Count)
             {
+                NotifyStoryProgress();
                 GD.Print($"场景 {State.CurrentSceneId} 结束。");
                 return;
             }
 
             var command = scene.Commands[State.CurrentCommandIndex];
 
-            // SKIP 已读模式：跳过非阻塞的已读命令
+            // SKIP 已读模式：只跳过已读的展示指令
             if (IsSkipReadMode && ShouldSkipReadCommand(command))
             {
                 State.MarkRead(State.CurrentSceneId, State.CurrentCommandIndex);
                 State.CurrentCommandIndex++;
-                CallDeferred(nameof(RunNextCommand));
+                NotifyStoryProgress();
+                ScheduleRunNextCommand();
                 return;
             }
 
             State.MarkRead(State.CurrentSceneId, State.CurrentCommandIndex);
             IsWaitingForInput = false;
             Runner.Execute(command);
+            NotifyStoryProgress();
+
+            // jump 会在本次调用返回后重新调度目标场景，不能再递增目标索引。
+            if (_redirectRequested)
+                return;
 
             if (!IsWaitingForInput && !IsTyping && !IsTransitioning)
             {
                 State.CurrentCommandIndex++;
-                CallDeferred(nameof(RunNextCommand));
+                if (_skipNextCommand)
+                {
+                    State.CurrentCommandIndex++;
+                    _skipNextCommand = false;
+                }
+                ScheduleRunNextCommand();
             }
+        }
+
+        private void ScheduleRunNextCommand()
+        {
+            if (_runScheduled)
+                return;
+
+            _runScheduled = true;
+            CallDeferred(nameof(RunNextCommand));
+        }
+
+        private void NotifyStoryProgress()
+        {
+            WebUI.Instance?.SendStoryProgress();
         }
 
         public void OnDialogueComplete()
@@ -187,16 +224,81 @@ namespace 交互式文本.Engine
 
         public void OnChoiceMade(string targetSceneId)
         {
+            if (string.IsNullOrEmpty(targetSceneId) || !Parser.Scenes.ContainsKey(targetSceneId))
+            {
+                GD.PushWarning($"选择分支目标场景不存在: {targetSceneId}");
+                return;
+            }
+
             State.CurrentSceneId = targetSceneId;
             State.CurrentCommandIndex = 0;
+            IsTyping = false;
+            IsWaitingForInput = false;
+            _advanceRequested = false;
+            _redirectRequested = false;
+            _skipNextCommand = false;
             RunNextCommand();
         }
 
         public void JumpTo(string sceneId, int commandIndex = 0)
         {
+            if (string.IsNullOrEmpty(sceneId) || !Parser.Scenes.ContainsKey(sceneId))
+            {
+                GD.PushWarning($"跳转目标场景不存在: {sceneId}");
+                return;
+            }
+
             State.CurrentSceneId = sceneId;
             State.CurrentCommandIndex = commandIndex;
-            RunNextCommand();
+            IsTyping = false;
+            IsWaitingForInput = false;
+            _advanceRequested = false;
+            _skipNextCommand = false;
+            _redirectRequested = true;
+            ScheduleRunNextCommand();
+        }
+
+        /// <summary>
+        /// 剧情管理器跳转：清除当前演出与输入状态后，从目标场景的指定指令重新开始执行。
+        /// </summary>
+        public void SeekTo(string sceneId, int commandIndex = 0)
+        {
+            if (string.IsNullOrEmpty(sceneId) || !Parser.Scenes.TryGetValue(sceneId, out var scene))
+            {
+                GD.PushWarning($"跳转目标场景不存在: {sceneId}");
+                return;
+            }
+
+            int index = Math.Clamp(commandIndex, 0, scene.Commands.Count);
+            CancelTransition();
+            Audio.AudioManager.Instance?.StopVoice();
+            DialogueBox?.ClearDialogue();
+            DialogueBox?.ClearChoices();
+            ResetStageForDebugSeek();
+
+            IsAutoMode = false;
+            IsSkipAllMode = false;
+            IsSkipReadMode = false;
+            IsWaitingForInput = false;
+            IsTyping = false;
+            _advanceRequested = false;
+            _autoTimer = 0.0;
+            _skipTimer = 0.0;
+            _redirectRequested = false;
+            _skipNextCommand = false;
+
+            State.CurrentSceneId = sceneId;
+            PrepareSceneStateToCommand(scene, index);
+            State.CurrentCommandIndex = index;
+            _skipNextCommand = false;
+
+            WebUI.Instance?.Send(new { type = "auto_state", on = false });
+            ScheduleRunNextCommand();
+        }
+
+        public void SkipNextCommand()
+        {
+            _skipNextCommand = true;
         }
 
         public void ToggleAutoMode()
@@ -216,6 +318,19 @@ namespace 交互式文本.Engine
         {
             if (data == null) return;
 
+            CancelTransition();
+            Audio.AudioManager.Instance?.StopVoice();
+            DialogueBox?.ClearDialogue();
+            DialogueBox?.ClearChoices();
+
+            IsWaitingForInput = false;
+            IsTyping = false;
+            _advanceRequested = false;
+            _autoTimer = 0.0;
+            _skipTimer = 0.0;
+            _redirectRequested = false;
+            _skipNextCommand = false;
+
             State.CurrentSceneId = data.CurrentSceneId;
             State.CurrentCommandIndex = data.CurrentCommandIndex;
             State.Variables = data.Variables ?? new();
@@ -228,8 +343,8 @@ namespace 交互式文本.Engine
             RestoreStage(State.Stage);
             RestoreAudio(State.Audio);
 
-            DialogueBox?.ClearChoices();
-            RunNextCommand();
+            // 统一通过延迟调度推进，避免读档时已有的 deferred 调用造成重复执行。
+            ScheduleRunNextCommand();
         }
 
         private void RestoreStage(StageSnapshot stage)
@@ -238,7 +353,16 @@ namespace 交互式文本.Engine
             {
                 var texture = GD.Load<Texture2D>($"res://assets/backgrounds/{stage.BackgroundPath}.png");
                 if (texture != null)
+                {
                     Background.Texture = texture;
+                    Background.Modulate = Colors.White;
+                }
+                else
+                {
+                    GD.PushWarning($"读档时未找到背景资源: {stage.BackgroundPath}");
+                    Background.Texture = null;
+                    Background.Modulate = new Color(stage.BackgroundColor);
+                }
             }
             else
             {
@@ -247,7 +371,7 @@ namespace 交互式文本.Engine
             }
 
             foreach (var child in CharacterStage.GetChildren())
-                child.QueueFree();
+                child.Free();
 
             foreach (var kv in stage.Characters)
             {
@@ -256,6 +380,7 @@ namespace 交互式文本.Engine
 
                 var sprite = new Sprite2D { Name = ch.CharacterId };
                 CharacterStage.AddChild(sprite);
+                sprite.Position = GetCharacterPosition(ch.Position);
                 var texture = GD.Load<Texture2D>($"res://assets/characters/{ch.CharacterId}/{ch.Emotion}.png");
                 if (texture != null)
                 {
@@ -267,8 +392,58 @@ namespace 交互式文本.Engine
 
         private void RestoreAudio(AudioSnapshot audio)
         {
-            if (!string.IsNullOrEmpty(audio.BgmTrack))
-                Audio.AudioManager.Instance?.PlayBgm(audio.BgmTrack, 0f, audio.BgmLoop);
+            var manager = Audio.AudioManager.Instance;
+            manager?.StopBgm(0f);
+
+            // BgmPlaying 兼容旧版本存档：旧存档没有该字段时，只要有轨道名就视为正在播放。
+            if ((audio.BgmPlaying || !string.IsNullOrEmpty(audio.BgmTrack)) && !string.IsNullOrEmpty(audio.BgmTrack))
+                manager?.PlayBgm(audio.BgmTrack, 0f, audio.BgmLoop, audio.BgmPosition);
+        }
+
+        private void ResetStageForDebugSeek()
+        {
+            if (Background != null)
+            {
+                Background.Texture = null;
+                Background.Modulate = Colors.Black;
+            }
+
+            if (CharacterStage != null)
+            {
+                foreach (var child in CharacterStage.GetChildren())
+                    child.Free();
+            }
+
+            State.Stage = new StageSnapshot();
+            State.Audio = new AudioSnapshot();
+            Audio.AudioManager.Instance?.StopBgm(0f);
+        }
+
+        private void PrepareSceneStateToCommand(SceneData scene, int targetIndex)
+        {
+            int end = Math.Min(targetIndex, scene.Commands.Count);
+            for (int i = 0; i < end; i++)
+            {
+                if (_skipNextCommand)
+                {
+                    _skipNextCommand = false;
+                    continue;
+                }
+
+                Runner.PrepareCommand(scene.Commands[i]);
+            }
+        }
+
+        public void CaptureAudioSnapshot()
+        {
+            var channel = Audio.AudioManager.Instance?.BgmChannel;
+            if (channel == null)
+                return;
+
+            State.Audio.BgmTrack = channel.CurrentTrack;
+            State.Audio.BgmLoop = channel.CurrentLoop;
+            State.Audio.BgmPosition = channel.IsPlaying ? channel.CurrentPosition : 0f;
+            State.Audio.BgmPlaying = channel.IsPlaying && !string.IsNullOrEmpty(channel.CurrentTrack);
         }
 
         /// <summary>
@@ -289,7 +464,11 @@ namespace 交互式文本.Engine
         /// </summary>
         public void OnTransitionFinished()
         {
+            if (!IsTransitioning)
+                return;
+
             IsTransitioning = false;
+            _backgroundTransitionTween = null;
             _advanceRequested = false;
             State.CurrentCommandIndex++;
             RunNextCommand();
@@ -298,15 +477,18 @@ namespace 交互式文本.Engine
         /// <summary>
         /// 黑屏淡入淡出切换背景。动画完成后调用 onFinished。
         /// </summary>
-        public void TransitionToBackground(Texture2D texture, float duration, Action onFinished)
+        public void TransitionToBackground(Texture2D texture, Color backgroundColor, float duration, Action onFinished)
         {
             if (duration <= 0f)
             {
                 Background.Texture = texture;
-                Background.Modulate = Colors.White;
+                Background.Modulate = texture != null ? Colors.White : backgroundColor;
                 onFinished?.Invoke();
                 return;
             }
+
+            _transitionGeneration++;
+            _backgroundTransitionTween?.Kill();
 
             var overlay = GetOrCreateTransitionOverlay();
             overlay.Color = Colors.Black;
@@ -315,22 +497,43 @@ namespace 交互式文本.Engine
             overlay.MouseFilter = Control.MouseFilterEnum.Ignore;
 
             float halfDuration = duration * 0.5f;
+            int generation = _transitionGeneration;
 
-            var fadeIn = overlay.CreateTween();
-            fadeIn.TweenProperty(overlay, "modulate:a", 1.0f, halfDuration);
-            fadeIn.Finished += () =>
+            _backgroundTransitionTween = overlay.CreateTween();
+            _backgroundTransitionTween.TweenProperty(overlay, "modulate:a", 1.0f, halfDuration);
+            _backgroundTransitionTween.TweenCallback(Callable.From(() =>
             {
-                Background.Texture = texture;
-                Background.Modulate = Colors.White;
+                if (generation != _transitionGeneration)
+                    return;
 
-                var fadeOut = overlay.CreateTween();
-                fadeOut.TweenProperty(overlay, "modulate:a", 0.0f, halfDuration);
-                fadeOut.Finished += () =>
-                {
-                    overlay.Visible = false;
-                    onFinished?.Invoke();
-                };
-            };
+                Background.Texture = texture;
+                Background.Modulate = texture != null ? Colors.White : backgroundColor;
+            }));
+            _backgroundTransitionTween.TweenProperty(overlay, "modulate:a", 0.0f, halfDuration);
+            _backgroundTransitionTween.TweenCallback(Callable.From(() =>
+            {
+                if (generation != _transitionGeneration)
+                    return;
+
+                overlay.Visible = false;
+                _backgroundTransitionTween = null;
+                onFinished?.Invoke();
+            }));
+        }
+
+        public void CancelTransition()
+        {
+            _transitionGeneration++;
+            _backgroundTransitionTween?.Kill();
+            _backgroundTransitionTween = null;
+            IsTransitioning = false;
+
+            var overlay = TransitionLayer?.GetNodeOrNull<ColorRect>("Overlay");
+            if (overlay != null)
+            {
+                overlay.Visible = false;
+                overlay.Modulate = new Color(1, 1, 1, 0);
+            }
         }
 
         private ColorRect GetOrCreateTransitionOverlay()
@@ -357,11 +560,14 @@ namespace 交互式文本.Engine
 
         private bool ShouldSkipReadCommand(CommandData command)
         {
-            // 选择支和条件块不应跳过
-            if (command.Cmd == "choice" || command.Cmd == "if" || command.Cmd == "jump")
+            if (!State.IsRead(State.CurrentSceneId, State.CurrentCommandIndex))
                 return false;
 
-            return State.IsRead(State.CurrentSceneId, State.CurrentCommandIndex);
+            // 快进只跳过不会改变游戏状态的展示指令。
+            return command.Cmd == "say"
+                || command.Cmd == "narrate"
+                || command.Cmd == "se"
+                || command.Cmd == "voice";
         }
 
         private bool IsBlockingVoice()
@@ -372,6 +578,66 @@ namespace 交互式文本.Engine
         private void ApplyVolumes()
         {
             Audio.AudioManager.Instance?.ApplyVolumes();
+        }
+
+        private void ValidateStoryAssets()
+        {
+            var checkedPaths = new HashSet<string>();
+
+            foreach (var scene in Parser.Scenes.Values)
+            {
+                foreach (var command in scene.Commands)
+                {
+                    string path = string.Empty;
+                    string description = command.Cmd;
+
+                    switch (command.Cmd)
+                    {
+                        case "bg":
+                            if (!string.IsNullOrEmpty(command.GetString("asset")))
+                                path = $"res://assets/backgrounds/{command.GetString("asset")}.png";
+                            break;
+                        case "bgm":
+                            if (!string.IsNullOrEmpty(command.GetString("track")))
+                                path = $"res://assets/bgm/{command.GetString("track")}.ogg";
+                            break;
+                        case "se":
+                            if (!string.IsNullOrEmpty(command.GetString("sound")))
+                                path = $"res://assets/se/{command.GetString("sound")}.wav";
+                            break;
+                        case "voice":
+                            path = command.GetString("path");
+                            break;
+                        case "show":
+                            string character = command.GetString("character");
+                            string emotion = command.GetString("emotion", "default");
+                            if (!string.IsNullOrEmpty(character) && !string.IsNullOrEmpty(emotion))
+                                path = $"res://assets/characters/{character}/{emotion}.png";
+                            break;
+                    }
+
+                    if (string.IsNullOrEmpty(path) || !checkedPaths.Add(path))
+                        continue;
+
+                    if (!ResourceLoader.Exists(path))
+                        GD.PushWarning($"剧情资源缺失（{description}）: {path}");
+                }
+            }
+        }
+
+        public Vector2 GetCharacterPosition(string position)
+        {
+            Viewport viewport = GetViewport();
+            Vector2 size = viewport.GetVisibleRect().Size;
+            string normalized = (position ?? "center").ToLowerInvariant();
+
+            return normalized switch
+            {
+                "left" => new Vector2(size.X * 0.25f, size.Y * 0.58f),
+                "right" => new Vector2(size.X * 0.75f, size.Y * 0.58f),
+                "center" => new Vector2(size.X * 0.5f, size.Y * 0.58f),
+                _ => new Vector2(size.X * 0.5f, size.Y * 0.58f)
+            };
         }
 
         private void RegisterInputActions()

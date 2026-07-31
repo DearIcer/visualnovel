@@ -20,7 +20,7 @@ namespace 交互式文本
 		[Export] public int SlotCount = 6;
 
 		/// <summary>是否有任意 Web 面板处于打开状态（由 JS 的 panel_opened/panel_closed 维护）。</summary>
-		public bool IsAnyUIOpen => _panelStack.Count > 0;
+		public bool IsAnyUIOpen => !string.IsNullOrEmpty(_openPanel);
 
 		private static readonly JsonSerializerOptions JsonOptions = new()
 		{
@@ -30,14 +30,16 @@ namespace 交互式文本
 		private Node _webView;
 		private VNCore _core;
 		private DialogueBox _dialogueBox;
+		private StoryManager _storyManager;
 		private bool _pageReady = false;
 		private readonly List<string> _pendingMessages = new();
-		private readonly Stack<string> _panelStack = new();
+		private string _openPanel = string.Empty;
 
 		public override void _Ready()
 		{
 			Instance = this;
 			_core = GetNode<VNCore>("/root/Main");
+			_storyManager = new StoryManager(_core);
 			_dialogueBox = GetNodeOrNull<DialogueBox>("../DialogueBox");
 			_webView = GetNodeOrNull("../WebView");
 
@@ -103,8 +105,22 @@ namespace 交互式文本
 		/// <summary>关闭所有面板。</summary>
 		public void CloseAll()
 		{
-			_panelStack.Clear();
+			_openPanel = string.Empty;
 			Send(new { type = "close_all" });
+		}
+
+		/// <summary>向 Web UI 推送剧情时间线元数据与当前进度。</summary>
+		public void SendStoryMeta()
+		{
+			if (_storyManager == null) return;
+			Send(_storyManager.BuildMeta());
+		}
+
+		/// <summary>向 Web UI 推送当前剧情进度。</summary>
+		public void SendStoryProgress()
+		{
+			if (_storyManager == null) return;
+			Send(_storyManager.BuildProgress());
 		}
 
 		private void OnPageLoadFinished(string url)
@@ -151,8 +167,10 @@ namespace 交互式文本
 				switch (type)
 				{
 					case "ready":
+						_openPanel = string.Empty;
 						FlushPending();
 						SendInit();
+						SendStoryMeta();
 						break;
 					case "advance":
 						if (_core.IsTyping) Send(new { type = "skip_typing" });
@@ -168,10 +186,10 @@ namespace 交互式文本
 						OpenPanel(doc.RootElement.GetProperty("panel").GetString());
 						break;
 					case "panel_opened":
-						_panelStack.Push(doc.RootElement.GetProperty("panel").GetString());
+						_openPanel = doc.RootElement.GetProperty("panel").GetString() ?? string.Empty;
 						break;
 					case "panel_closed":
-						if (_panelStack.Count > 0) _panelStack.Pop();
+						_openPanel = string.Empty;
 						break;
 					case "save_slot":
 						SaveLoadManager.Save(doc.RootElement.GetProperty("slot").GetInt32(), _core);
@@ -192,6 +210,14 @@ namespace 交互式文本
 						break;
 					case "skip_end":
 						_core.IsSkipReadMode = false;
+						break;
+					case "story_seek":
+						_storyManager?.Seek(
+							doc.RootElement.GetProperty("sceneId").GetString(),
+							GetInt(doc.RootElement, "commandIndex", 0));
+						break;
+					case "story_seek_global":
+						_storyManager?.SeekGlobal(GetInt(doc.RootElement, "index", 0));
 						break;
 				}
 			}

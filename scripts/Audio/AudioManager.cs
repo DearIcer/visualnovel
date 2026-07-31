@@ -58,14 +58,14 @@ namespace 交互式文本.Audio
 			AudioServer.SetBusVolumeDb(AudioServer.GetBusIndex("Voice"), LinearToDb(config.VoiceVolume));
 		}
 
-		public void PlayBgm(string track, float fade = 1.0f, bool loop = true)
+		public bool PlayBgm(string track, float fade = 1.0f, bool loop = true, float fromPosition = 0f)
 		{
-			BgmChannel?.Play(track, fade, loop);
+			return BgmChannel?.Play(track, fade, loop, fromPosition) ?? false;
 		}
 
-		public void CrossfadeBgm(string track, float fade = 1.5f, bool loop = true)
+		public bool CrossfadeBgm(string track, float fade = 1.5f, bool loop = true, float fromPosition = 0f)
 		{
-			BgmChannel?.Crossfade(track, fade, loop);
+			return BgmChannel?.Crossfade(track, fade, loop, fromPosition) ?? false;
 		}
 
 		public void StopBgm(float fade = 1.0f)

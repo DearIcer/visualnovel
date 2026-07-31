@@ -14,6 +14,10 @@ bin/
 obj/
 *.csproj.user
 
+# Keep the godot_wry GDExtension binaries vendored in the repository.
+!addons/godot_wry/bin/
+!addons/godot_wry/bin/**
+
 # 备份与临时文件
 *.tmp
 *.translation

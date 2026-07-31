@@ -72,6 +72,127 @@ html, body {
 }
 @keyframes pulse { 50% { opacity: 0.65; } }
 
+/* ========== 剧情调试管理器 ========== */
+#story-bar {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(880px, calc(100% - 48px));
+  z-index: 28;
+  padding: 12px 16px 10px;
+  background: rgba(18, 14, 28, 0.88);
+  border: 1px solid var(--panel-border);
+  border-radius: 14px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  animation: story-bar-in 0.2s ease;
+}
+@keyframes story-bar-in {
+  from { opacity: 0; transform: translateX(-50%) translateY(-8px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.story-main-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.story-position {
+  min-width: 150px;
+  max-width: 190px;
+  font-size: 12px;
+  color: var(--accent);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#story-progress {
+  flex: 1;
+  height: 6px;
+  appearance: none;
+  -webkit-appearance: none;
+  background: linear-gradient(90deg, var(--accent) var(--fill, 0%), rgba(255, 255, 255, 0.12) var(--fill, 0%));
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+#story-progress::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--accent-2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+#story-progress:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.story-total {
+  min-width: 78px;
+  font-size: 12px;
+  color: var(--text-dim);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.story-sub-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+#story-scene-select {
+  min-width: 200px;
+  max-width: 320px;
+  padding: 7px 10px;
+  font-size: 13px;
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  outline: none;
+  cursor: pointer;
+}
+
+#story-command-label {
+  flex: 1;
+  min-width: 0;
+  font-size: 12px;
+  color: var(--text-dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#story-jump-scene,
+#story-close {
+  padding: 7px 14px;
+  font-size: 12px;
+  font-family: var(--font);
+  color: var(--text-dim);
+  background: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+#story-jump-scene:hover,
+#story-close:hover {
+  color: var(--text);
+  border-color: var(--panel-border);
+  background: var(--card-hover);
+}
+
 /* ========== 对话框 ========== */
 #dialogue-box {
   position: absolute;

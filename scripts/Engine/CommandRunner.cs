@@ -11,10 +11,25 @@ namespace 交互式文本.Engine
     public partial class CommandRunner : RefCounted
     {
         private readonly VNCore _core;
+        private bool _prepareOnly = false;
 
         public CommandRunner(VNCore core)
         {
             _core = core;
+        }
+
+        /// <summary>仅应用状态类指令，不播放对白、音效、动画或跳转，用于调试跳转前恢复场景状态。</summary>
+        public void PrepareCommand(CommandData cmd)
+        {
+            _prepareOnly = true;
+            try
+            {
+                Execute(cmd);
+            }
+            finally
+            {
+                _prepareOnly = false;
+            }
         }
 
         public void Execute(CommandData cmd)
@@ -75,18 +90,32 @@ namespace 交互式文本.Engine
         {
             string color = cmd.GetString("color", "#000000");
             string asset = cmd.GetString("asset");
-            float fade = cmd.GetFloat("fade", 0f);
+            float fade = _prepareOnly ? 0f : cmd.GetFloat("fade", 0f);
+            Color backgroundColor;
+
+            try
+            {
+                backgroundColor = new Color(color);
+            }
+            catch
+            {
+                GD.PushWarning($"背景颜色无效: {color}，将使用黑色");
+                backgroundColor = Colors.Black;
+                color = "#000000";
+            }
+
+            Texture2D texture = null;
 
             if (!string.IsNullOrEmpty(asset))
             {
-                var texture = GD.Load<Texture2D>($"res://assets/backgrounds/{asset}.png");
+                texture = GD.Load<Texture2D>($"res://assets/backgrounds/{asset}.png");
                 if (texture != null)
                 {
                     if (fade > 0f)
                     {
                         // 带 fade 参数时使用黑屏淡入淡出切换背景，并阻塞剧情自动推进
                         _core.IsTransitioning = true;
-                        _core.TransitionToBackground(texture, fade, () => _core.OnTransitionFinished());
+                        _core.TransitionToBackground(texture, Colors.White, fade, () => _core.OnTransitionFinished());
                     }
                     else
                     {
@@ -94,13 +123,25 @@ namespace 交互式文本.Engine
                         _core.Background.Modulate = Colors.White;
                     }
                 }
+                else
+                {
+                    GD.PushWarning($"未找到背景资源: {asset}.png，将回退为纯色背景");
+                    asset = string.Empty;
+                }
             }
-            else if (fade > 0f)
+
+            if (texture == null)
             {
-                // 没有新背景图时，仅对当前背景做淡入（保持旧行为）
-                _core.Background.Modulate = new Color(1, 1, 1, 0);
-                var tween = _core.Background.CreateTween();
-                tween.TweenProperty(_core.Background, "modulate:a", 1.0f, fade);
+                if (fade > 0f)
+                {
+                    _core.IsTransitioning = true;
+                    _core.TransitionToBackground(null, backgroundColor, fade, () => _core.OnTransitionFinished());
+                }
+                else
+                {
+                    _core.Background.Texture = null;
+                    _core.Background.Modulate = backgroundColor;
+                }
             }
 
             _core.State.Stage.BackgroundColor = color;
@@ -111,28 +152,42 @@ namespace 交互式文本.Engine
         {
             string action = cmd.GetString("action", "play");
             string track = cmd.GetString("track");
-            float fade = cmd.GetFloat("fade", 1.0f);
+            float fade = _prepareOnly ? 0f : cmd.GetFloat("fade", 1.0f);
             bool loop = cmd.GetBool("loop", true);
+            bool started = false;
 
             switch (action)
             {
                 case "play":
-                    Audio.AudioManager.Instance?.PlayBgm(track, fade, loop);
+                    started = Audio.AudioManager.Instance?.PlayBgm(track, fade, loop) ?? false;
                     break;
                 case "crossfade":
-                    Audio.AudioManager.Instance?.CrossfadeBgm(track, fade, loop);
+                    started = Audio.AudioManager.Instance?.CrossfadeBgm(track, fade, loop) ?? false;
                     break;
                 case "stop":
                     Audio.AudioManager.Instance?.StopBgm(fade);
+                    _core.State.Audio.BgmTrack = string.Empty;
+                    _core.State.Audio.BgmPosition = 0f;
+                    _core.State.Audio.BgmPlaying = false;
+                    break;
+                default:
+                    GD.PushWarning($"未知 BGM 操作: {action}");
                     break;
             }
 
-            _core.State.Audio.BgmTrack = track;
-            _core.State.Audio.BgmLoop = loop;
+            if (action == "play" || action == "crossfade")
+            {
+                _core.State.Audio.BgmTrack = started ? track : string.Empty;
+                _core.State.Audio.BgmPosition = 0f;
+                _core.State.Audio.BgmLoop = loop;
+                _core.State.Audio.BgmPlaying = started;
+            }
         }
 
         private void ExecuteSe(CommandData cmd)
         {
+            if (_prepareOnly) return;
+
             string sound = cmd.GetString("sound");
             float volume = cmd.GetFloat("volume", 1.0f);
             float pitch = cmd.GetFloat("pitch", 1.0f);
@@ -141,15 +196,16 @@ namespace 交互式文本.Engine
 
         private void ExecuteVoice(CommandData cmd)
         {
+            if (_prepareOnly) return;
+
             string path = cmd.GetString("path");
             Audio.AudioManager.Instance?.PlayVoice(path);
-            _core.State.Audio.BgmPosition = 0f;
         }
 
         private void ExecuteShow(CommandData cmd)
         {
             string charId = cmd.GetString("character");
-            string position = cmd.GetString("position", "center");
+            string position = cmd.GetString("position");
             string emotion = cmd.GetString("emotion", "default");
             string animation = cmd.GetString("animation", "fade");
             float duration = cmd.GetFloat("duration", 0.3f);
@@ -160,6 +216,9 @@ namespace 交互式文本.Engine
                 return;
             }
 
+            if (string.IsNullOrEmpty(position))
+                position = character.DefaultPosition;
+
             var texture = GD.Load<Texture2D>($"res://assets/characters/{charId}/{emotion}.png");
             if (texture == null)
             {
@@ -167,9 +226,27 @@ namespace 交互式文本.Engine
                 return;
             }
 
+            if (_prepareOnly)
+            {
+                var preparedSprite = GetOrCreateCharacterSprite(charId);
+                preparedSprite.Position = _core.GetCharacterPosition(position);
+                preparedSprite.Texture = texture;
+                preparedSprite.Visible = true;
+                preparedSprite.Modulate = Colors.White;
+                _core.ApplyCharacterScale(preparedSprite);
+                _core.State.Stage.Characters[charId] = new CharacterOnStage
+                {
+                    CharacterId = charId,
+                    Emotion = emotion,
+                    Position = position,
+                    Visible = true
+                };
+                return;
+            }
+
             var existingSprite = _core.CharacterStage.GetNodeOrNull<Sprite2D>(charId);
             var sprite = GetOrCreateCharacterSprite(charId);
-            sprite.Position = PositionFromName(position);
+            sprite.Position = _core.GetCharacterPosition(position);
             sprite.Visible = true;
 
             if (existingSprite != null && existingSprite.Texture != null && existingSprite.Texture != texture)
@@ -211,8 +288,15 @@ namespace 交互式文本.Engine
             float duration = cmd.GetFloat("duration", 0.5f);
 
             var sprite = GetOrCreateCharacterSprite(charId);
-            var tween = sprite.CreateTween();
-            tween.TweenProperty(sprite, "position", PositionFromName(position), duration);
+            if (_prepareOnly)
+            {
+                sprite.Position = _core.GetCharacterPosition(position);
+            }
+            else
+            {
+                var tween = sprite.CreateTween();
+                tween.TweenProperty(sprite, "position", _core.GetCharacterPosition(position), duration);
+            }
 
             if (_core.State.Stage.Characters.ContainsKey(charId))
                 _core.State.Stage.Characters[charId].Position = position;
@@ -220,6 +304,8 @@ namespace 交互式文本.Engine
 
         private void ExecuteSay(CommandData cmd)
         {
+            if (_prepareOnly) return;
+
             string charId = cmd.GetString("character");
             string text = cmd.GetString("text");
 
@@ -246,13 +332,26 @@ namespace 交互式文本.Engine
 
         private void ExecuteNarrate(CommandData cmd)
         {
+            if (_prepareOnly) return;
+
             string text = cmd.GetString("text");
             _core.IsTyping = true;
             _core.DialogueBox.ShowDialogue("", text, "#aaaaaa");
+
+            _core.State.PushHistory(new HistoryEntry
+            {
+                SpeakerId = string.Empty,
+                SpeakerName = string.Empty,
+                Text = text,
+                SceneId = _core.State.CurrentSceneId,
+                CommandIndex = _core.State.CurrentCommandIndex
+            });
         }
 
         private void ExecuteChoice(CommandData cmd)
         {
+            if (_prepareOnly) return;
+
             var options = new List<ChoiceOption>();
             var args = cmd.GetArg("options").AsGodotArray();
             foreach (var opt in args)
@@ -270,6 +369,8 @@ namespace 交互式文本.Engine
 
         private void ExecuteJump(CommandData cmd)
         {
+            if (_prepareOnly) return;
+
             string target = cmd.GetString("target");
             _core.JumpTo(target);
         }
@@ -293,8 +394,9 @@ namespace 交互式文本.Engine
             bool result = EvaluateCondition(current, op, value);
             if (!result)
             {
-                // 简单实现：跳转到下一个非 endif/jump 指令（MVP 暂不支持完整块）
-                GD.Print($"[IF] 条件不满足: {name} {op} {value}");
+                // MVP 不使用 endif 块：条件不满足时跳过紧随其后的单条指令。
+                _core.SkipNextCommand();
+                GD.Print($"[IF] 条件不满足，跳过下一条指令: {name} {op} {value}");
             }
         }
 
@@ -404,21 +506,6 @@ namespace 交互式文本.Engine
                     fadeIn.TweenProperty(newSprite, "modulate:a", 1.0f, duration);
                     break;
             }
-        }
-
-        private Vector2 PositionFromName(string position)
-        {
-            Viewport viewport = _core.GetViewport();
-            Vector2 size = viewport.GetVisibleRect().Size;
-            // 以屏幕高度 90% 缩放后，中心点约在 58% 处，使立绘底部略低于屏幕底边，
-            // 与对话框自然重叠，符合常见视觉小说的演出习惯。
-            return position.ToLower() switch
-            {
-                "left" => new Vector2(size.X * 0.25f, size.Y * 0.58f),
-                "right" => new Vector2(size.X * 0.75f, size.Y * 0.58f),
-                "center" => new Vector2(size.X * 0.5f, size.Y * 0.58f),
-                _ => new Vector2(size.X * 0.5f, size.Y * 0.58f)
-            };
         }
 
         private bool EvaluateCondition(Variant left, string op, Variant right)

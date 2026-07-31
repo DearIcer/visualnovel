@@ -92,6 +92,7 @@ namespace 交互式文本.Engine
         public string BgmTrack { get; set; } = string.Empty;
         public float BgmPosition { get; set; } = 0f;
         public bool BgmLoop { get; set; } = true;
+        public bool BgmPlaying { get; set; } = false;
     }
 
     public class UnlockData

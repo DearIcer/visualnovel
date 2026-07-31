@@ -35,5 +35,11 @@ namespace 交互式文本
 		{
 			WebUI.Instance?.Send(new { type = "clear_choices" });
 		}
+
+		/// <summary>清空当前对白内容和打字状态。</summary>
+		public void ClearDialogue()
+		{
+			WebUI.Instance?.Send(new { type = "clear_dialogue" });
+		}
 	}
 }

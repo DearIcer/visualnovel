@@ -34,6 +34,9 @@ namespace 交互式文本
 		/// <summary>打开鉴赏面板。</summary>
 		public void ShowGallery() => WebUI.Instance?.OpenPanel("gallery");
 
+		/// <summary>显示/隐藏剧情调试管理器。</summary>
+		public void ToggleStoryManager() => WebUI.Instance?.Send(new { type = "toggle_story_bar" });
+
 		/// <summary>关闭所有面板。</summary>
 		public void CloseAll() => WebUI.Instance?.CloseAll();
 	}

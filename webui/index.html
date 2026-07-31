@@ -15,6 +15,22 @@
     <button class="top-btn" data-panel="load">读档</button>
     <button class="top-btn" data-panel="settings">设置</button>
     <button class="top-btn" data-panel="gallery">鉴赏</button>
+    <button id="story-toggle" class="top-btn">剧情</button>
+  </div>
+
+  <!-- 剧情调试管理器 -->
+  <div id="story-bar" class="hidden">
+    <div class="story-main-row">
+      <span id="story-position" class="story-position"></span>
+      <input id="story-progress" type="range" min="0" max="0" value="0" step="1" disabled>
+      <span id="story-total" class="story-total"></span>
+    </div>
+    <div class="story-sub-row">
+      <select id="story-scene-select" aria-label="剧情场景"></select>
+      <button id="story-jump-scene">跳到场景</button>
+      <div id="story-command-label"></div>
+      <button id="story-close">收起</button>
+    </div>
   </div>
 
   <!-- 选择支 -->
@@ -45,6 +61,7 @@
     <div class="ctx-item" data-action="load">读档</div>
     <div class="ctx-item" data-action="settings">设置</div>
     <div class="ctx-item" data-action="gallery">鉴赏</div>
+    <div class="ctx-item" data-action="story">剧情管理器</div>
     <div class="ctx-sep"></div>
     <div class="ctx-item" data-action="auto"><span id="ctx-auto-check"></span>自动模式</div>
     <div class="ctx-item" data-action="close">关闭菜单</div>
