@@ -216,8 +216,14 @@ namespace 交互式文本.Engine
                 return;
             }
 
+            // 未指定 position 时：已登场角色保持当前位置（避免切表情被拉回默认位），新登场用默认位
             if (string.IsNullOrEmpty(position))
-                position = character.DefaultPosition;
+            {
+                if (_core.State.Stage.Characters.TryGetValue(charId, out var onStage) && onStage.Visible)
+                    position = onStage.Position;
+                else
+                    position = character.DefaultPosition;
+            }
 
             var texture = GD.Load<Texture2D>($"res://assets/characters/{charId}/{emotion}.png");
             if (texture == null)

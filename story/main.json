@@ -59,6 +59,7 @@
 	"ending_intro": {
 	  "commands": [
 		{ "cmd": "bg", "asset": "starry_sky", "fade": 1.0 },
+		{ "cmd": "hide", "character": "shiori" },
 		{ "cmd": "bgm", "action": "crossfade", "track": "echo_memory", "fade": 2.0 },
 		{ "cmd": "narrate", "text": "夜色完全降临，星光铺满天空。那份初见时萌芽的羁绊，无论是甜是苦，都已经悄悄缠上了我的心脏。" },
 		{ "cmd": "narrate", "text": "属于我们的故事，才刚刚开始。" }
