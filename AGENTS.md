@@ -66,6 +66,8 @@ addons/godot_wry/      # Godot WRY WebView GDExtension（驱动整个 Web UI 层
 | `se` | 音效 | `sound`（assets/se 下 .wav 文件名）、`volume`、`pitch` |
 | `voice` | 语音 | `path` |
 | `show` / `hide` / `move` | 立绘显示/隐藏/移动 | `character`、`position`(left/center/right)、`emotion`、`animation`、`duration` |
+
+> `show` 省略 `position` 时：已登场角色保持当前位置（仅切换表情），新登场角色落到 `defaultPosition`。切换场景/段落时旧角色不会自动退场，需要显式 `hide`，否则立绘会残留叠在新场景上。
 | `say` / `narrate` | 角色对话 / 旁白 | `character`、`text` |
 | `choice` | 选择支 | `options`：[{`text`, `target`}] |
 | `jump` | 跳转场景 | `target` |

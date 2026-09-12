@@ -1,67 +1,503 @@
 {
   "characters": {
-	"shiori": {
-	  "displayName": "千织",
-	  "color": "#d63384",
+	"wanqing": {
+	  "displayName": "林晚晴",
+	  "color": "#ff8c42",
+	  "defaultPosition": "center"
+	},
+	"xingmian": {
+	  "displayName": "沈星眠",
+	  "color": "#7a8bda",
 	  "defaultPosition": "center"
 	}
   },
   "scenes": {
 	"start": {
 	  "commands": [
-		{ "cmd": "bg", "asset": "school_dusk", "fade": 1.0 },
-		{ "cmd": "bgm", "action": "play", "track": "gentle_piano", "fade": 1.5 },
-		{ "cmd": "narrate", "text": "夕阳把天空染成了温柔的橘红色，放学的路上，我低着头往前走，却突然撞上了什么人。" },
-		{ "cmd": "se", "sound": "collision_whoosh", "volume": 0.8 },
-		{ "cmd": "show", "character": "shiori", "position": "center", "emotion": "normal" },
-		{ "cmd": "say", "character": "shiori", "text": "呜……好痛。" },
-		{ "cmd": "say", "character": "shiori", "text": "那个……你没事吧？是我没看路。" },
-		{ "cmd": "narrate", "text": "她揉了揉额头，抬起头看向我。那是一张精致得不像话的脸，黑色的长发被丝带随意地扎成侧马尾，黑白格纹的裙子在晚风里轻轻晃动。" },
-		{ "cmd": "say", "character": "shiori", "text": "我叫千织。那个……你的书包带子松了哦。" },
-		{ "cmd": "show", "character": "shiori", "position": "center", "emotion": "smile" },
-		{ "cmd": "say", "character": "shiori", "text": "来，我帮你系好……" },
-		{ "cmd": "narrate", "text": "她突然凑得很近，那双漂亮的大眼睛专心致志地盯着我的包带，手指灵巧地帮我把散落的带子重新系好。微风带起她发间的香气。" },
-		{ "cmd": "say", "character": "shiori", "text": "系好了哦！这样就不会掉了。以后要是你掉了什么东西，或者……不见了，我会很伤心的。" },
-		{ "cmd": "narrate", "text": "她笑着说出了这句话，虽然语气甜美，但那双黑色的眼眸深处，似乎掠过一丝让我脊背发凉的执着。" },
+		{ "cmd": "bg", "asset": "school_gate_sakura", "fade": 1.5 },
+		{ "cmd": "bgm", "action": "play", "track": "daily_bright", "fade": 2.0 },
+		{ "cmd": "music", "id": "daily_bright" },
+		{ "cmd": "narrate", "text": "四月。樱花开了满街，像是有人把春天揉碎了，一把一把撒向这条走了两年的上学路。" },
+		{ "cmd": "narrate", "text": "我叫陆之遥，高二学生。成绩中游，特长没有，唯一的爱好是午休时躲去天台发呆。" },
+		{ "cmd": "narrate", "text": "本该是和平常没什么两样的一天——直到那个转角。" },
+		{ "cmd": "se", "sound": "footsteps", "volume": 0.7 },
+		{ "cmd": "narrate", "text": "一阵急促的脚步声由远及近。我刚转过街角，怀里抱着一大摞传单的身影就结结实实地撞了上来。" },
+		{ "cmd": "se", "sound": "paper_rustle", "volume": 0.9 },
+		{ "cmd": "narrate", "text": "传单哗啦啦散了一地，像落了一场粉色的雪。" },
+		{ "cmd": "show", "character": "wanqing", "position": "center", "emotion": "surprised" },
+		{ "cmd": "say", "character": "wanqing", "text": "呀——！对、对不起！你没事吧？" },
+		{ "cmd": "narrate", "text": "少女慌忙蹲下身去捡传单。栗色的及肩发随着动作轻轻晃动，右侧别着一枚显眼的橙色蝴蝶结。" },
+		{ "cmd": "say", "character": "wanqing", "text": "完蛋了完蛋了，这可是文化祭的传单，弄皱了会被班长念叨死的……" },
+		{ "cmd": "narrate", "text": "她一边小声嘀咕一边手忙脚乱。我蹲下来，帮她把散落的传单一张张拢好。" },
+		{ "cmd": "show", "character": "wanqing", "emotion": "shy" },
+		{ "cmd": "say", "character": "wanqing", "text": "谢、谢谢你……咦？等等，你这张脸——" },
+		{ "cmd": "show", "character": "wanqing", "emotion": "smile" },
+		{ "cmd": "say", "character": "wanqing", "text": "你不是二年三班的陆之遥吗！坐第三排靠窗，午休老是消失不见的那个！" },
+		{ "cmd": "narrate", "text": "被说得这么具体，我一时不知道该怎么接话。原来我在班里是这种形象吗。" },
+		{ "cmd": "say", "character": "wanqing", "text": "我是林晚晴，今天刚转到你们班！以后就是同班同学啦，请多关照咯，陆之遥同学~" },
+		{ "cmd": "narrate", "text": "她笑起来的时候，眼睛弯成两弯月牙。晨光落在她的发梢上，连飘落的樱花都像是特意为她让路。" },
+		{ "cmd": "show", "character": "wanqing", "emotion": "laugh" },
+		{ "cmd": "say", "character": "wanqing", "text": "好啦，传单捡完了！作为赔罪——不对，是作为谢礼，今天放学请你吃车站前的可丽饼！" },
+		{ "cmd": "say", "character": "wanqing", "text": "不许拒绝哦。拒绝的人，会被我用传单打哦。" },
+		{ "cmd": "narrate", "text": "她扬了扬怀里厚厚一摞传单，一脸理所当然地宣布着蛮不讲理的决定。" },
+		{ "cmd": "narrate", "text": "……不知为什么，我完全没有想要拒绝的念头。" },
+		{ "cmd": "say", "character": "wanqing", "text": "唔——上完了上午的课，肚子已经咕咕叫了。陆之遥，你午饭怎么吃？便利店？食堂？" },
+		{ "cmd": "narrate", "text": "我晃了晃书包里的便当盒。她的眼睛瞬间亮了，像两颗被点着的小灯泡。" },
+		{ "cmd": "show", "character": "wanqing", "emotion": "laugh" },
+		{ "cmd": "say", "character": "wanqing", "text": "便当！手作便当！好，决定了，今天中午你带我去你的秘密基地！就是那个——午休老往那儿跑的地方！" },
+		{ "cmd": "say", "character": "wanqing", "text": "别想藏哦。转学生的情报网可是很灵的，三班的女生们已经把你「天台发呆爱好者」的称号告诉我了。" },
+		{ "cmd": "narrate", "text": "……转学第一天就建立情报网，这家伙的社交能力简直可怕。" },
+		{ "cmd": "cg", "id": "cg_sakura_encounter" },
+		{ "cmd": "jump", "target": "morning_class" }
+	  ]
+	},
+	"morning_class": {
+	  "commands": [
+		{ "cmd": "bg", "asset": "classroom_morning", "fade": 1.2 },
+		{ "cmd": "se", "sound": "school_chime", "volume": 0.8 },
+		{ "cmd": "narrate", "text": "上课铃响过，班主任夹着一叠文件走进教室，转身在黑板上写下四个大字——文化祭。" },
+		{ "cmd": "narrate", "text": "教室里瞬间炸开了锅。讨论声、拍桌声、不知谁的欢呼声混成一片。" },
+		{ "cmd": "narrate", "text": "投票的结果，我们班的主题是——「复古喫茶店」。穿围裙端咖啡的那种。" },
+		{ "cmd": "show", "character": "wanqing", "position": "right", "emotion": "laugh" },
+		{ "cmd": "say", "character": "wanqing", "text": "太好了！我超想试试当看板娘的！陆之遥，你说我穿围裙合适吗？合适吧？一定合适吧？" },
+		{ "cmd": "narrate", "text": "转学生林晚晴，座位被安排在——我的旁边。此刻她正趴在课桌上，兴致勃勃地用铅笔敲着我的胳膊。" },
+		{ "cmd": "show", "character": "wanqing", "emotion": "normal" },
+		{ "cmd": "say", "character": "wanqing", "text": "呐呐，执行委员还差两个人。负责采购、布置、还有菜单设计……听起来就很青春对吧？" },
+		{ "cmd": "show", "character": "wanqing", "emotion": "smile" },
+		{ "cmd": "say", "character": "wanqing", "text": "我已经报名了哦。然后，我就顺便把你的名字也写上去了。" },
+		{ "cmd": "narrate", "text": "她说得理直气壮，笔尖在报名表的角落戳了戳。那里果然已经有了我的名字，字迹圆润得过分。" },
+		{ "cmd": "show", "character": "wanqing", "emotion": "pout" },
+		{ "cmd": "say", "character": "wanqing", "text": "怎么，不愿意啊？早上是谁帮你捡的传单——不对，是谁被你的脸撞了胸口啊？" },
+		{ "cmd": "say", "character": "wanqing", "text": "再说，和我一起做事，又不是什么吃亏的事……对吧？" },
+		{ "cmd": "narrate", "text": "她鼓着脸颊瞪我，可耳尖却悄悄红了。那双琥珀色的眼睛一眨不眨，像是在紧张我的答案。" },
 		{
 		  "cmd": "choice",
 		  "options": [
-			{ "text": "“谢谢你，千织。下周见。”", "target": "sweet_path" },
-			{ "text": "“那……你要不要一直和我在一起？”", "target": "yandere_path" }
+			{ "text": "“交给我吧。采购也好布置也好，我全包了。”", "target": "class_accept" },
+			{ "text": "“……至少先把报名表上我的名字描清楚点。”", "target": "class_tease" }
 		  ]
 		}
 	  ]
 	},
-	"sweet_path": {
+	"class_accept": {
 	  "commands": [
-		{ "cmd": "bg", "asset": "night_street", "fade": 1.0 },
-		{ "cmd": "show", "character": "shiori", "emotion": "smile" },
-		{ "cmd": "say", "character": "shiori", "text": "嗯！下周见！……不过你跑不掉的哦~" },
-		{ "cmd": "narrate", "text": "她站在路灯下朝我挥了挥手，昏黄的灯光把她的侧脸照得格外温柔，但那句话里的弦外之音，让我莫名心跳加速。" },
-		{ "cmd": "set", "name": "affection_shiori", "value": 5 },
-		{ "cmd": "cg", "id": "cg_first_meet_sweet" },
-		{ "cmd": "jump", "target": "ending_intro" }
+		{ "cmd": "show", "character": "wanqing", "position": "right", "emotion": "surprised" },
+		{ "cmd": "say", "character": "wanqing", "text": "诶……诶？！真的？一口就答应了？没有附加条件？" },
+		{ "cmd": "show", "character": "wanqing", "emotion": "laugh" },
+		{ "cmd": "say", "character": "wanqing", "text": "耶——！陆之遥，你果然是好人中的好人！我从转学的第一天就这么觉得了！" },
+		{ "cmd": "narrate", "text": "转学第一天。也就是今天。她所谓的「一直」，满打满算不过三个小时。" },
+		{ "cmd": "show", "character": "wanqing", "emotion": "shy" },
+		{ "cmd": "say", "character": "wanqing", "text": "那、那就约好了哦。文化祭结束之前，你就是我的专属苦力……不对，是专属搭档。" },
+		{ "cmd": "narrate", "text": "她说「搭档」两个字的时候，声音轻得像羽毛落地。" },
+		{ "cmd": "jump", "target": "rooftop_lunch" }
 	  ]
 	},
-	"yandere_path": {
+	"class_tease": {
 	  "commands": [
-		{ "cmd": "bg", "asset": "river_bank_night", "fade": 1.0 },
-		{ "cmd": "show", "character": "shiori", "emotion": "normal" },
-		{ "cmd": "say", "character": "shiori", "text": "诶……？" },
-		{ "cmd": "show", "character": "shiori", "emotion": "smile" },
-		{ "cmd": "say", "character": "shiori", "text": "这可是你说的哦？说话要算数哦？" },
-		{ "cmd": "narrate", "text": "她轻轻歪了歪头，笑容甜得像能挤出蜜来，但那双黑眼睛却异常认真地盯着我，仿佛要隔着夜色把我整个人锁进她的视野里。" },
-		{ "cmd": "set", "name": "affection_shiori", "value": 8 },
-		{ "cmd": "cg", "id": "cg_first_meet_yandere" },
-		{ "cmd": "jump", "target": "ending_intro" }
+		{ "cmd": "show", "character": "wanqing", "position": "right", "emotion": "pout" },
+		{ "cmd": "say", "character": "wanqing", "text": "什么嘛——这种吐槽方式！你就不能老老实实答应吗！" },
+		{ "cmd": "show", "character": "wanqing", "emotion": "smile" },
+		{ "cmd": "say", "character": "wanqing", "text": "不过，你没有拒绝。嘿嘿，我听到了哦，你话里话外都是「真拿你没办法」的意思。" },
+		{ "cmd": "narrate", "text": "被看穿了。在她亮晶晶的注视下，我确实生不出半点拒绝的心思。" },
+		{ "cmd": "say", "character": "wanqing", "text": "那就这么说定啦，搭档。文化祭，请多指教~" },
+		{ "cmd": "narrate", "text": "她朝我伸出手，小指弯成勾。我迟疑了一下，勾了上去。她的指尖很暖。" },
+		{ "cmd": "jump", "target": "rooftop_lunch" }
 	  ]
 	},
-	"ending_intro": {
+	"rooftop_lunch": {
 	  "commands": [
-		{ "cmd": "bg", "asset": "starry_sky", "fade": 1.0 },
-		{ "cmd": "bgm", "action": "crossfade", "track": "echo_memory", "fade": 2.0 },
-		{ "cmd": "narrate", "text": "夜色完全降临，星光铺满天空。那份初见时萌芽的羁绊，无论是甜是苦，都已经悄悄缠上了我的心脏。" },
-		{ "cmd": "narrate", "text": "属于我们的故事，才刚刚开始。" }
+		{ "cmd": "bg", "asset": "rooftop_day", "fade": 1.0 },
+		{ "cmd": "narrate", "text": "午休的天台，风很软，云走得很慢。这是我的秘密基地——曾经是的。" },
+		{ "cmd": "show", "character": "wanqing", "position": "center", "emotion": "laugh" },
+		{ "cmd": "say", "character": "wanqing", "text": "哇——视野好棒！怪不得你天天往这儿跑。喏，坐垫分你一半，便当分我一口，公平交易！" },
+		{ "cmd": "narrate", "text": "她自顾自地铺开野餐垫，把我的便当盒和她的并排放在一起。她的便当五颜六色，玉子烧煎得金黄。" },
+		{ "cmd": "show", "character": "wanqing", "emotion": "normal" },
+		{ "cmd": "say", "character": "wanqing", "text": "陆之遥，你以前都是一个人在这里吃饭吧？不寂寞吗？" },
+		{ "cmd": "narrate", "text": "我想了想。寂寞倒谈不上，只是习惯了。习惯了风的声音，习惯了一个人的云。" },
+		{ "cmd": "show", "character": "wanqing", "emotion": "smile" },
+		{ "cmd": "say", "character": "wanqing", "text": "那以后就不许习惯了。从今天开始，这个位置的另一半，被我林晚晴长期承包了。" },
+		{ "cmd": "narrate", "text": "她咬着筷子，含含糊糊地宣布主权。阳光落在她鼓起的腮帮上，我忽然觉得，天台好像比昨天宽敞了一点，也亮了一点。" },
+		{ "cmd": "show", "character": "wanqing", "emotion": "shy" },
+		{ "cmd": "say", "character": "wanqing", "text": "啊——那个，玉子烧，好吃吗？我今早五点起来煎的……失败了四次才煎出这一盒。" },
+		{ "cmd": "narrate", "text": "我认真地告诉她，这是我吃过最好吃的玉子烧。她愣了一下，随即扭过头去看云，耳朵尖红得通透。" },
+		{ "cmd": "say", "character": "wanqing", "text": "……骗、骗人也没关系。这句话，我收下了。" },
+		{ "cmd": "jump", "target": "library_noon" }
+	  ]
+	},
+	"library_noon": {
+	  "commands": [
+		{ "cmd": "bg", "asset": "library_day", "fade": 1.2 },
+		{ "cmd": "hide", "character": "wanqing" },
+		{ "cmd": "bgm", "action": "crossfade", "track": "gentle_piano", "fade": 2.0 },
+		{ "cmd": "music", "id": "gentle_piano" },
+		{ "cmd": "narrate", "text": "午休。我抱着替老师归还的一摞参考书走进图书馆。阳光从高窗斜斜地落下来，空气里浮着细小的尘埃。" },
+		{ "cmd": "narrate", "text": "图书馆安静得能听见自己的脚步声。在最高那排书架前，站着一个熟悉的身影。" },
+		{ "cmd": "se", "sound": "page_flip", "volume": 0.7 },
+		{ "cmd": "show", "character": "xingmian", "position": "center", "emotion": "normal" },
+		{ "cmd": "narrate", "text": "沈星眠。我们班的图书委员。及腰的黑长直发，别着一枚小小的银色星星发卡，总是安安静静地坐在教室的角落看书。" },
+		{ "cmd": "narrate", "text": "此刻她正踮着脚，努力伸长了手臂，想去够最高层的一本厚册子——指尖总是差那么一点点。" },
+		{ "cmd": "show", "character": "xingmian", "emotion": "troubled" },
+		{ "cmd": "say", "character": "xingmian", "text": "唔……就差一点……明明昨天还够得到的……" },
+		{ "cmd": "narrate", "text": "这大概就是所谓的「一点也没有长高」的烦恼吧。我走上前，替她把那本书抽了出来。" },
+		{ "cmd": "show", "character": "xingmian", "emotion": "surprised" },
+		{ "cmd": "say", "character": "xingmian", "text": "呀……！陆、陆之遥同学？你什么时候……" },
+		{ "cmd": "show", "character": "xingmian", "emotion": "shy" },
+		{ "cmd": "say", "character": "xingmian", "text": "谢、谢谢你。这本《日本喫茶店图鉴》……是为了文化祭的菜单设计找的参考书。" },
+		{ "cmd": "narrate", "text": "她接过书，小心地抱在怀里，脸颊微微泛红。近距离看才发现，她的睫毛很长。" },
+		{ "cmd": "say", "character": "xingmian", "text": "我……不太擅长人多的场合。所以文化祭，我主动申请了幕后——设计菜单和看板。" },
+		{ "cmd": "show", "character": "xingmian", "emotion": "smile" },
+		{ "cmd": "say", "character": "xingmian", "text": "但是，能把「喫茶店」三个字写进班级企划里，是我提议的。因为我最喜欢那样的地方了。" },
+		{ "cmd": "say", "character": "xingmian", "text": "旧旧的木桌、暖黄的灯、还有一个人的下午……你也喜欢那样的地方吗？" },
+		{ "cmd": "narrate", "text": "她抬起眼看我，那双紫灰色的眼睛里映着窗外细碎的光。" },
+		{
+		  "cmd": "choice",
+		  "options": [
+			{ "text": "“喜欢。尤其是有人陪着一起安静待着的那种下午。”", "target": "library_warm" },
+			{ "text": "“比起喫茶店，我更常去天台就是了。”", "target": "library_plain" }
+		  ]
+		}
+	  ]
+	},
+	"library_warm": {
+	  "commands": [
+		{ "cmd": "show", "character": "xingmian", "position": "center", "emotion": "shy" },
+		{ "cmd": "say", "character": "xingmian", "text": "有人陪着……嗯。安静待着，不用说话也不会觉得尴尬的那种。" },
+		{ "cmd": "say", "character": "xingmian", "text": "……我觉得，和你待在一起的时候，好像就是那种感觉。" },
+		{ "cmd": "narrate", "text": "她说完就低下头去翻书，假装看得很认真。可是那一页，足足两分钟都没有翻动。" },
+		{ "cmd": "show", "character": "xingmian", "emotion": "smile" },
+		{ "cmd": "say", "character": "xingmian", "text": "菜单设计如果遇到难题……可以去找你商量吗？放学后的教室，或者，这里。" },
+		{ "cmd": "narrate", "text": "我点了点头。她的笑容很轻，却像书签一样，安安静静地夹进了这个下午。" },
+		{ "cmd": "jump", "target": "prep_cookie" }
+	  ]
+	},
+	"library_plain": {
+	  "commands": [
+		{ "cmd": "show", "character": "xingmian", "position": "center", "emotion": "smile" },
+		{ "cmd": "say", "character": "xingmian", "text": "天台啊……听起来也不错。风很大，云很近，适合发呆。" },
+		{ "cmd": "say", "character": "xingmian", "text": "原来陆之遥同学是「一个人也能很开心」的类型呢。稍微有点……羡慕。" },
+		{ "cmd": "narrate", "text": "她笑了笑，抱着书坐回窗边的位置。阳光落在她的发顶，像镀了一层薄薄的金。" },
+		{ "cmd": "narrate", "text": "不知为何，走出图书馆的时候，我回头看了一眼。她还坐在那里，安静得像一幅画。" },
+		{ "cmd": "jump", "target": "prep_cookie" }
+	  ]
+	},
+	"prep_cookie": {
+	  "commands": [
+		{ "cmd": "bg", "asset": "classroom_sunset", "fade": 1.2 },
+		{ "cmd": "hide", "character": "xingmian" },
+		{ "cmd": "narrate", "text": "放学后的教室被夕阳泡得暖洋洋的。文化祭筹备第一天，林晚晴神秘兮兮地把我留了下来。" },
+		{ "cmd": "show", "character": "wanqing", "position": "right", "emotion": "smile" },
+		{ "cmd": "say", "character": "wanqing", "text": "锵锵——！为了喫茶店的招牌菜单，我昨晚连夜试做的——手作曲奇！" },
+		{ "cmd": "narrate", "text": "她献宝似的打开便当盒。里面的曲奇形状各异，有几块的颜色深得有些可疑。" },
+		{ "cmd": "show", "character": "wanqing", "emotion": "normal" },
+		{ "cmd": "say", "character": "wanqing", "text": "这盘是正常版，这盘是加浓可可版，这盘是……唔，忘记看烤箱版。你先从哪盘开始？" },
+		{ "cmd": "narrate", "text": "这是什么俄罗斯轮盘式的试吃会。我视死如归地拿起一块「忘记看烤箱版」，咬了一口。" },
+		{ "cmd": "narrate", "text": "……意外地，很好吃。外壳微焦带脆，里面是浓浓的黄油香。" },
+		{ "cmd": "show", "character": "wanqing", "emotion": "surprised" },
+		{ "cmd": "say", "character": "wanqing", "text": "欸？真的吗？！不是强撑着说的？你眼眶都有点红了哦？" },
+		{ "cmd": "show", "character": "wanqing", "emotion": "shy" },
+		{ "cmd": "say", "character": "wanqing", "text": "……太好了。其实我很紧张的。第一次给……给别人做东西吃。" },
+		{ "cmd": "narrate", "text": "她小声嘟囔着，手指无意识地卷着发梢。夕阳把她的侧脸染成了蜂蜜的颜色。" },
+		{ "cmd": "show", "character": "wanqing", "emotion": "smile" },
+		{ "cmd": "say", "character": "wanqing", "text": "那就决定了！文化祭的隐藏菜单——「晚晴特制·焦香黄油曲奇」。第一个客人永远是你。" },
+		{ "cmd": "narrate", "text": "「永远」这个词，她说得又轻又快，像是怕被我听见，又像是怕我听不见。" },
+		{ "cmd": "show", "character": "xingmian", "position": "left", "emotion": "normal" },
+		{ "cmd": "se", "sound": "page_flip", "volume": 0.6 },
+		{ "cmd": "say", "character": "xingmian", "text": "打扰了……啊。我、我闻到香味，就想来看看……菜单试做的进度。" },
+		{ "cmd": "narrate", "text": "星眠抱着菜单画稿站在教室门口，目光在便当盒和我们之间转了一圈，脚步顿住了。" },
+		{ "cmd": "show", "character": "wanqing", "position": "right", "emotion": "laugh" },
+		{ "cmd": "say", "character": "wanqing", "text": "沈同学来得正好！来尝尝我的特制曲奇！——这块，不许拿焦的！" },
+		{ "cmd": "show", "character": "xingmian", "emotion": "smile" },
+		{ "cmd": "say", "character": "xingmian", "text": "唔……！好好吃。黄油的比例，一定是反复调整过的吧。……我也想，把这份味道画进菜单里。" },
+		{ "cmd": "narrate", "text": "三个人的黄昏，曲奇的甜香混着夕阳的温度。那一刻我忽然觉得，文化祭什么的，好像真的会变成一个值得记住的节日。" },
+		{ "cmd": "jump", "target": "prep_choice" }
+	  ]
+	},
+	"prep_choice": {
+	  "commands": [
+		{ "cmd": "se", "sound": "school_chime", "volume": 0.8 },
+		{ "cmd": "narrate", "text": "距离文化祭还有三天。筹备进入冲刺阶段，人手开始捉襟见肘。" },
+		{ "cmd": "show", "character": "xingmian", "position": "left", "emotion": "troubled" },
+		{ "cmd": "show", "character": "wanqing", "position": "right", "emotion": "normal" },
+		{ "cmd": "say", "character": "wanqing", "text": "采购清单还有一大堆没买！纸杯、糖浆、装饰用的干花……商店街今天傍晚有折扣，现在去正好！" },
+		{ "cmd": "say", "character": "xingmian", "text": "那个……菜单的最终稿还没有定。字体的间距和插画，我想再调整一下……如果有人能帮我看看就好了。" },
+		{ "cmd": "narrate", "text": "两个人同时看向我。一边是晃着采购清单的晚晴，一边是抱着画稿、欲言又止的星眠。" },
+		{ "cmd": "narrate", "text": "放学后的时间只有一个。我必须做出选择。" },
+		{
+		  "cmd": "choice",
+		  "options": [
+			{ "text": "陪晚晴去商店街采购。", "target": "route_shopping" },
+			{ "text": "留下来帮星眠修改菜单。", "target": "route_menu" }
+		  ]
+		}
+	  ]
+	},
+	"route_shopping": {
+	  "commands": [
+		{ "cmd": "hide", "character": "xingmian" },
+		{ "cmd": "bg", "asset": "shopping_street_dusk", "fade": 1.2 },
+		{ "cmd": "bgm", "action": "crossfade", "track": "daily_bright", "fade": 1.5 },
+		{ "cmd": "narrate", "text": "傍晚的商店街亮起了暖黄的灯笼。晚晴推着小小的折叠购物车，走在我身边，嘴里念念有词地核对清单。" },
+		{ "cmd": "show", "character": "wanqing", "position": "center", "emotion": "normal" },
+		{ "cmd": "say", "character": "wanqing", "text": "纸杯三百个、枫糖浆两瓶、干花十束……好，买齐了！陆之遥，你的臂力真是一流，值得表扬！" },
+		{ "cmd": "narrate", "text": "她拍了拍我怀里摞成小山的购物袋，一脸满足。我的手臂已经开始发抖了。" },
+		{ "cmd": "show", "character": "wanqing", "emotion": "smile" },
+		{ "cmd": "say", "character": "wanqing", "text": "辛苦啦辛苦啦。作为奖励——看！可丽饼店！我请客！" },
+		{ "cmd": "narrate", "text": "她买了两支可丽饼，把草莓奶油的那支塞给我，自己捧着巧克力香蕉的，小口小口吃得像只仓鼠。" },
+		{ "cmd": "say", "character": "wanqing", "text": "你知道吗，我一直觉得可丽饼是很厉害的食物。甜的东西被薄薄的面皮包起来——像把「开心」打包带走一样。" },
+		{ "cmd": "say", "character": "wanqing", "text": "唔……你那个看起来也好好吃。就一口，给我尝一口嘛。" },
+		{ "cmd": "narrate", "text": "不等我回答，她凑过来，就着我手里的可丽饼咬了一小口。距离近得能看清她睫毛的弧度。" },
+		{ "cmd": "show", "character": "wanqing", "emotion": "shy" },
+		{ "cmd": "say", "character": "wanqing", "text": "……甜、甜度刚刚好！嗯！我的味觉果然没问题！" },
+		{ "cmd": "narrate", "text": "她猛地退开半步，语无伦次地找补着，耳朵红得像灯笼。晚风吹过商店街，带着章鱼烧的香气。" },
+		{ "cmd": "show", "character": "wanqing", "emotion": "normal" },
+		{ "cmd": "say", "character": "wanqing", "text": "呐，陆之遥。我转学过来之前，其实很害怕的。怕融不进新班级，怕交不到朋友。" },
+		{ "cmd": "say", "character": "wanqing", "text": "但是现在，我每天都在想——转学真好啊。能遇见这个班级，能遇见……你。" },
+		{ "cmd": "narrate", "text": "她望着远处的灯笼，侧脸在暖光里忽明忽暗。那一刻，商店街的喧闹忽然变得很远很远。" },
+		{ "cmd": "show", "character": "wanqing", "emotion": "laugh" },
+		{ "cmd": "say", "character": "wanqing", "text": "——好啦！感性环节结束！再不走末班车就没了，跑起来，搭档！" },
+		{ "cmd": "narrate", "text": "她抓起购物袋就跑，橙色蝴蝶结在暮色里一跳一跳。我提着大包小包追上去，竟然一点都不觉得累。" },
+		{ "cmd": "set", "name": "route_pick", "value": "wq" },
+		{ "cmd": "jump", "target": "festival_day" }
+	  ]
+	},
+	"route_menu": {
+	  "commands": [
+		{ "cmd": "hide", "character": "wanqing" },
+		{ "cmd": "bg", "asset": "classroom_sunset", "fade": 1.0 },
+		{ "cmd": "bgm", "action": "crossfade", "track": "gentle_piano", "fade": 1.5 },
+		{ "cmd": "narrate", "text": "放学后，教室里只剩下我和星眠两个人。她把菜单画稿在课桌上铺开，铅笔屑和橡皮擦排成整齐的一列。" },
+		{ "cmd": "show", "character": "xingmian", "position": "center", "emotion": "normal" },
+		{ "cmd": "say", "character": "xingmian", "text": "你看这里，「喫茶」两个字的间距……是紧一点好，还是松一点好？我盯着看太久了，已经分不清了。" },
+		{ "cmd": "narrate", "text": "我们头挨着头讨论字体，讨论配色，讨论要不要在角落画一只打盹的猫。不知不觉，窗外的天色暗了下来。" },
+		{ "cmd": "show", "character": "xingmian", "emotion": "smile" },
+		{ "cmd": "say", "character": "xingmian", "text": "完成了……！你看，这是我们两个人一起做的菜单哦。" },
+		{ "cmd": "narrate", "text": "她说「我们两个人」的时候，声音里带着藏不住的雀跃。桌上的画稿被夕阳照得发亮。" },
+		{ "cmd": "say", "character": "xingmian", "text": "我小时候，家附近有一家很老的喫茶店。下雨天，奶奶会带我去，点一杯热可可，听店主爷爷讲以前的故事。" },
+		{ "cmd": "show", "character": "xingmian", "emotion": "normal" },
+		{ "cmd": "say", "character": "xingmian", "text": "后来店关了，奶奶也不在了。但是那个味道、那种灯光，我一直记得。所以我想，如果我们的教室也能变成那样的地方……哪怕只有一天。" },
+		{ "cmd": "narrate", "text": "她低头摩挲着画稿的边角。我没有说话，只是把她手边凉掉的茶换成了热的。她愣了一下，小声说了句「谢谢」。" },
+		{ "cmd": "se", "sound": "rain_loop", "volume": 0.5 },
+		{ "cmd": "narrate", "text": "就在这时，窗外传来了细密的雨声。春雨来得毫无预兆，敲打着玻璃，把黄昏揉成了一片模糊的光晕。" },
+		{ "cmd": "show", "character": "xingmian", "emotion": "surprised" },
+		{ "cmd": "say", "character": "xingmian", "text": "下雨了……？天气预报明明说今天是晴天……啊，完蛋，我没带伞。" },
+		{ "cmd": "bg", "asset": "rain_street", "fade": 1.5 },
+		{ "cmd": "narrate", "text": "好在，我的书包里常年躺着一把折叠伞。伞不大，两个人撑，就注定要挨得很近。" },
+		{ "cmd": "show", "character": "xingmian", "position": "right", "emotion": "shy" },
+		{ "cmd": "say", "character": "xingmian", "text": "那、那个……你的肩膀，淋湿了哦。再往中间站一点也没关系的……" },
+		{ "cmd": "narrate", "text": "她把伞往我这边倾斜，自己的肩头反而湿了。我们为此推让了三次，最后变成两个人各湿半边肩膀。" },
+		{ "cmd": "show", "character": "xingmian", "emotion": "smile" },
+		{ "cmd": "say", "character": "xingmian", "text": "噗……我们这样，好傻啊。但是……嘿嘿，有点开心。" },
+		{ "cmd": "say", "character": "xingmian", "text": "陆之遥同学，你知道吗。雨天的声音很好听。噼里啪啦的，像全世界只剩下我们两个人在说话。" },
+		{ "cmd": "narrate", "text": "她的话音混在雨声里，轻得几乎听不清。路灯次第亮起，把我们的影子叠在一起，拉得很长。" },
+		{ "cmd": "show", "character": "xingmian", "emotion": "shy" },
+		{ "cmd": "say", "character": "xingmian", "text": "明天……文化祭结束以后，可以……稍微陪我一下吗？我有话想对你说。" },
+		{ "cmd": "narrate", "text": "我点头的时候，她握伞柄的手指悄悄收紧了。伞沿的雨滴落在我们之间，像一串断了线的珠子。" },
+		{ "cmd": "cg", "id": "cg_rain_umbrella" },
+		{ "cmd": "set", "name": "route_pick", "value": "xm" },
+		{ "cmd": "jump", "target": "festival_day" }
+	  ]
+	},
+	"festival_day": {
+	  "commands": [
+		{ "cmd": "bg", "asset": "cafe_festival", "fade": 1.5 },
+		{ "cmd": "bgm", "action": "crossfade", "track": "festival_lively", "fade": 1.5 },
+		{ "cmd": "music", "id": "festival_lively" },
+		{ "cmd": "se", "sound": "crowd_festival", "volume": 0.4 },
+		{ "cmd": "narrate", "text": "文化祭当天。二年三班的「复古喫茶店」大排长龙，教室里的桌椅铺上了格子桌布，纸拉花在灯光下摇晃。" },
+		{ "cmd": "show", "character": "wanqing", "position": "left", "emotion": "laugh" },
+		{ "cmd": "say", "character": "wanqing", "text": "欢迎光临——！啊，是陆之遥！快来快来，后厨缺人，你就负责……端盘子！仅限今天哦，看板娘亲自给你系围裙！" },
+		{ "cmd": "narrate", "text": "晚晴穿着店里的围裙，头上还别了条蕾丝发带。她踮起脚，绕到我身后系围裙带，指尖有意无意地擦过我的后颈。" },
+		{ "cmd": "show", "character": "wanqing", "emotion": "shy" },
+		{ "cmd": "say", "character": "wanqing", "text": "好、好了！很合身嘛……比想象中还要合身。那个，等一下收摊，别忘了来试吃「第一个客人」的曲奇哦。" },
+		{ "cmd": "narrate", "text": "她飞快地说完，转身钻进人群，背影都透着一股手忙脚乱的可爱。" },
+		{ "cmd": "show", "character": "xingmian", "position": "right", "emotion": "smile" },
+		{ "cmd": "say", "character": "xingmian", "text": "陆之遥同学……菜单大受好评哦。有客人专门问，角落那只打盹的猫是谁画的。" },
+		{ "cmd": "narrate", "text": "星眠负责收银台。她今天把长发编了起来，星星发卡别在耳后，忙碌中透着掩不住的开心。" },
+		{ "cmd": "show", "character": "xingmian", "emotion": "shy" },
+		{ "cmd": "say", "character": "xingmian", "text": "我说是……和我一起做菜单的人画的。是我们一起的。……这样说，可以吗？" },
+		{ "cmd": "narrate", "text": "当然可以。我点头的时候，她笑得眼睛弯了起来，像夜色里两枚浅浅的月牙。" },
+		{ "cmd": "narrate", "text": "午后人手终于松了些，班长挥挥手放我们轮班休息。我端着借来的托盘，正想找个角落喘口气——" },
+		{ "cmd": "show", "character": "wanqing", "position": "left", "emotion": "smile" },
+		{ "cmd": "say", "character": "wanqing", "text": "陆之遥！这边这边！我给你留了最后一杯特调——「晚晴特制·焦糖云朵拿铁」，全店最后一杯哦！" },
+		{ "cmd": "show", "character": "xingmian", "position": "right", "emotion": "shy" },
+		{ "cmd": "say", "character": "xingmian", "text": "那个……我这边的，是照着图鉴复刻的老式柠檬茶。如果、如果你不忙的话……" },
+		{ "cmd": "narrate", "text": "左手边是笑得灿烂的晚晴，右手边是捧着茶杯、指尖微微发紧的星眠。两杯饮料在夕阳下泛着不同的光。" },
+		{ "cmd": "narrate", "text": "这大概是今天最难的一道选择题。" },
+		{
+		  "cmd": "choice",
+		  "options": [
+			{ "text": "接过晚晴的焦糖拿铁。", "target": "break_wq" },
+			{ "text": "接过星眠的柠檬茶。", "target": "break_xm" }
+		  ]
+		}
+	  ]
+	},
+	"break_wq": {
+	  "commands": [
+		{ "cmd": "show", "character": "xingmian", "position": "right", "emotion": "troubled" },
+		{ "cmd": "narrate", "text": "星眠轻轻「啊」了一声，抱着茶杯退开半步，嘴角却还是弯着的。「没关系，柠檬茶……我自己喝也很好喝。」" },
+		{ "cmd": "show", "character": "wanqing", "position": "left", "emotion": "laugh" },
+		{ "cmd": "say", "character": "wanqing", "text": "耶！——咳。我是说，你很有眼光嘛，搭档。这杯的拉花可是我练习了两周的得意之作！" },
+		{ "cmd": "narrate", "text": "杯子里浮着一只歪歪扭扭的猫。与其说是拉花，不如说是行为艺术。但甜度刚好，暖意顺着喉咙一直落到胃里。" },
+		{ "cmd": "show", "character": "wanqing", "emotion": "shy" },
+		{ "cmd": "say", "character": "wanqing", "text": "好喝吗？……那就好。这杯的味道，我只打算做给一个人喝。以后也是。" },
+		{ "cmd": "narrate", "text": "她说完就转身去收拾杯子，留我一个人捧着那杯拿铁，心跳声大得担心被全教室听见。" },
+		{ "cmd": "set", "name": "break_pick", "value": "wq" },
+		{ "cmd": "jump", "target": "festival_dusk" }
+	  ]
+	},
+	"break_xm": {
+	  "commands": [
+		{ "cmd": "show", "character": "wanqing", "position": "left", "emotion": "pout" },
+		{ "cmd": "narrate", "text": "晚晴的笑容僵了半秒，随即把拿铁护进怀里。「哼，不识货！这杯我自己喝！……明天再给你做一杯，不许不喝。」" },
+		{ "cmd": "show", "character": "xingmian", "position": "right", "emotion": "smile" },
+		{ "cmd": "say", "character": "xingmian", "text": "谢谢你……这杯柠檬茶，是我照着奶奶店里记住的味道调的。你是第二个喝到的人。" },
+		{ "cmd": "narrate", "text": "我们并排坐在教室后排的空位上，慢慢地喝。茶是微酸的，回甘却很长，像她这个人一样。" },
+		{ "cmd": "show", "character": "xingmian", "emotion": "shy" },
+		{ "cmd": "say", "character": "xingmian", "text": "今天，是我在这里读书以来……最热闹、也最开心的一天。因为有你一起做的菜单，也有……你。" },
+		{ "cmd": "narrate", "text": "她望着杯子里浮着的柠檬片，声音轻得像在自言自语。我没有接话，只是把椅子往她那边挪了一寸。" },
+		{ "cmd": "set", "name": "break_pick", "value": "xm" },
+		{ "cmd": "jump", "target": "festival_dusk" }
+	  ]
+	},
+	"festival_dusk": {
+	  "commands": [
+		{ "cmd": "narrate", "text": "一天的喧嚣在傍晚迎来了尾声。送走最后一桌客人时，夕阳正好斜照进教室，把格子桌布染成蜜糖色。" },
+		{ "cmd": "narrate", "text": "黑板上留着客人用粉笔写下的留言：「喫茶店，明年也请一定再开。」" },
+		{ "cmd": "bgm", "action": "stop", "fade": 2.0 },
+		{ "cmd": "jump", "target": "after_festival" }
+	  ]
+	},
+	"after_festival": {
+	  "commands": [
+		{ "cmd": "bg", "asset": "classroom_sunset", "fade": 1.5 },
+		{ "cmd": "bgm", "action": "play", "track": "emotional_piano", "fade": 2.5 },
+		{ "cmd": "music", "id": "emotional_piano" },
+		{ "cmd": "narrate", "text": "收摊后的教室安静下来。夕阳把两个人的影子拉得很长，空气里还残留着咖啡和曲奇的香气。" },
+		{ "cmd": "narrate", "text": "收拾到一半，我摸了摸口袋——里面躺着两张便签。" },
+		{ "cmd": "narrate", "text": "一张字迹圆润：「收摊后来天台。有重要的话，想第一个说给你听。——晚晴」" },
+		{ "cmd": "narrate", "text": "一张字迹清秀：「图书馆的窗边座位，我会一直等到灯熄灭。——星眠」" },
+		{ "cmd": "narrate", "text": "窗外的晚霞烧得正盛。我攥紧便签，迈出了脚步。" },
+		{ "cmd": "if", "name": "route_pick", "op": "==", "value": "wq" },
+		{ "cmd": "jump", "target": "check_wq" },
+		{ "cmd": "if", "name": "route_pick", "op": "==", "value": "xm" },
+		{ "cmd": "jump", "target": "check_xm" },
+		{ "cmd": "jump", "target": "ending_friend" }
+	  ]
+	},
+	"check_wq": {
+	  "commands": [
+		{ "cmd": "if", "name": "break_pick", "op": "==", "value": "wq" },
+		{ "cmd": "jump", "target": "ending_wq" },
+		{ "cmd": "jump", "target": "ending_friend" }
+	  ]
+	},
+	"check_xm": {
+	  "commands": [
+		{ "cmd": "if", "name": "break_pick", "op": "==", "value": "xm" },
+		{ "cmd": "jump", "target": "ending_xm" },
+		{ "cmd": "jump", "target": "ending_friend" }
+	  ]
+	},
+	"ending_wq": {
+	  "commands": [
+		{ "cmd": "bg", "asset": "rooftop_sunset", "fade": 1.5 },
+		{ "cmd": "hide", "character": "xingmian" },
+		{ "cmd": "narrate", "text": "推开天台的铁门，晚霞毫无防备地铺满了整个视野。晚晴背对着我，趴在铁丝网前，橙色蝴蝶结被风吹得一颤一颤。" },
+		{ "cmd": "show", "character": "wanqing", "position": "center", "emotion": "normal" },
+		{ "cmd": "say", "character": "wanqing", "text": "你来啦。……嘿嘿，其实便签是我上课偷偷写的，写了撕、撕了写，用了整整七张纸。" },
+		{ "cmd": "show", "character": "wanqing", "emotion": "shy" },
+		{ "cmd": "say", "character": "wanqing", "text": "陆之遥。我这人说话一向不过脑子，想到什么说什么。所以今天这句话，我要认真地说。" },
+		{ "cmd": "narrate", "text": "她转过身，两只手紧张地绞在一起，深吸了一口气。晚霞落在她眼睛里，像两簇小小的火苗。" },
+		{ "cmd": "say", "character": "wanqing", "text": "从樱花道上撞到你的那一刻起，不，从更早，从看到分班表上你名字的那一刻起——" },
+		{ "cmd": "say", "character": "wanqing", "text": "我就一直在想，如果每天早上都能第一个见到这个人，那该多好啊。" },
+		{ "cmd": "show", "character": "wanqing", "emotion": "smile" },
+		{ "cmd": "say", "character": "wanqing", "text": "我喜欢你。不是同桌之间的那种喜欢，是想把每一天的早安和晚安，都变成专属的那种喜欢。" },
+		{ "cmd": "narrate", "text": "风停了。世界安静得只剩下心跳声。我向前一步，握住了她微微发抖的手。" },
+		{ "cmd": "show", "character": "wanqing", "emotion": "surprised" },
+		{ "cmd": "say", "character": "wanqing", "text": "欸……？你、你的意思是……" },
+		{ "cmd": "show", "character": "wanqing", "emotion": "laugh" },
+		{ "cmd": "say", "character": "wanqing", "text": "……呜哇，太好了……真的太好了！我还准备了 B 计划，如果你拒绝我就死缠烂打三年呢！" },
+		{ "cmd": "narrate", "text": "她笑着扑进我怀里，发梢扫过我的下巴，带着曲奇和阳光的味道。天台的晚霞把相拥的影子融成了一个。" },
+		{ "cmd": "bg", "asset": "cg_rooftop_wq", "fade": 1.0 },
+		{ "cmd": "narrate", "text": "「以后请多指教啦，男朋友。」她仰起脸，鼻尖蹭过我的鼻尖，「明天的可丽饼，换你请客哦。」" },
+		{ "cmd": "cg", "id": "cg_rooftop_wq" },
+		{ "cmd": "jump", "target": "epilogue_love" }
+	  ]
+	},
+	"ending_xm": {
+	  "commands": [
+		{ "cmd": "bg", "asset": "library_day", "fade": 1.5 },
+		{ "cmd": "hide", "character": "wanqing" },
+		{ "cmd": "narrate", "text": "图书馆即将闭馆。暖黄的灯下，星眠坐在窗边的老位置，面前摊着那本《日本喫茶店图鉴》，却一个字也没有看进去。" },
+		{ "cmd": "show", "character": "xingmian", "position": "center", "emotion": "normal" },
+		{ "cmd": "say", "character": "xingmian", "text": "你来了……我还在想，如果你去了天台，我就假装只是在看书。" },
+		{ "cmd": "show", "character": "xingmian", "emotion": "shy" },
+		{ "cmd": "say", "character": "xingmian", "text": "我这个人，不擅长热闹，不擅长表达，连道谢都会脸红。所以，我把想说的话……夹在了这本书里。" },
+		{ "cmd": "narrate", "text": "她把书递过来。夹着书签的那一页，是一张手绘的书签——上面画着一把伞，伞下并排站着两个小小的身影。" },
+		{ "cmd": "say", "character": "xingmian", "text": "书上说，喫茶店是「等一个人，或者被一个人等」的地方。我想，我终于明白这句话的意思了。" },
+		{ "cmd": "show", "character": "xingmian", "emotion": "smile" },
+		{ "cmd": "say", "character": "xingmian", "text": "陆之遥同学。以后放学后的图书馆，午休的窗边，下雨天的伞下……这些位置，可不可以都给你留着？" },
+		{ "cmd": "say", "character": "xingmian", "text": "我喜欢你。安安静静地，但是用尽了全部力气地，喜欢你。" },
+		{ "cmd": "narrate", "text": "她的声音很轻，却一个字一个字，清晰地落在我心上。我伸手，轻轻覆上她放在书页上的手。" },
+		{ "cmd": "show", "character": "xingmian", "emotion": "surprised" },
+		{ "cmd": "narrate", "text": "「那，明天的这个位置，」我说，「换我提前来占座。」" },
+		{ "cmd": "show", "character": "xingmian", "emotion": "shy" },
+		{ "cmd": "say", "character": "xingmian", "text": "……嗯。约好了。违约的人，要帮对方整理一辈子的书架哦。" },
+		{ "cmd": "narrate", "text": "她低下头，额头轻轻抵在我的肩膀上。窗外的最后一缕天光落进来，把我们的影子印在书架之间，像一册被时光珍藏的书。" },
+		{ "cmd": "bg", "asset": "cg_library_xm", "fade": 1.0 },
+		{ "cmd": "narrate", "text": "闭馆的铃声响起时，我们谁也没有动。那就再待一会儿吧——反正从今往后，我们还有很多很多个这样的黄昏。" },
+		{ "cmd": "cg", "id": "cg_library_xm" },
+		{ "cmd": "jump", "target": "epilogue_love" }
+	  ]
+	},
+	"ending_friend": {
+	  "commands": [
+		{ "cmd": "bg", "asset": "school_dusk", "fade": 1.5 },
+		{ "cmd": "narrate", "text": "握着两张便签，我在走廊上来回踱步，迟迟没能下定决心。等帮老师搬完最后一箱器材时，天已经擦黑了。" },
+		{ "cmd": "narrate", "text": "走出校门，却看见两个熟悉的身影并肩站在路灯下，一人抱着一摞没发完的传单。" },
+		{ "cmd": "show", "character": "wanqing", "position": "left", "emotion": "pout" },
+		{ "cmd": "say", "character": "wanqing", "text": "陆之遥！你这家伙，让我们等了四十分钟！四十分钟！便当盒里的曲奇都凉了！" },
+		{ "cmd": "show", "character": "xingmian", "position": "right", "emotion": "troubled" },
+		{ "cmd": "say", "character": "xingmian", "text": "凉了的曲奇，配热茶也还是不错的……不过，下次再这样，书签就要收回去了哦。" },
+		{ "cmd": "narrate", "text": "她们一左一右地「押」着我往车站走。夜风有点凉，可三个人挨在一起，就刚刚好。" },
+		{ "cmd": "show", "character": "wanqing", "emotion": "smile" },
+		{ "cmd": "say", "character": "wanqing", "text": "罚你明天请可丽饼！然后后天的天台午饭，还有周末的图书馆值日，统统都要一起来！" },
+		{ "cmd": "show", "character": "xingmian", "emotion": "smile" },
+		{ "cmd": "say", "character": "xingmian", "text": "呵呵。那就……一言为定。" },
+		{ "cmd": "narrate", "text": "路灯下，三个人的影子挨挨挤挤。有些心意还没来得及说出口，但没关系——属于我们的季节，才刚刚开始。" },
+		{ "cmd": "jump", "target": "epilogue_friend" }
+	  ]
+	},
+	"epilogue_love": {
+	  "commands": [
+		{ "cmd": "bg", "asset": "park_sakura", "fade": 1.5 },
+		{ "cmd": "hide", "character": "wanqing" },
+		{ "cmd": "hide", "character": "xingmian" },
+		{ "cmd": "bgm", "action": "crossfade", "track": "daily_bright", "fade": 2.0 },
+		{ "cmd": "narrate", "text": "——一年后的春天。" },
+		{ "cmd": "narrate", "text": "樱花又开了。公园的长椅上，我们肩并着肩，分享同一副耳机，同一份可丽饼，和同一个无所事事的下午。" },
+		{ "cmd": "narrate", "text": "花瓣落在摊开的笔记本上。那一页写着：「明年、后年，往后的每一个四月，都要一起看樱花。」" },
+		{ "cmd": "bg", "asset": "cg_sakura_promise", "fade": 1.5 },
+		{ "cmd": "narrate", "text": "风一吹，满树的花瓣便纷纷扬扬地落下来，像一场永远不会停的、温柔的雪。" },
+		{ "cmd": "cg", "id": "cg_sakura_promise" },
+		{ "cmd": "narrate", "text": "——与你共度的樱色季节，永不落幕。" },
+		{ "cmd": "bgm", "action": "stop", "fade": 3.0 },
+		{ "cmd": "narrate", "text": "【完】感谢游玩《与你共度的樱色季节》。" }
+	  ]
+	},
+	"epilogue_friend": {
+	  "commands": [
+		{ "cmd": "bg", "asset": "park_sakura", "fade": 1.5 },
+		{ "cmd": "hide", "character": "wanqing" },
+		{ "cmd": "hide", "character": "xingmian" },
+		{ "cmd": "bgm", "action": "crossfade", "track": "daily_bright", "fade": 2.0 },
+		{ "cmd": "narrate", "text": "——一年后的春天。" },
+		{ "cmd": "narrate", "text": "樱花道上，三个人吵吵闹闹地走着。晚晴举着可丽饼走在最前面，星眠抱着书小步跟在后面，而我走在中间。" },
+		{ "cmd": "narrate", "text": "那份没能说出口的心意，最终变成了三个人之间心照不宣的温柔。或许有一天，它会找到自己的形状。" },
+		{ "cmd": "narrate", "text": "但在那之前——樱花每年都会再开。而我们，还有很多很多个春天。" },
+		{ "cmd": "bgm", "action": "stop", "fade": 3.0 },
+		{ "cmd": "narrate", "text": "【完】感谢游玩《与你共度的樱色季节》。" }
 	  ]
 	}
   }
