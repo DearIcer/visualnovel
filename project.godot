@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 AudioManager="*res://scripts/Audio/AudioManager.cs"
 
+[display]
+
+window/size/resizable=false
+
 [dotnet]
 
 project/assembly_name="交互式文本"
