@@ -68,10 +68,15 @@ const CMD_DEFS = {
   cg:        { label: '解锁 CG',  fields: [ { key: 'id', name: 'CG ID', kind: 'text', required: true } ]},
   music:     { label: '解锁音乐', fields: [ { key: 'id', name: '音乐 ID', kind: 'text', required: true } ]},
   vo_unlock: { label: '解锁语音', fields: [ { key: 'id', name: '语音 ID', kind: 'text', required: true } ]},
+  cgshow:    { label: '展示 CG',  fields: [
+    { key: 'id', name: 'CG ID', kind: 'text', required: true, placeholder: 'assets/cg 下文件名，不含 .png' },
+    { key: 'fade', name: '淡入(秒)', kind: 'number' },
+  ]},
+  cghide:    { label: '收起 CG',  fields: [] },
 };
 
 const CMD_ORDER = ['say', 'narrate', 'show', 'hide', 'move', 'bg', 'bgm', 'se', 'voice',
-                   'choice', 'jump', 'set', 'if', 'cg', 'music', 'vo_unlock'];
+                   'choice', 'jump', 'set', 'if', 'cg', 'music', 'vo_unlock', 'cgshow', 'cghide'];
 
 /* ---------- 全局状态 ---------- */
 let doc = null;            // { characters: {...}, scenes: {...} }

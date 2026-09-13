@@ -43,17 +43,18 @@ const test = `
 ;(function runTests() {
   const assert = (cond, msg) => { if (!cond) throw new Error('断言失败: ' + msg); };
 
-  // 1. 加载项目自带的 main.json
+  // 1. 加载项目自带的 main.json（不断言具体场景数量，适配各分支剧本）
   const main = JSON.parse(MAIN_JSON);
   loadDoc(main, 'main.json');
-  assert(sceneOrder.length === 4, '应解析出 4 个场景, 实际 ' + sceneOrder.length);
-  assert(currentScene === 'start', '当前场景应为 start');
+  const mainSceneKeys = Object.keys(main.scenes);
+  assert(sceneOrder.length === mainSceneKeys.length, '场景数量应与剧本一致, 实际 ' + sceneOrder.length);
+  assert(currentScene === mainSceneKeys[0], '当前场景应为首个场景 ' + mainSceneKeys[0]);
   assert(validate(false) === true, '自带 main.json 应通过校验, 问题: ' + JSON.stringify(lastIssues));
 
   // 2. 序列化应保持场景顺序与结构
   const out = JSON.parse(serializeDoc());
-  assert(JSON.stringify(Object.keys(out.scenes)) === JSON.stringify(['start','sweet_path','yandere_path','ending_intro']), '场景顺序不一致');
-  assert(out.characters.shiori.displayName === '千织', '角色数据丢失');
+  assert(JSON.stringify(Object.keys(out.scenes)) === JSON.stringify(mainSceneKeys), '场景顺序不一致');
+  assert(JSON.stringify(out.characters) === JSON.stringify(main.characters), '角色数据丢失');
 
   // 3. 构造问题脚本应被校验捕获
   loadDoc({
