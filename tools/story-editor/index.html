@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>剧情编辑器 - 交互式文本</title>
+<link rel="stylesheet" href="editor.css">
+</head>
+<body>
+
+<!-- 顶栏 -->
+<header id="topbar">
+  <span id="app-title">剧情编辑器</span>
+  <span id="file-name">未打开文件</span>
+  <span id="dirty-dot" class="hidden" title="有未保存的修改">●</span>
+  <div class="spacer"></div>
+  <button id="btn-open" class="tb-btn">打开</button>
+  <button id="btn-new" class="tb-btn">新建</button>
+  <button id="btn-save" class="tb-btn primary">保存 <span class="key">Ctrl+S</span></button>
+  <button id="btn-saveas" class="tb-btn">另存为</button>
+  <button id="btn-validate" class="tb-btn">校验</button>
+  <button id="btn-characters" class="tb-btn">角色管理</button>
+</header>
+
+<!-- 校验结果面板 -->
+<div id="issues-panel" class="hidden">
+  <div class="issues-head">
+    <span id="issues-title">校验结果</span>
+    <button id="btn-close-issues" class="icon-btn">✕</button>
+  </div>
+  <ul id="issues-list"></ul>
+</div>
+
+<main id="main">
+  <!-- 场景侧栏 -->
+  <aside id="sidebar">
+    <div class="side-head">
+      <span>场景</span>
+      <button id="btn-add-scene" class="icon-btn" title="新增场景">＋</button>
+    </div>
+    <ul id="scene-list"></ul>
+  </aside>
+
+  <!-- 指令编辑区 -->
+  <section id="content">
+    <div id="welcome">
+      <h1>交互式文本 · 剧情编辑器</h1>
+      <p>打开 <code>story/main.json</code> 开始编辑，或新建一份剧情脚本。</p>
+      <p class="dim">推荐使用 Chrome / Edge 打开本页面，可直接读写本地文件。</p>
+      <div class="welcome-actions">
+        <button class="tb-btn primary" onclick="document.getElementById('btn-open').click()">打开剧情文件</button>
+        <button class="tb-btn" onclick="document.getElementById('btn-new').click()">新建剧情</button>
+      </div>
+    </div>
+
+    <div id="scene-editor" class="hidden">
+      <div id="scene-header">
+        <span class="label">场景</span>
+        <span id="scene-id-label"></span>
+        <div class="spacer"></div>
+        <button id="btn-rename-scene" class="tb-btn">重命名</button>
+        <button id="btn-del-scene" class="tb-btn danger">删除场景</button>
+      </div>
+      <div id="command-list"></div>
+      <div id="add-bar">
+        <select id="add-type"></select>
+        <button id="btn-add-cmd" class="tb-btn">＋ 添加指令</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- 角色管理弹窗 -->
+<div id="char-modal" class="modal-backdrop hidden">
+  <div class="modal">
+    <div class="modal-head">
+      <span>角色管理</span>
+      <button id="btn-close-chars" class="icon-btn">✕</button>
+    </div>
+    <div id="char-list"></div>
+    <div class="modal-foot">
+      <button id="btn-add-char" class="tb-btn">＋ 新增角色</button>
+    </div>
+  </div>
+</div>
+
+<!-- 隐藏的文件输入（无 File System Access API 时的兜底） -->
+<input type="file" id="file-input" accept=".json,application/json" class="hidden">
+
+<datalist id="dl-characters"></datalist>
+<datalist id="dl-scenes"></datalist>
+
+<script src="editor.js"></script>
+</body>
+</html>
