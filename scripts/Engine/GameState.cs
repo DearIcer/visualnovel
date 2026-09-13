@@ -76,6 +76,8 @@ namespace 交互式文本.Engine
     {
         public string BackgroundPath { get; set; } = string.Empty;
         public string BackgroundColor { get; set; } = "#000000";
+        /// <summary>当前正在展示的全屏 CG（res://assets/cg 下的文件名，空串表示无）。</summary>
+        public string CgPath { get; set; } = string.Empty;
         public Dictionary<string, CharacterOnStage> Characters { get; set; } = new();
     }
 

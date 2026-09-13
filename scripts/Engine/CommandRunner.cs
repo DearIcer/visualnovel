@@ -80,6 +80,12 @@ namespace 交互式文本.Engine
                 case "vo_unlock":
                     ExecuteUnlock(cmd);
                     break;
+                case "cgshow":
+                    ExecuteCgShow(cmd);
+                    break;
+                case "cghide":
+                    _core.HideCg(cmd.GetFloat("fade", 0.5f));
+                    break;
                 default:
                     GD.PushWarning($"未知指令: {cmd.Cmd}");
                     break;
@@ -88,6 +94,9 @@ namespace 交互式文本.Engine
 
         private void ExecuteBackground(CommandData cmd)
         {
+            // 切换背景意味着离开当前画面：收起正在展示的全屏 CG
+            _core.HideCg(cmd.GetFloat("fade", 0f));
+
             string color = cmd.GetString("color", "#000000");
             string asset = cmd.GetString("asset");
             float fade = _prepareOnly ? 0f : cmd.GetFloat("fade", 0f);
@@ -204,6 +213,9 @@ namespace 交互式文本.Engine
 
         private void ExecuteShow(CommandData cmd)
         {
+            // 立绘登场/切换意味着回到常规舞台：收起正在展示的全屏 CG
+            _core.HideCg(cmd.GetFloat("duration", 0.3f));
+
             string charId = cmd.GetString("character");
             string position = cmd.GetString("position");
             string emotion = cmd.GetString("emotion", "default");
@@ -416,6 +428,14 @@ namespace 交互式文本.Engine
                 case "vo_unlock": _core.State.Unlocks.Voices.Add(id); break;
             }
             GD.Print($"[UNLOCK] {cmd.Cmd}: {id}");
+        }
+
+        /// <summary>展示全屏 CG：cgshow { id, fade }。CG 会被随后的 bg / show / cghide 指令收起。</summary>
+        private void ExecuteCgShow(CommandData cmd)
+        {
+            string id = cmd.GetString("id");
+            float fade = _prepareOnly ? 0f : cmd.GetFloat("fade", 0.8f);
+            _core.ShowCg(id, fade);
         }
 
         private Sprite2D GetOrCreateCharacterSprite(string charId)

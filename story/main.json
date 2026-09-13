@@ -1,68 +1,3012 @@
 {
   "characters": {
-	"shiori": {
-	  "displayName": "千织",
-	  "color": "#d63384",
+	"anzhi": {
+	  "displayName": "安栀",
+	  "color": "#e8567e",
 	  "defaultPosition": "center"
+	},
+	"zhouye": {
+	  "displayName": "周野",
+	  "color": "#5a8de0",
+	  "defaultPosition": "left"
+	},
+	"xuwei": {
+	  "displayName": "许薇",
+	  "color": "#d9a45b",
+	  "defaultPosition": "right"
 	}
   },
   "scenes": {
-	"start": {
+	"pro0_monologue": {
 	  "commands": [
-		{ "cmd": "bg", "asset": "school_dusk", "fade": 1.0 },
-		{ "cmd": "bgm", "action": "play", "track": "gentle_piano", "fade": 1.5 },
-		{ "cmd": "narrate", "text": "夕阳把天空染成了温柔的橘红色，放学的路上，我低着头往前走，却突然撞上了什么人。" },
-		{ "cmd": "se", "sound": "collision_whoosh", "volume": 0.8 },
-		{ "cmd": "show", "character": "shiori", "position": "center", "emotion": "normal" },
-		{ "cmd": "say", "character": "shiori", "text": "呜……好痛。" },
-		{ "cmd": "say", "character": "shiori", "text": "那个……你没事吧？是我没看路。" },
-		{ "cmd": "narrate", "text": "她揉了揉额头，抬起头看向我。那是一张精致得不像话的脸，黑色的长发被丝带随意地扎成侧马尾，黑白格纹的裙子在晚风里轻轻晃动。" },
-		{ "cmd": "say", "character": "shiori", "text": "我叫千织。那个……你的书包带子松了哦。" },
-		{ "cmd": "show", "character": "shiori", "position": "center", "emotion": "smile" },
-		{ "cmd": "say", "character": "shiori", "text": "来，我帮你系好……" },
-		{ "cmd": "narrate", "text": "她突然凑得很近，那双漂亮的大眼睛专心致志地盯着我的包带，手指灵巧地帮我把散落的带子重新系好。微风带起她发间的香气。" },
-		{ "cmd": "say", "character": "shiori", "text": "系好了哦！这样就不会掉了。以后要是你掉了什么东西，或者……不见了，我会很伤心的。" },
-		{ "cmd": "narrate", "text": "她笑着说出了这句话，虽然语气甜美，但那双黑色的眼眸深处，似乎掠过一丝让我脊背发凉的执着。" },
+		{
+		  "cmd": "bg",
+		  "color": "#000000",
+		  "fade": 0
+		},
+		{
+		  "cmd": "bgm",
+		  "action": "play",
+		  "track": "bgm_rain",
+		  "fade": 3.0
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我叫沈亦。在那场雨之前，我的人生是一条用尺子画出来的直线。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "上课，兼职，图书馆三楼的靠窗位。不讨厌谁，也不被谁特别地需要。我以为日子会一直这样下去——平静得像一杯凉掉的白开水。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "后来我才知道，白开水是最好的培养基。只要落进去一粒种子，就能长出你想象不到的东西。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "那粒种子落下的夜晚，下着那年秋天最大的一场雨。"
+		},
+		{
+		  "cmd": "jump",
+		  "target": "prologue_rain"
+		}
+	  ]
+	},
+	"prologue_rain": {
+	  "commands": [
+		{
+		  "cmd": "bg",
+		  "asset": "bg_convenience_rain",
+		  "fade": 0
+		},
+		{
+		  "cmd": "bgm",
+		  "action": "play",
+		  "track": "bgm_rain",
+		  "fade": 2.0
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "十一点的雨，下得像是有人在天上拧开了阀门，又忘了关。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我站在便利店门口的屋檐下，看着雨幕发呆。论文、兼职、下周的发表会——脑子里一堆东西泡在水里，沉不下去，也浮不上来。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "店里暖黄的灯光从玻璃门里漏出来，照着脚边一小片干燥的水泥地。那是这整条街上，唯一没有被雨占领的地方。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "就是在这个时候，我听见了那个声音。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "那、那个……不好意思……"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "声音很轻，像雨点落在棉花上。我转过头，看见一个女孩抱着便利店的纸袋，站在离门半步远的地方，被屋檐的边缘淋湿了半边肩膀。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "position": "center",
+		  "emotion": "normal"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "黑色的长发直直地垂到腰际，发间别着一枚白色的栀子花发夹。白裙子的下摆已经湿透了，贴在小腿上。她赤着一只脚，另一只脚上挂着只剩半边的人字拖。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "狼狈。这是第一印象。但奇怪的是，她明明狼狈成那样，腰背却挺得很直，像一株被雨打弯又弹回来的植物。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "请问……这把伞，能借我站一站吗？就站一小会儿。雨好像，一时半会儿停不了。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她说「借我站一站」。不是借伞，是借伞下面的一小块位置。这种说法很奇怪，又莫名地让人没法拒绝。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我往旁边让了让。她小跑着钻进伞沿下面，纸袋抱在胸前，像护着什么重要的东西。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "shy"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "谢谢。……纸袋里是便当，明天的。淋湿了就不好吃了。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "我叫安栀。安心的安，栀子花的栀。是南边那所大学，一年级的学生。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "南边的大学。和我同一所。她仰起脸看我，睫毛上挂着细小的雨珠，在灯光下一晃一晃的。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "smile"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "那，前辈是几年级呢？我看过你。在图书馆三楼的靠窗位置，你总坐那里。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "雨声忽然显得有点大。我回忆了一下，图书馆三楼的靠窗位——我确实是常客。但我对她，没有任何印象。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "没有印象，才是正常的吧。每天从那张桌子旁边走过的人，没有一百也有八十。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她也不追问，只是安静地站在我旁边，看雨。便利店的光落在我们中间，把两个人的影子叠在湿漉漉的地面上，分不清谁的更长一些。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "过了很久，她小声说："
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "normal"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "雨声很好听。但是一个人听的话，会难过。"
+		},
 		{
 		  "cmd": "choice",
 		  "options": [
-			{ "text": "“谢谢你，千织。下周见。”", "target": "sweet_path" },
-			{ "text": "“那……你要不要一直和我在一起？”", "target": "yandere_path" }
+			{
+			  "text": "「我送你回去吧，顺路。」（其实并不顺路）",
+			  "target": "pro_walk"
+			},
+			{
+			  "text": "「伞给你，我跑回去就行。」",
+			  "target": "pro_umbrella"
+			},
+			{
+			  "text": "「雨小了，我先走了。你早点回去。」",
+			  "target": "pro_leave"
+			}
 		  ]
 		}
 	  ]
 	},
-	"sweet_path": {
+	"pro_walk": {
 	  "commands": [
-		{ "cmd": "bg", "asset": "night_street", "fade": 1.0 },
-		{ "cmd": "show", "character": "shiori", "emotion": "smile" },
-		{ "cmd": "say", "character": "shiori", "text": "嗯！下周见！……不过你跑不掉的哦~" },
-		{ "cmd": "narrate", "text": "她站在路灯下朝我挥了挥手，昏黄的灯光把她的侧脸照得格外温柔，但那句话里的弦外之音，让我莫名心跳加速。" },
-		{ "cmd": "set", "name": "affection_shiori", "value": 5 },
-		{ "cmd": "cg", "id": "cg_first_meet_sweet" },
-		{ "cmd": "jump", "target": "ending_intro" }
+		{
+		  "cmd": "set",
+		  "name": "bond",
+		  "value": 2
+		},
+		{
+		  "cmd": "bg",
+		  "asset": "bg_street_rain",
+		  "fade": 1.0
+		},
+		{
+		  "cmd": "cgshow",
+		  "id": "cg_umbrella",
+		  "fade": 0.8
+		},
+		{
+		  "cmd": "cg",
+		  "id": "cg_umbrella"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我撑开伞。伞不大，两个人站在下面，肩膀几乎要碰在一起。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她走路很慢，步子很小，好像怕踩碎地上的水洼。我把伞往她那边倾斜了一点。雨声在伞面上敲出密密的鼓点，把整条街敲得只剩下我们两个人。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "路过一盏路灯的时候，她忽然停下来，回头看我。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "position": "center",
+		  "emotion": "smile"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "前辈，你知道吗。栀子花的花语，是「一生的守候」。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "我妈妈留给我的，只有这枚发夹，和这句话。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她说得很轻，像在讲别人的事。路灯的光从她头顶照下来，她发间那枚白花花的发夹亮了一下，又暗下去。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我不知道该怎么接，只好沉默地把她送到了公寓楼下。那是一栋旧得看不出颜色的四层小楼，楼道口的灯坏了，黑黢黢的。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "shy"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "今天，是我这半年来，最开心的一天。谢谢你，前辈。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "晚安。——明天见。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "明天见。她说得笃定极了，仿佛那不是一句客套，而是一个已经被写进日程的事实。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她跑进黑暗的楼道，脚步声一级一级地远上去。我撑着她硬塞还给我的伞往回走，忽然意识到一件事：从头到尾，我都没有告诉过她，我住哪个方向。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "可她说「顺路」的时候，连头都没有回。"
+		},
+		{
+		  "cmd": "jump",
+		  "target": "ch1_campus"
+		}
 	  ]
 	},
-	"yandere_path": {
+	"pro_umbrella": {
 	  "commands": [
-		{ "cmd": "bg", "asset": "river_bank_night", "fade": 1.0 },
-		{ "cmd": "show", "character": "shiori", "emotion": "normal" },
-		{ "cmd": "say", "character": "shiori", "text": "诶……？" },
-		{ "cmd": "show", "character": "shiori", "emotion": "smile" },
-		{ "cmd": "say", "character": "shiori", "text": "这可是你说的哦？说话要算数哦？" },
-		{ "cmd": "narrate", "text": "她轻轻歪了歪头，笑容甜得像能挤出蜜来，但那双黑眼睛却异常认真地盯着我，仿佛要隔着夜色把我整个人锁进她的视野里。" },
-		{ "cmd": "set", "name": "affection_shiori", "value": 8 },
-		{ "cmd": "cg", "id": "cg_first_meet_yandere" },
-		{ "cmd": "jump", "target": "ending_intro" }
+		{
+		  "cmd": "set",
+		  "name": "bond",
+		  "value": 1
+		},
+		{
+		  "cmd": "bg",
+		  "asset": "bg_street_rain",
+		  "fade": 1.0
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我把伞塞进她手里，没等她推辞，就拉高了外套的领子冲进雨里。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "前辈——！"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "跑出十几米，雨里传来她的声音，模模糊糊的："
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "伞——我会还给你的——一定——"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "一定。她把这两个字咬得很重，隔着一整条街的雨，砸在我背上。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "第二天，我感冒了。第三天，我的课桌抽屉里多了一把折得整整齐齐的伞，伞柄上系着一小朵白色的栀子花，还压着一张字条。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "字条上是清秀得近乎拘谨的字迹：「谢谢前辈。药我放在旁边的袋子里了，是冲剂，不苦。——安栀」"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "袋子里是一盒感冒冲剂，和一小盒草莓味的糖。我盯着那盒糖看了很久。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我没有告诉过任何人我感冒了。也没有告诉过任何人，我不吃苦的药。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "「一定是她问你同学的吧。」我这样对自己说。这个解释合理、温和，无懈可击。我把它端端正正地放在心里，像压住一张会被风吹走的纸。"
+		},
+		{
+		  "cmd": "jump",
+		  "target": "ch1_campus"
+		}
 	  ]
 	},
-	"ending_intro": {
+	"pro_leave": {
 	  "commands": [
-		{ "cmd": "bg", "asset": "starry_sky", "fade": 1.0 },
-		{ "cmd": "hide", "character": "shiori" },
-		{ "cmd": "bgm", "action": "crossfade", "track": "echo_memory", "fade": 2.0 },
-		{ "cmd": "narrate", "text": "夜色完全降临，星光铺满天空。那份初见时萌芽的羁绊，无论是甜是苦，都已经悄悄缠上了我的心脏。" },
-		{ "cmd": "narrate", "text": "属于我们的故事，才刚刚开始。" }
+		{
+		  "cmd": "set",
+		  "name": "bond",
+		  "value": 0
+		},
+		{
+		  "cmd": "set",
+		  "name": "doubt",
+		  "value": 1
+		},
+		{
+		  "cmd": "bg",
+		  "asset": "bg_street_rain",
+		  "fade": 1.0
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我说完那句话，就撑开伞走进了雨里。背后安静了几秒，然后传来一声很轻的：「嗯。晚安，前辈。」"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我没有回头。所以我没有看见她站在原地，看着我的背影，看了多久。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "后来周野问我，如果那天我回了头，会不会有什么不一样。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我说不上来。我只知道，从那以后，我的生活里开始频繁地、恰到好处地，出现那个白裙子的影子。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "图书馆里隔着两个座位的呼吸声。食堂里「刚好」多打了一份的糖醋排骨。下雨天时，教学楼门口那把「没人认领」的伞。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "它们都长着同一张脸：温柔、妥帖，并且不容拒绝。"
+		},
+		{
+		  "cmd": "jump",
+		  "target": "ch1_campus"
+		}
+	  ]
+	},
+	"ch1_campus": {
+	  "commands": [
+		{
+		  "cmd": "bg",
+		  "asset": "bg_campus_day",
+		  "fade": 1.0
+		},
+		{
+		  "cmd": "bgm",
+		  "action": "crossfade",
+		  "track": "bgm_daily",
+		  "fade": 2.0
+		},
+		{
+		  "cmd": "music",
+		  "id": "bgm_daily"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "一周后的午后，银杏道的阳光好得过分。我抱着发表会要用的资料往教学楼走，被人从侧后方轻轻拽了一下袖子。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "position": "center",
+		  "emotion": "smile"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "前辈！真的是你。我刚才在那边看了好久，怕自己认错了。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "你今天没课吧？周三下午，你的课表是空的。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我的脚步停了半拍。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "啊，别误会。新生手册后面印着各年级的公共课表，我……记忆力比较好而已。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她笑着解释，眼睛弯成很好看的月牙。记忆力好，和特意去记一个陌生学长的课表，是两回事。但那天阳光太好，我把这点违和感咽了回去。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "normal"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "发表会的资料，很重吧？我帮你拿一半。反正我下午也没事。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她不由分说地抱走了一半资料。走路的时候，她始终落后我半步，像一道安静的影子。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "路过自动贩卖机，她忽然停下来，投币，按了一罐热可可，递给我。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "shy"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "你不喝咖啡的，下午喝晚上会睡不着。可可……可以吗？"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我接过那罐还烫手的可可，指尖和她的指尖碰了一下。她像被烫到一样缩回手，耳朵尖红了。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "「谢谢。」我说。她低着头「嗯」了一声，声音小得像落在地上的银杏叶。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我本该觉得哪里不对劲的。但人的警惕心就是这么奇怪的东西——当所有细节都指向「她在乎你」的时候，大脑会拒绝把它们翻译成「她在监视你」。"
+		},
+		{
+		  "cmd": "jump",
+		  "target": "ch1_library"
+		}
+	  ]
+	},
+	"ch1_library": {
+	  "commands": [
+		{
+		  "cmd": "bg",
+		  "asset": "bg_campus_day",
+		  "fade": 0.8
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "那之后，图书馆三楼的靠窗位，开始固定地出现两个人。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她总在我坐下之后不久出现，抱着一摞和她纤细手腕完全不相称的大部头，轻轻拉开我斜对面的椅子。我们之间隔着一张桌子，和一段恰到好处的、不会互相打扰的距离。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她看书的时候很安静，只有翻页的声音。偶尔抬起头，撞上我的视线，就笑一下，再低下头去。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "position": "center",
+		  "emotion": "normal"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "有一次我中途去洗手间，回来的时候，发现我的笔记本被人动过——摊开的那一页上，我潦草的草稿旁边，多了一行娟秀的小字，把我卡了一下午的那处论证，补上了缺掉的一环。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "字迹的末尾没有署名，只画了一朵很小的栀子花。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "前辈回来了？……啊，那个，对不起，我没忍住。你的思路太好了，就差一步，它卡在那里，我看着难受。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "「你看懂了我的论文？」那不是什么通俗读物，是本系三年级的专题。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "smile"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "你的每一篇课程论文，我都读过哦。贴在系刊栏里的那些。写得最好的是去年那篇，讲「规训与凝视」的。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "「当凝视成为习惯，被凝视者会开始替凝视者管理自己。」——这句话，我抄在本子上了。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她背出那句话的时候，眼睛亮晶晶的，像一个真正被论文打动的读者。我本该受宠若惊的。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "可不知道为什么，那句话从她嘴里念出来，味道忽然变了。「被凝视者会开始替凝视者管理自己」——我端着水杯，莫名其妙地想起这两天，自己出门前会下意识地检查领口。"
+		},
+		{
+		  "cmd": "jump",
+		  "target": "ch1_lunch"
+		}
+	  ]
+	},
+	"ch1_lunch": {
+	  "commands": [
+		{
+		  "cmd": "bg",
+		  "asset": "bg_campus_day",
+		  "fade": 0.8
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "午饭时间，我在天台角落的老位置坐下，刚撕开饭团的包装，天台的门「吱呀」一声开了。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "position": "center",
+		  "emotion": "smile"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "果然在这里。我就知道。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她拎着一只浅蓝色的布包走过来，在我身边坐下，隔着一拳的距离。布包打开，是两层的便当盒：玉子烧、章鱼香肠、拌菠菜，米饭上用海苔拼了一个笑脸。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "便利店的东西，吃多了胃会坏掉的。你上周有三天午饭都是饭团，对不对？"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "我多做了一份。不是什么大不了的东西，你不吃的话，我也只能倒掉。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她说「只能倒掉」的时候，睫毛垂下去，像受了天大的委屈。那是根本没法拒绝的说法。"
+		},
+		{
+		  "cmd": "choice",
+		  "options": [
+			{
+			  "text": "接过便当，道谢。",
+			  "target": "ch1_lunch_yes"
+			},
+			{
+			  "text": "「你怎么知道我上周吃了什么？」",
+			  "target": "ch1_lunch_ask"
+			}
+		  ]
+		}
+	  ]
+	},
+	"ch1_lunch_yes": {
+	  "commands": [
+		{
+		  "cmd": "set",
+		  "name": "bond",
+		  "value": 4
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "shy"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "便当很好吃。好吃得不像一个独居大学生的手艺。她看着我吃，自己不动筷子，只是双手托着腮。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "怎么样？"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "「很好吃。比我妈做的好吃。」我说的是实话。她愣了一下，然后笑开了，那种从眼睛深处漫出来的、不带任何防备的笑。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "那我以后每天都做。前辈的午饭，我来负责。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她说得那么自然，好像「每天」是一个不需要商量的单位。我低头扒饭，没有接话。风从天台的铁丝网外面吹进来，她伸手按住被吹起的头发，腕骨细得像一折就断。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "那一顿饭吃得很暖。暖到我刻意忽略了便当盒底层的米饭上，还压着另一张海苔——拼的不是笑脸。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "是一朵栀子花。"
+		},
+		{
+		  "cmd": "jump",
+		  "target": "ch1_weekend"
+		}
+	  ]
+	},
+	"ch1_lunch_ask": {
+	  "commands": [
+		{
+		  "cmd": "set",
+		  "name": "bond",
+		  "value": 2
+		},
+		{
+		  "cmd": "set",
+		  "name": "doubt",
+		  "value": 3
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "normal"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她托着腮看我，看了两秒，歪了歪头。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "食堂阿姨说的呀。她说三楼的那个高个子男生，最近总买梅子饭团。我只是……顺便听了进去。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "顺便听到了，顺便记住了，顺便就做了便当。前辈，「顺便」这个词，很好用吧？什么都能装进去。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她笑吟吟地看着我。食堂阿姨。多么合理的解释。合理得连质疑它都显得我自己神经质。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "可食堂离她的学部，要穿过大半个校区。一个人得有多少「顺便」，才能把另一个人的生活，拼得这样分毫不差？"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "smile"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "快吃吧，要凉了。玉子烧是甜的，你喜欢吃甜口的。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我最终吃掉了那份便当。甜味的玉子烧在舌尖上化开的时候，我想，被一个人这样彻底地了解，原来是这种感觉——像被一双很温柔的手，一寸一寸地剥开。"
+		},
+		{
+		  "cmd": "jump",
+		  "target": "ch1_weekend"
+		}
+	  ]
+	},
+	"ch1_weekend": {
+	  "commands": [
+		{
+		  "cmd": "bg",
+		  "asset": "bg_street_rain",
+		  "fade": 1.0
+		},
+		{
+		  "cmd": "bgm",
+		  "action": "crossfade",
+		  "track": "bgm_daily",
+		  "fade": 2.0
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "周六我在旧书店打工。午后的雨不大不小，店里没什么客人，只有除湿机在角落里嗡嗡地响。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "门铃响的时候，我正踩着梯子整理最高一层的旧书。回头一看，白裙子站在门口，收伞，甩了甩上面的水。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "position": "center",
+		  "emotion": "smile"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "前辈，好巧。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "好巧。这家旧书店在城市的另一头，离她的公寓要换两趟公交。她鞋尖的水渍在地板上印出一小串脚印，一直延伸到推理小说区。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我没有拆穿她。我只是忽然意识到，她说「好巧」的时候，眼睛里那种光明正大的欢喜——她根本不打算让我相信这是巧合。她是在等我自己习惯这种「巧合」。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她在店里待了三个小时，最后买了一本很旧的《一个陌生女人的来信》。付钱的时候，她把书贴在胸口，对我说："
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "normal"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "这本书我读过很多遍。一个女人用一辈子爱一个人，对方却从来不知道。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "以前我觉得她好可怜。现在不了。她好厉害——她把「他永远不知道」这件事，变成了只属于她一个人的东西。谁也抢不走。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "不过，我不会学她的。我喜欢的东西，我一定要让他知道。知道了，才会有回音呀。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她推门走进雨里。门铃在她身后叮叮当当地响。我看着玻璃门上她的倒影，忽然发现自己一直在数——这是这周第几次「好巧」了。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "第四次。答案是第四次。我开始数了。不知道从什么时候起，我已经开始数了。"
+		},
+		{
+		  "cmd": "jump",
+		  "target": "ch1_cafe"
+		}
+	  ]
+	},
+	"ch1_cafe": {
+	  "commands": [
+		{
+		  "cmd": "bg",
+		  "asset": "bg_cafe",
+		  "fade": 1.0
+		},
+		{
+		  "cmd": "bgm",
+		  "action": "crossfade",
+		  "track": "bgm_cafe",
+		  "fade": 2.0
+		},
+		{
+		  "cmd": "music",
+		  "id": "bgm_cafe"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "发表会结束后的傍晚，安栀约我去学校后门的咖啡厅，说是「答谢我雨天的伞」。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "那家店很小，灯光是蜂蜜色的，藏在一条需要拐三个弯的巷子里。窗外又下起了雨，玻璃上爬满细密的水痕。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "「这家店很难找。」我说。「连很多大四的人都不知道。」"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "position": "center",
+		  "emotion": "smile"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "我找了两周哦。看点评、问店主、把附近每条巷子都走了一遍。因为前辈说过，你喜欢「安静到能听见咖啡凉掉」的地方。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我说过吗？也许说过。也许是在某条早就删掉的动态里。她把我随口撒落的话，一颗一颗捡起来，串成了项链。"
+		},
+		{
+		  "cmd": "cgshow",
+		  "id": "cg_cafe",
+		  "fade": 0.8
+		},
+		{
+		  "cmd": "cg",
+		  "id": "cg_cafe"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "前辈，你发表的样子，我看了。坐在最后一排。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "你讲到第三页的时候卡了一下，右手会去摸讲台边缘。紧张的时候你就会那样。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她双手捧着杯子，隔着热气看我。那双眼睛很亮，亮得过分专注，像要把我的每一个表情都拓印下来收好。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "但是很可爱哦。认真的前辈。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她记得我不喝下午的咖啡。记得我对青霉素过敏。记得我围巾是灰色的、手套丢了一只。甚至记得我随口说过一次的、小学时养过的那条狗的名字。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她像一个用了很多年、把我研究得很透彻的学者，而我直到今天，才第一次坐到她的对面。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "「安栀。」我放下杯子，「你为什么会……」"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "「嘘。」她把食指竖在唇前，笑了。「让我猜猜你要问什么。你要问，为什么我记得这么多，对不对？」"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "normal"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "因为「记得」是我唯一擅长的事了。我的童年没有留下别的东西。没有相册，没有玩具，连一张全家福都没有。所以我只能靠记。把重要的东西全部记在脑子里，哪里都偷不走。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她说这话的时候，目光落在窗外。雨痕把她的侧脸切割成一小块一小块的，每一块里都是不同的神情。"
+		},
+		{
+		  "cmd": "choice",
+		  "options": [
+			{
+			  "text": "「你记得好清楚……谢谢，我很开心。」",
+			  "target": "ch1_warm"
+			},
+			{
+			  "text": "「安栀，你为什么对我这么了解？」",
+			  "target": "ch1_ask"
+			},
+			{
+			  "text": "（沉默地移开视线，后背有些发凉）",
+			  "target": "ch1_cold"
+			}
+		  ]
+		}
+	  ]
+	},
+	"ch1_warm": {
+	  "commands": [
+		{
+		  "cmd": "set",
+		  "name": "bond",
+		  "value": 4
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "shy"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "诶……开心吗？真的？"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她愣了一下，然后低下头，肩膀轻轻地抖。我以为她在笑，过了几秒才发现她在哭。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "cry"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "对不起。只是，以前从来没有人，因为我记得他的事情而开心过。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "大家都说，「安栀，你这样很吓人」。可是我只是……只是想把我喜欢的东西，好好地收在心里而已。收在心里，也有错吗？"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我隔着桌子，把纸巾递给她。她接纸巾的时候，握住了我的手腕。很轻，但我没有抽走。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "smile"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "前辈，你和他们不一样。你不要变，好不好？"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "那一刻她手心的温度是暖的。我选择记住那份暖，把其余的，都按进了窗外的雨声里。"
+		},
+		{
+		  "cmd": "jump",
+		  "target": "ch1_room"
+		}
+	  ]
+	},
+	"ch1_ask": {
+	  "commands": [
+		{
+		  "cmd": "set",
+		  "name": "bond",
+		  "value": 2
+		},
+		{
+		  "cmd": "set",
+		  "name": "doubt",
+		  "value": 2
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "normal"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "咖啡厅里安静了几秒。勺子碰在杯壁上，叮的一声。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "因为……"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "dark"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "因为前辈是我选中的人呀。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她的脸垂进了灯光照不到的阴影里，只有声音还是软的。那句话像一枚冰冷的针，贴着耳膜滑了进去。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "smile"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "开玩笑的。是「一见钟情」啦，书上不都这么说吗？看到喜欢的人，就会想知道他的一切。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她重新抬起头，笑容完美得像什么都没发生过。可我注意到，她搅动咖啡的勺子，很久，都没有停。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "圈。一圈。又一圈。那杯咖啡早就凉透了，她却还在搅，仿佛那不是咖啡，而是某种需要她不停安抚的东西。"
+		},
+		{
+		  "cmd": "jump",
+		  "target": "ch1_room"
+		}
+	  ]
+	},
+	"ch1_cold": {
+	  "commands": [
+		{
+		  "cmd": "set",
+		  "name": "bond",
+		  "value": 1
+		},
+		{
+		  "cmd": "set",
+		  "name": "doubt",
+		  "value": 3
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我没有回答。窗外的雨敲在玻璃上，像很多细小的指甲。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "normal"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "……前辈？"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "你在怕我吗？"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她的声音还是软的，甚至带着点受伤。可我看见她放在桌下的另一只手，正紧紧攥着自己的裙摆，指节发白，攥出了血一样的红。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "smile"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "不用怕我的。我只会对前辈好。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "——只、会、对、前、辈、好。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她一字一顿地重复了一遍，像在完成某种仪式。回去的路上，我一直在想：那么，她「不好」的那些部分，给了谁呢？"
+		},
+		{
+		  "cmd": "jump",
+		  "target": "ch1_room"
+		}
+	  ]
+	},
+	"ch1_room": {
+	  "commands": [
+		{
+		  "cmd": "bg",
+		  "asset": "bg_apartment_evening",
+		  "fade": 1.0
+		},
+		{
+		  "cmd": "bgm",
+		  "action": "crossfade",
+		  "track": "bgm_daily",
+		  "fade": 2.0
+		},
+		{
+		  "cmd": "show",
+		  "character": "zhouye",
+		  "position": "left",
+		  "emotion": "normal"
+		},
+		{
+		  "cmd": "say",
+		  "character": "zhouye",
+		  "text": "喂，沈亦。你最近是不是走桃花运了？"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "周野四仰八叉地瘫在我的沙发上，手里转着我的备用钥匙。这家伙是我室友，从高中混到大学，嘴上没把门，但眼睛毒得很。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "zhouye",
+		  "text": "天天有人送便当，图书馆有人陪坐。全系都在传，说三楼的沈亦被一年级最漂亮的那个女生拿下了。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "zhouye",
+		  "text": "不过说真的，我有点事想跟你讲，你别觉得我神经过敏。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "他难得坐直了，压低了声音。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "zhouye",
+		  "text": "上周有个女生来我们系打听你。课表、社团、有没有女朋友、常去哪吃饭。问得特别细，细到我们班长以为她是教务处的。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "zhouye",
+		  "text": "黑长直，白裙子，发卡是朵白花。——是你那个小学妹吧？"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我握着水杯，半天没说话。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "zhouye",
+		  "text": "还有。前天晚上我回来得晚，看见楼下路灯那儿站着个人，白裙子，就站那儿，朝着咱们窗户。我以为看错了，走近了人就不见了。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "zhouye",
+		  "text": "兄弟，我不是要坏你好事。被人喜欢是好事。但是啊……"
+		},
+		{
+		  "cmd": "say",
+		  "character": "zhouye",
+		  "text": "「了解」和「调查」，中间隔着一条线。你自己掂量，那条线她过没过。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "周野走后，我一个人坐到天黑。屋里没开灯，沙发的轮廓一点一点沉进暮色里。手机在茶几上震了一下。"
+		},
+		{
+		  "cmd": "se",
+		  "sound": "se_phone",
+		  "volume": 0.9
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "没有来电显示的短信。只有一行字："
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "「前辈，今天也辛苦了。你屋里的灯还亮着，早点休息哦。晚安。」"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "——我的屋里，没有开灯。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我猛地站起来，冲到窗边，一把拉开窗帘。"
+		},
+		{
+		  "cmd": "bg",
+		  "asset": "bg_apartment_night",
+		  "fade": 0
+		},
+		{
+		  "cmd": "bgm",
+		  "action": "stop",
+		  "fade": 1.5
+		},
+		{
+		  "cmd": "se",
+		  "sound": "se_heartbeat",
+		  "volume": 0.8
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "楼下的街道空空的，只有雨后的路灯，照着一圈一圈湿漉漉的光。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "没有任何人。也可能，刚刚还有人。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我缩回窗帘后面，背抵着墙慢慢滑坐下去。她不是在描述我此刻的房间。她是在描述她想象中我的房间——或者说，她希望我过上的那种生活：灯亮着，人安睡，被她看着。"
+		},
+		{
+		  "cmd": "jump",
+		  "target": "ch2_festival"
+		}
+	  ]
+	},
+	"ch2_festival": {
+	  "commands": [
+		{
+		  "cmd": "bg",
+		  "asset": "bg_campus_day",
+		  "fade": 1.0
+		},
+		{
+		  "cmd": "bgm",
+		  "action": "play",
+		  "track": "bgm_daily",
+		  "fade": 2.0
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "文化祭筹备开始了。我们社团抽到的是中庭的摊位，周野负责搬桌子，我负责写企划。许薇学姐是总协调。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "zhouye",
+		  "position": "left",
+		  "emotion": "normal"
+		},
+		{
+		  "cmd": "say",
+		  "character": "zhouye",
+		  "text": "沈亦，你那个小学妹，报了我们摊位的志愿者。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "zhouye",
+		  "text": "我没批准也没驳回。表在我手里，你说句话。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我还没来得及回答，身后就响起了熟悉的声音。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "position": "right",
+		  "emotion": "smile"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "周野学长，驳回也没关系哦。我可以作为「帮忙的朋友」来。端盘子、发传单、收拾桌子，什么都可以。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "我只是想在前辈做事的时候，待在看得见的地方。这个要求，很过分吗？"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "周野张了张嘴，没说出话。一个笑得这么乖的女孩子，说「我只想待在看得见的地方」——任何拒绝听起来都像欺凌。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "那天下午的筹备会，安栀帮所有人泡了茶。她记得周野喝浓茶，记得学姐不喝冰的，记得我胃不好所以我的那杯永远温温的。散会的时候，连最挑剔的宣传部学姐都拉着她说「下次还来」。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她像一滴水落进油里，安静、圆融、无孔不入地，渗进了我的整个世界。等所有人反应过来的时候，她已经成了「沈亦身边的人」这个既定事实的一部分。"
+		},
+		{
+		  "cmd": "hide",
+		  "character": "anzhi"
+		},
+		{
+		  "cmd": "say",
+		  "character": "zhouye",
+		  "text": "……喂，沈亦。我刚才居然觉得有她帮忙挺好的。你不觉得可怕吗？我明明一直在提防她。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "zhouye",
+		  "text": "她让你周围的人，一个一个，全都觉得「她在」是理所当然的。等你哪天觉得不对劲了，你会发现你身边已经没有一个人，能帮你说话了。"
+		},
+		{
+		  "cmd": "hide",
+		  "character": "zhouye"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我收拾着桌上的纸杯，没有回答。最后一个杯底，沉着一小朵白色的栀子花，泡在残茶里，安安静静的。"
+		},
+		{
+		  "cmd": "jump",
+		  "target": "ch2_goodnight"
+		}
+	  ]
+	},
+	"ch2_goodnight": {
+	  "commands": [
+		{
+		  "cmd": "bg",
+		  "asset": "bg_apartment_night",
+		  "fade": 1.0
+		},
+		{
+		  "cmd": "bgm",
+		  "action": "crossfade",
+		  "track": "bgm_cafe",
+		  "fade": 2.5
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "从某个时间点开始，每晚十一点，我的手机都会准时震一下。没有来电显示，永远只有那几句话。"
+		},
+		{
+		  "cmd": "se",
+		  "sound": "se_phone",
+		  "volume": 0.7
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "「前辈，今天走了九千四百步哦。比昨天多了八百步。去哪里散步了吗？」"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "「晚饭吃的是二楼食堂的麻婆豆腐吧。那个太辣了，对胃不好。下次试试三楼的炖菜，你上次说好吃的那个。」"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "「你房间的窗户今天开着一条缝。晚上风大，要关好哦。」"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我从来没回过这些短信。但它们从来没有断过。它们像一种安静的潮水，每天晚上涨起来，漫过我的脚背，再退下去，留下一地支离破碎的、关于我自己的信息。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "有天夜里我加班改企划，两点才睡。躺下不到一分钟，手机震了。"
+		},
+		{
+		  "cmd": "se",
+		  "sound": "se_phone",
+		  "volume": 0.7
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "「前辈，你今天好晚。是企划不顺吗？不要太勉强自己。我在。」"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我在。不是「晚安」，是「我在」。凌晨两点，某个人醒着，知道我刚躺下，知道我为什么晚睡，然后说：我在。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我盯着那两个字看了很久。恐惧吗？有的。可是在那恐惧的最底下，还沉着一点别的东西，一点我不敢打捞上来的、可耻的暖意——在这个世界上，原来真的有一个人，分分秒秒地，知道我的存在。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "那晚我第一次回了短信。我说：「晚安，安栀。早点睡。」"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "对方几乎是秒回的：「嗯！前辈晚安。今晚梦里见哦。」后面跟着一个栀子花的表情。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "那天夜里，我真的梦见了栀子花。一大片，开在没有尽头的黑色原野上，白得像雪崩。"
+		},
+		{
+		  "cmd": "jump",
+		  "target": "ch2_past"
+		}
+	  ]
+	},
+	"ch2_past": {
+	  "commands": [
+		{
+		  "cmd": "bg",
+		  "asset": "bg_apartment_evening",
+		  "fade": 1.0
+		},
+		{
+		  "cmd": "bgm",
+		  "action": "crossfade",
+		  "track": "bgm_uneasy",
+		  "fade": 2.0
+		},
+		{
+		  "cmd": "show",
+		  "character": "zhouye",
+		  "position": "left",
+		  "emotion": "normal"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "周末，周野拎着两罐啤酒过来，往桌上一坐，脸色比啤酒还凉。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "zhouye",
+		  "text": "我托人查了。我表哥在安栀他们高中所在的那个城市当辅警。我没说为什么，就说帮我看看这个人。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "zhouye",
+		  "text": "安栀。母亲在她六岁时因为「偏执型精神障碍伴严重暴力倾向」住院，一住十几年。父亲更早，在她四岁时「失踪」——注意，是失踪，不是离婚。户口注销理由是下落不明满四年。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "啤酒罐被我捏得咔的一声。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "zhouye",
+		  "text": "还有。初二那年，她班里有个转学生，跟她关系很好，好到同进同出。半年后那个转学生退学搬家，全家搬走，走得干干净净。学校里传过一阵子闲话，后来不了了之。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "zhouye",
+		  "text": "沈亦，我不是说这些跟她有关。我是说，这种模式……一个人靠她太近，然后整个人从她生活里消失……这不是第一次了。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "「你想说什么？」"
+		},
+		{
+		  "cmd": "say",
+		  "character": "zhouye",
+		  "text": "我想说，你现在觉得她是天上掉下来的温柔。可天底下没有凭空掉下来的东西。她对你的好，都是有形状的——那个形状，叫「笼子」。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "zhouye",
+		  "text": "你慢慢挑。挑你能信的信。但别挑到最后才发现，你连「不信」的权利都没有了。"
+		},
+		{
+		  "cmd": "hide",
+		  "character": "zhouye"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "周野走后，那两罐啤酒我一口没动。夜里十一点，短信照常来了。"
+		},
+		{
+		  "cmd": "se",
+		  "sound": "se_phone",
+		  "volume": 0.7
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "「前辈，今天周野学长来找你了呢。你们聊了好久。……聊了什么呀？」"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "「不方便说也没关系哦。我不好奇的。我只是，有一点点寂寞。」"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我看着那两条短信，第一次清楚地意识到：我和周野在屋里的两个小时，从头到尾，都有一双眼睛贴在墙上。"
+		},
+		{
+		  "cmd": "jump",
+		  "target": "ch2_senior"
+		}
+	  ]
+	},
+	"ch2_senior": {
+	  "commands": [
+		{
+		  "cmd": "bg",
+		  "asset": "bg_campus_day",
+		  "fade": 1.0
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "又过了几天，许薇学姐约我在中庭见面，说是文化祭的赞助方案出了问题。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "xuwei",
+		  "position": "right",
+		  "emotion": "normal"
+		},
+		{
+		  "cmd": "say",
+		  "character": "xuwei",
+		  "text": "抱歉啊沈亦，好不容易你休息，还把你抓出来。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "xuwei",
+		  "text": "其实赞助的事半小时就说完了。剩下的话……是我私人的事。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "学姐拨了一下耳边的头发。她今天化了很淡的妆，是我没见过的、郑重其事的淡。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "xuwei",
+		  "text": "我明年就要毕业了。走之前，有句话放心里三年了，我觉得再不说，就没机会了。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "xuwei",
+		  "text": "沈亦，我——"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她的话没能说完。一阵风穿过中庭，卷起地上的银杏叶。我下意识地回头。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "银杏道的尽头，站着一个白裙子的身影。隔着大半个中庭，安安静静地，看着这边。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "position": "left",
+		  "emotion": "dark"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "是安栀。她没有走近，也没有打招呼。只是站着，看着。阳光那么好，她的脸却像沉在水底。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我们对视了也许有三秒，也许有三十秒。她脸上没有任何表情——没有愤怒，没有悲伤，什么都没有。那种空白比任何表情都吓人。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "等我再看过去的时候，那里已经没有人了。只有一片被踩进泥里的银杏叶。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "xuwei",
+		  "text": "……怎么了？你脸色不太好。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "「没事。」我听见自己说。学姐沉默了一会儿，把没说完的话轻轻咽了回去，换上一贯得体的笑。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "xuwei",
+		  "text": "那算了。有些话，可能本来就不该说。……沈亦，最近那个一年级的孩子，你离她远一点。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "xuwei",
+		  "text": "别问我为什么。女人的直觉。她的眼神不像是在看你，像是在给一件行李贴标签。"
+		},
+		{
+		  "cmd": "hide",
+		  "character": "xuwei"
+		},
+		{
+		  "cmd": "hide",
+		  "character": "anzhi"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "那天晚上，我的手机收到一条陌生号码的短信。我以为又是安栀的「晚安」，点开了。"
+		},
+		{
+		  "cmd": "se",
+		  "sound": "se_phone",
+		  "volume": 0.8
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "不是安栀。是许薇。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "「沈亦，明天下午四点，老地方咖啡厅。有件事我必须当面告诉你。关于你身边那个人。别告诉任何人。」"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我盯着那条短信看了很久。回了一个「好」。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "那是我最后一次，在正常的日子里见到许薇学姐——不，严格地说，我连那最后一面，都没能见到。"
+		},
+		{
+		  "cmd": "jump",
+		  "target": "ch2_disappear"
+		}
+	  ]
+	},
+	"ch2_disappear": {
+	  "commands": [
+		{
+		  "cmd": "bg",
+		  "asset": "bg_cafe",
+		  "fade": 1.0
+		},
+		{
+		  "cmd": "bgm",
+		  "action": "crossfade",
+		  "track": "bgm_uneasy",
+		  "fade": 2.0
+		},
+		{
+		  "cmd": "music",
+		  "id": "bgm_uneasy"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "第二天下午四点，我坐在那家咖啡厅里，等到天黑。许薇没有来。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "电话停机。消息发不出去。三天后，系里传开一个消息：许薇办了休学，走了。没有欢送，没有说明，连社团的交接都是邮件里草草完成的。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "有人说她家里出了事，有人说她出国了。她租的房子一夜之间清空，社交账号全部注销。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "一个活生生的人，像被橡皮擦从这座城市里擦掉了，边缘干净得可怕。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "而我坐在咖啡厅里，看着桌上两杯凉掉的咖啡，一遍又一遍地想：她到底要告诉我什么？"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "那天晚上，安栀来了。她看起来有点担心我。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "position": "center",
+		  "emotion": "normal"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "前辈，你这几天都没怎么吃东西吧。脸都瘦了一圈。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "许薇学姐的事，我听说了。……你别太难过。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "smile"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "不过，往好处想——这样一来，前辈周三下午的社团例会也没有了，我们就可以常常来这家店了。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "蜂蜜色的灯光落在她的笑脸上。我的血液却一寸一寸地凉下去。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她怎么知道许薇就是「那个社团」的学姐？她怎么知道例会在周三下午？我从来没有在她面前提过许薇的名字。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "还有。许薇约我的那条短信，我说过「别告诉任何人」。我连周野都没说。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "可是安栀今天见到我的第一句话是：「你这几天都没怎么吃东西」。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她知道我等了三天。她知道我「这几天」。她一直看着。她一直在看着。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "normal"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "前辈？你在发抖哦。冷吗？要不要我把外套……"
+		},
+		{
+		  "cmd": "choice",
+		  "options": [
+			{
+			  "text": "「安栀。许薇的事，你是不是知道什么？」",
+			  "target": "ch2_confront"
+			},
+			{
+			  "text": "「……没什么。可能是有点感冒。」",
+			  "target": "ch2_silent"
+			}
+		  ]
+		}
+	  ]
+	},
+	"ch2_confront": {
+	  "commands": [
+		{
+		  "cmd": "set",
+		  "name": "doubt",
+		  "value": 5
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "话出口的一瞬间，我就后悔了。不是后悔问了，而是后悔在她面前问。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "dark"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "安栀脸上的笑，像退潮一样，一点一点收干净了。她垂下眼，睫毛在灯光下投出两小片阴影。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "前辈，你这是什么意思呀？"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "学姐要走，是她自己的选择哦。一个成年人，去自己想去的地方，有什么不对吗？"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "还是说，在前辈心里，我是那种……会做坏事的人？"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她抬起眼。那双眼睛湿漉漉的，盛满了恰到好处的受伤，真诚得无懈可击。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "cry"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "我那么努力地对你好……原来在你眼里，我只是个可疑的人吗？"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "眼泪掉下来的瞬间，我的立场就崩塌了。周围的人开始往这边看。道歉的人是我。买单的人是我。送她回家的路上，不停说「对不起，我想多了」的人，还是我。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她的眼泪像一种精密的机关，每一步都踩在我的愧疚上。等我反应过来的时候，被审讯的人已经变成了我，罪名是「居然敢怀疑她」。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "分别时她站在路灯下朝我挥手，笑容温顺。可我记得清清楚楚——"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她说「是她自己的选择」的时候，用了一个词：「要去的地方」。她怎么会知道，许薇是「去了」某个地方，而不是「出了事」？警察连许薇的去向都还没查到。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "那一夜，我睁着眼睛到天亮。天花板上有一道裂缝，我数了它三百多遍。"
+		},
+		{
+		  "cmd": "jump",
+		  "target": "ch2_nightmare"
+		}
+	  ]
+	},
+	"ch2_silent": {
+	  "commands": [
+		{
+		  "cmd": "set",
+		  "name": "bond",
+		  "value": 5
+		},
+		{
+		  "cmd": "set",
+		  "name": "doubt",
+		  "value": 3
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我把所有疑问都咽了回去，换上一句「可能是有点感冒」。谎言说出口的时候，喉咙里泛着铁锈味。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "shy"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "那我送你回去。感冒的人不能吹风。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "回去的路上她走在我右边，哼着一支我没听过的歌。调子很老，像上个时代的摇篮曲。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "路灯一盏一盏从我们头顶退过去。有那么一瞬间，我甚至觉得，如果什么都不知道、什么都不问，就这样被她照顾着，日子也许会过得很好，很幸福。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "——就像被圈养的动物，也觉得笼子很好一样。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "分别的时候，她踮起脚，帮我把围巾重新围好。她的手指在我领口停留的时间，比需要的长了那么一秒。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "前辈。你选择相信我，对不对？"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "我好高兴。你放心，相信我的人，我一辈子都不会让他后悔的。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "一辈子。她又说了一遍这个词。她说这个词的样子，不像在许愿，像在宣读。"
+		},
+		{
+		  "cmd": "jump",
+		  "target": "ch2_nightmare"
+		}
+	  ]
+	},
+	"ch2_nightmare": {
+	  "commands": [
+		{
+		  "cmd": "bg",
+		  "asset": "bg_apartment_night",
+		  "fade": 1.0
+		},
+		{
+		  "cmd": "bgm",
+		  "action": "crossfade",
+		  "track": "bgm_horror",
+		  "fade": 3.0
+		},
+		{
+		  "cmd": "music",
+		  "id": "bgm_horror"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "那天夜里，我做了个梦。梦里有人在哼歌，还是那支很老的摇篮曲，调子断断续续的，像从很深的水底传上来。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "梦里的我站在一个白色的房间里，房间里摆满了栀子花，每一朵都开得过分饱满，白得发青。有人隔着花丛看我。我走过去，花就枯一朵；再走一步，再枯一朵。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "然后我在梦里意识到：不对，这不是梦里的声音。这个声音在我的房间里。"
+		},
+		{
+		  "cmd": "se",
+		  "sound": "se_heartbeat",
+		  "volume": 1.0
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我睁开眼。"
+		},
+		{
+		  "cmd": "cgshow",
+		  "id": "cg_bedside",
+		  "fade": 0.8
+		},
+		{
+		  "cmd": "cg",
+		  "id": "cg_bedside"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "月光从窗帘的缝隙里切进来，落在地板上，是惨白的一线。而我的床边，站着一个人。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "白裙子。黑色的长发垂下来，遮住了半张脸。发间那枚栀子花发夹，在黑暗里泛着一点点冷光。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她就那么站着，一动不动，低着头，看着我。不知道已经看了多久。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "恐惧这种东西，真正到来的时候是没有声音的。它不从门外进来，它早就在屋里了。它只是等到你睁开眼。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "……前辈睡着的样子，好乖。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "呼吸声，心跳声，睫毛抖动的声音。我全都，听到了哦。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我的房门是锁着的。窗户也是。这里是四楼。"
+		},
+		{
+		  "cmd": "choice",
+		  "options": [
+			{
+			  "text": "（猛地坐起来开灯）「安栀？！你怎么进来的！」",
+			  "target": "ch2_lights"
+			},
+			{
+			  "text": "（屏住呼吸，继续装睡）",
+			  "target": "ch2_pretend"
+			}
+		  ]
+		}
+	  ]
+	},
+	"ch2_lights": {
+	  "commands": [
+		{
+		  "cmd": "set",
+		  "name": "doubt",
+		  "value": 6
+		},
+		{
+		  "cmd": "se",
+		  "sound": "se_stinger",
+		  "volume": 0.7
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我几乎是滚下床去按开关的。灯亮的瞬间，整个房间白得刺眼。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "position": "center",
+		  "emotion": "normal"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她站在原地，没有躲，也没有慌。被灯光照得清清楚楚的脸上，甚至没有一丝「被抓住」的表情。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "那才是最可怕的部分。被抓住的人会慌，而她只是安静地站在那里，仿佛错的是这盏突然亮起的灯。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "门没有锁哦。我敲了很久，你没有应，我担心你出事，就……"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "说谎。我睡前亲手锁的门，链子都挂上了。我的目光越过她，落在房门上——防盗链安安静静地挂在那里，完好无损。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "完好无损。也就是说，她不是从门进来的。或者，她有办法让链子「完好无损」。这两种可能，哪一种都让人头皮发麻。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "smile"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "前辈，你生气的样子也很可爱。但是，熬夜不好。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "我回去了。做个好梦。——梦里有我的话，就更好了。"
+		},
+		{
+		  "cmd": "hide",
+		  "character": "anzhi"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她开门，出去，轻轻带上。脚步声在走廊里走远，轻得像猫。我冲过去把门锁死，挂上链子，又用椅子顶住门把手。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "然后我坐在椅子上，抱着膝盖，听了一夜自己心跳的声音。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "天亮的时候，我发现了一件事：她站过的那块地板，正对着我的床。那个位置，看不见门，看不见窗，视野里只有我的枕头。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她选那个位置站了很久。久到地板上，留下了一小圈被体温焐干的、淡淡的露水痕。"
+		},
+		{
+		  "cmd": "jump",
+		  "target": "ch3_investigate"
+		}
+	  ]
+	},
+	"ch2_pretend": {
+	  "commands": [
+		{
+		  "cmd": "set",
+		  "name": "bond",
+		  "value": 5
+		},
+		{
+		  "cmd": "set",
+		  "name": "doubt",
+		  "value": 4
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我没有动。我把呼吸压得很慢，很慢，慢成真正熟睡的样子。心脏撞在肋骨上，我怕它吵到她。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "床边的人影站了很久。然后，床垫轻轻往下陷了一块——她坐在了床沿上。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "前辈。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她喊了一声。试探的。我没有动。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "睡着了呀。……真好。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "一只冰凉的手，极轻极轻地，落在了我的额头上。像一片雪。她替我拢了拢被子，动作熟稔得像做过千百遍。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "你知道吗。妈妈以前，也是这样看着爸爸睡觉的。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "后来爸爸不见了。妈妈就整夜整夜地看栀子花。再后来，妈妈也不见了。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "所以我很小的时候就决定了。我喜欢的东西，我要一直看着。看着，就不会不见了。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她的手指顺着我的额头滑到眉骨，又停住。那支摇篮曲又响了起来，很轻，就在我耳边。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "「睡吧，睡吧，栀子的根，扎在深深的地底下……」"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我不知道她什么时候走的。天亮的时候我睁开眼，被子掖得整整齐齐，枕头上放着一朵新鲜的、还带着露水的白色栀子花。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "防盗链完好无损地挂着。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我把那朵花拿起来，在窗边站了很久。露水顺着我的指缝往下淌，凉的。我想把它扔掉，最后却找了一个杯子，装上清水，把它插了进去。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "就是从那一刻起，我开始分不清，自己到底是怕她，还是已经在等她。"
+		},
+		{
+		  "cmd": "jump",
+		  "target": "ch3_investigate"
+		}
+	  ]
+	},
+	"ch3_investigate": {
+	  "commands": [
+		{
+		  "cmd": "bg",
+		  "asset": "bg_apartment_evening",
+		  "fade": 1.0
+		},
+		{
+		  "cmd": "bgm",
+		  "action": "crossfade",
+		  "track": "bgm_uneasy",
+		  "fade": 2.0
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "天亮之后，我做了那个早就该做的决定：查。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我把自己的房间翻了个底朝天。书架第三格的《局外人》里，夹着一枚指甲盖大小的黑色定位器，冰凉的，还在一闪一闪地亮着绿灯。"
+		},
+		{
+		  "cmd": "se",
+		  "sound": "se_stinger",
+		  "volume": 0.6
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "玄关的鞋柜夹层里，有一小束用红绳扎好的头发——黑色的，很长。不是我的。红绳系的方式很特别，是一个又一个的死结，像某种固执的咒语。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "床垫底下有一沓便利店的收据，全是我买东西的那家店，每一张的日期都对得上我「一个人过日子」的夜晚。原来连我随手扔掉的收据，都有人在替我收藏。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "周野来了。他看着桌上的定位器和头发，平时吊儿郎当的脸第一次白得像纸。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "zhouye",
+		  "position": "left",
+		  "emotion": "normal"
+		},
+		{
+		  "cmd": "say",
+		  "character": "zhouye",
+		  "text": "沈亦，这已经不是什么「喜欢得太用力」了。这是犯罪。我们报警。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "zhouye",
+		  "text": "还有件事我一直没敢告诉你。许薇休学前给我发过一条消息，只有四个字：「看好沈亦」。然后她的号就没了。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "窗外又阴沉下来。我们正商量着去派出所，门铃响了。"
+		},
+		{
+		  "cmd": "se",
+		  "sound": "se_knock",
+		  "volume": 0.9
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "猫眼外面，是抱着一个纸箱的安栀。白裙子，栀子花发夹，笑容干净得像第一场雪。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "前辈，我做了便当。你最近都没有好好吃饭。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "周野看了我一眼，用口型说：别开门。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "可安栀接下来的话，隔着门板，轻轻巧巧地飘了进来："
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "前辈，我知道周野在里面。我也知道你们找到了什么。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "position": "right",
+		  "emotion": "normal"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "门开了。我不知道是我开的，还是风开的。她站在门口，抱着那个纸箱，目光越过我，落在桌上的定位器上，然后她笑了。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "smile"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "啊，被找到了。那本来是我放在书里的「护身符」哦。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "不过没关系。藏起来的爱也是爱，摊开来的爱，也是爱。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她把纸箱放在桌上，推到我面前。里面整整齐齐码着的，是我的东西：我丢过的那只手套；我用完扔掉的钢笔；我发表会那天擦过汗、扔进垃圾桶的纸巾；上百张照片，打印出来的，全是不同角度的我。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "纸箱的最上面，是一本黑色的笔记本。封皮上烫着一朵小小的栀子花。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "打开看看吧，前辈。第一页是妈妈教我的那句话。后面的每一页，都是你。"
+		},
+		{
+		  "cmd": "jump",
+		  "target": "ch3_diary"
+		}
+	  ]
+	},
+	"ch3_diary": {
+	  "commands": [
+		{
+		  "cmd": "bgm",
+		  "action": "crossfade",
+		  "track": "bgm_confession",
+		  "fade": 3.0
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我翻开了第一页。清秀的字迹写着：「栀子花的花语：一生的守候。妈妈守了爸爸一辈子。妈妈说她不后悔。」"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "第二页：「爸爸还是走了。守是守不住的。要把根留住，得把土锁起来。」"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "第三页开始，笔迹变小了，也稳了，日期是七年前——她十五岁：「今天在医院，妈妈又把栀子花认成了爸爸。她对着花说话，说了两个小时。护工说她很幸福。什么是幸福？对着一朵不会走的花说话，就是幸福吗？」"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "「那我明白了。只要让对方变成「不会走的东西」，就能幸福。妈妈错在只看。光看着，人是会走的。要把他的一切都拿在手里，他的路、他的时间、他的朋友、他的天气。这样，他就哪里也去不了了。」"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "再往后，一页一页，全是我。我第一次在图书馆坐到靠窗位的日期；我某次感冒旷课的记录；我和周野在食堂吵架又和好的那天；许薇第一次跟我说话的中庭，甚至画了小小的平面图，标注了当时风的方向。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "最后一页是三天前：「前辈今天在中庭，听许薇说话。他听得很认真。我不喜欢。但是没关系。风会把多余的叶子都吹掉的。我只要照顾好我的花。」"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我的手开始抖。周野一把抢过笔记本摔回箱子里：「沈亦，别看了！这算什么东西——我们走，现在就去派出所！」"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "dark"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "周野学长。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "安栀转过头，第一次正眼看周野。她的声音还是那么软，可房间里的温度好像骤降了十度。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "你上周三晚上十一点四十，把烟头摁灭在前辈楼下第三盏路灯的柱子上。你口袋里的打火机，是你死去的哥哥留给你的，你从来不让别人碰。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "我什么都知道哦。所以，请你不要教前辈做危险的事。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "许薇学姐就是太危险了。她把前辈的名字写在嘴唇上。那种东西，我只能帮她收走了。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "周野后退了一步，撞在墙上。房间里安静得可怕，只有那本黑笔记本躺在纸箱里，封皮的栀子花在灯光下泛着幽微的光。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我听见自己的声音，陌生得像别人的："
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "「安栀。天台。我们两个人谈。现在。」"
+		},
+		{
+		  "cmd": "hide",
+		  "character": "zhouye"
+		},
+		{
+		  "cmd": "hide",
+		  "character": "anzhi"
+		},
+		{
+		  "cmd": "jump",
+		  "target": "ch3_rooftop"
+		}
+	  ]
+	},
+	"ch3_rooftop": {
+	  "commands": [
+		{
+		  "cmd": "bg",
+		  "asset": "bg_rooftop_dusk",
+		  "fade": 1.5
+		},
+		{
+		  "cmd": "bgm",
+		  "action": "crossfade",
+		  "track": "bgm_confession",
+		  "fade": 2.5
+		},
+		{
+		  "cmd": "music",
+		  "id": "bgm_confession"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "学校的天台，黄昏。云层被夕阳烧得通红，铁丝网把天空切成一格一格的，像一张巨大的网。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "position": "center",
+		  "emotion": "normal"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "安栀站在网前，风吹起她的长发和白裙子。她看上去那么小，那么薄，好像随时会被风从天台上带走。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "前辈，你想问什么，就问吧。今天我全都告诉你。反正……也已经没有什么好藏的了。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "「许薇学姐现在在哪里？」"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "很远的地方。南边，一个有很多栀子花的小城。她换了名字，换了工作，过得很好哦。她答应过我，永远不再联系你。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "我没有伤害她。我只是让她明白，有些东西不是她的，碰了，就要付出碰的代价。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "她的公寓钥匙是我配的。她的辞职信是我替她润色的。她离开那天的车票，是我提前订好的。你看，我做事很周到的。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她说这些的时候，语气平静得像在报一份购物清单。我的胃里一阵一阵地泛酸。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "「为什么……要做到这种地步？」"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "cry"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "因为我怕啊。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "我六岁那年的雨夜，妈妈把我锁在衣柜里，说「数到一千，妈妈就回来」。我数到一千，又数到一千，数到天亮，衣柜门外面，只有栀子花的味道。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "她在医院住了十一年。她谁都不认识了，但她还记得栀子花。每次我去看她，她都对着花喊爸爸的名字。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "前辈，你知道我看着妈妈的时候，在想什么吗？我在想——爱这种东西，原来是这样把人活活耗死的。守是守不住的。所以，我爱的人，我要把他放进我看得见的地方，哪里也去不了的地方。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "yandere"
+		},
+		{
+		  "cmd": "cgshow",
+		  "id": "cg_rooftop",
+		  "fade": 0.8
+		},
+		{
+		  "cmd": "cg",
+		  "id": "cg_rooftop"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "那个雨天，你把伞往我这边倾斜的时候，你的右边肩膀全湿了。你不知道吧。你自己都不知道。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "全世界那么多人，没有一个人看见过我的衣柜。可是你看见了我的雨。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "所以我把挡在我们中间的东西，一件一件，都清理掉了。欺负你的讲师、纠缠你的学姐、催你回家考公的电话……现在，你的世界干干净净的，只剩下我了。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她朝我伸出手。夕阳在她背后烧成一片血色的海，她的笑容天真又残破，掌心里躺着那枚栀子花发夹。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "前辈。到这里来。来到我身边来。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "这一次，换你来数。数到一千，我还在。数到一万，我还在。你数一辈子，我就在这里一辈子。"
+		},
+		{
+		  "cmd": "se",
+		  "sound": "se_heartbeat",
+		  "volume": 0.7
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "风停了。世界安静得只剩下她的呼吸，和我的心跳。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我知道，接下来的这个选择，没有回头路。就像她说的：栀子花的根，一旦扎下去，就再也挪不动了。"
+		},
+		{
+		  "cmd": "choice",
+		  "options": [
+			{
+			  "text": "（走过去，抱住她）「那我也告诉你一个秘密。」",
+			  "target": "end3_dawn"
+			},
+			{
+			  "text": "「安栀，你需要的不是我，是医生。我们明天一起去医院。」",
+			  "target": "end2_branch"
+			},
+			{
+			  "text": "（后退一步）「别过来。你已经疯了。」",
+			  "target": "end4_branch"
+			}
+		  ]
+		}
+	  ]
+	},
+	"end3_dawn": {
+	  "commands": [
+		{
+		  "cmd": "narrate",
+		  "text": "我走过去，把她抱进怀里。她僵了一下，然后整个人都软了，像一根绷了十几年的弦终于找到了可以断掉的地方。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "前辈……？你不怕我吗？我做了那么多、那么多可怕的事……"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "「怕。」我说。「我怕得要死。但我更怕另一件事。」"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "「你数到一千的那个衣柜，门从外面锁着。可这么多年了，你从来没跟任何人说过，你自己也一直锁在里面。」"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "cry"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她在我怀里开始发抖。那些眼泪不再是表演，不是武器，只是一个二十二岁的女孩，迟到了十六年的、号啕大哭。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "呜……呜呜……前辈……我害怕……我把一切都搞砸了……我这样的人……我这样的人也配被抱住吗……"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "「听我说。」我捧起她的脸，让她看着我的眼睛。「你做的那些事，一笔一笔，都要还。许薇学姐那里，我们去道歉，去补偿；定位器、照片，全部销毁；然后，我们一起去看医生。每周都去。」"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "「你不是说守是守不住的吗？那从今天起，我们不「守」。我们一起走。你要是掉队了，我就回头找你。我要是害怕了，你就拉住我。」"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "一起……走？去哪里？"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "「先去派出所。」我说完，看见她瞳孔猛地一缩。我握紧了她的手：「我陪你去。自首也好，说明情况也好，我陪你坐在那张椅子上。然后，去你说过的、那个开满栀子花的小城。」"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "……你不跑吗？"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "「不跑。」"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "smile"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "……那，拉钩。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她伸出小指，哭得乱七八糟的脸上，第一次露出一个不带任何杂质的、小孩子一样的笑。我们的小指勾在一起的时候，天边的血色刚好褪尽，露出一线干净的蓝。"
+		},
+		{
+		  "cmd": "bg",
+		  "asset": "bg_station_dawn",
+		  "fade": 2.0
+		},
+		{
+		  "cmd": "bgm",
+		  "action": "crossfade",
+		  "track": "bgm_dawn",
+		  "fade": 3.0
+		},
+		{
+		  "cmd": "music",
+		  "id": "bgm_dawn"
+		},
+		{
+		  "cmd": "cgshow",
+		  "id": "cg_dawn",
+		  "fade": 0.8
+		},
+		{
+		  "cmd": "cg",
+		  "id": "cg_dawn"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "三个月后，黎明的小站。薄雾还没散，铁轨一直铺到看不见的远方。她的案子因为情节轻微、主动自首和赔偿，最终以不起诉处理；心理评估报告有厚厚一沓，每一页的末尾，都有我们两个人的签名。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "这三个月不容易。她在诊室里哭过、砸过东西、整夜整夜地抓着我的袖子不肯睡。但每一次，她都在天亮之前把手松开了。她说：「前辈不是我的药。前辈是陪我找药的人。」"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "「前辈，冷。」她说着，往我身边靠了靠。我把围巾分给她一半。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "列车进站的灯光刺破晨雾。她忽然凑到我耳边，用只有我能听见的声音说："
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "前辈。数到多少了？"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "「还在数呢。」我说。「一直数着呢。」"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她笑了。白色栀子花在初升的太阳里，边缘被镀上一层毛茸茸的金。这一次，她的眼睛里有了光。"
+		},
+		{
+		  "cmd": "cgshow",
+		  "id": "cg_cage",
+		  "fade": 0.8
+		},
+		{
+		  "cmd": "cg",
+		  "id": "cg_cage"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "后来我去过她的新房间。窗台上种着一排栀子花，开得正好。她抱着我，给我看她手机里的相册——我的照片从三百多张，删到了三十张。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "剩下的会慢慢删掉的。医生说，这叫「脱敏」。其实我不懂这些词。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "我只知道，现在前辈就在我怀里。不用隔着照片看了。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她说这话的时候，手臂收得很紧很紧，紧到我有点透不过气。栀子花的香气从窗台漫过来，浓得化不开。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "笼子没有消失。它只是变成了我们两个人，一起守着的东西。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "—— TRUE END「栀子的花期」——"
+		},
+		{
+		  "cmd": "jump",
+		  "target": "credits"
+		}
+	  ]
+	},
+	"end2_branch": {
+	  "commands": [
+		{
+		  "cmd": "narrate",
+		  "text": "我说出「医院」两个字的时候，安栀脸上的表情，像一面慢慢裂开的镜子。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "dark"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "医院。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "医院。哈哈哈哈。妈妈也去了医院。穿着白大褂的人说，「交给我们」。然后呢？然后她连我都不认识了。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "前辈，你也想把我变成那个样子吗？变成一排编了号的、安安静静的、什么都不记得的……花？"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "「不是那样的，安栀，现在的治疗和妈妈那个年代——」"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "broken"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "够了。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她的声音忽然空了。像有人把她身体里唯一燃烧着的东西，当着我的面吹熄了。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "我把心掏出来给你看，你说它病了。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "……好。好。我知道了。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她后退一步，朝我鞠了一躬。很深，很标准，像一个谢幕的演员。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "前辈，谢谢你这段日子。你要好好的。按时吃饭，围巾要戴好，你左边那只手套，我缝好了放在你信箱里了。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "然后她翻过天台的门，消失在楼梯间的黑暗里。脚步声一级一级下去，越来越远，越来越轻。我没有追。我站在原地，任由那声音彻底消失——很多年后我都在想，如果那天我追了，结局会不会不一样。"
+		},
+		{
+		  "cmd": "bg",
+		  "asset": "bg_apartment_evening",
+		  "fade": 2.0
+		},
+		{
+		  "cmd": "bgm",
+		  "action": "crossfade",
+		  "track": "bgm_uneasy",
+		  "fade": 3.0
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "安栀退学了。和许薇一样，干净地、彻底地，从这座城市蒸发。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "生活慢慢回到正轨。毕业，工作，搬家。周野结婚的时候，我当的伴郎。婚礼上司仪起哄让我说两句，我说：祝你们永远看得见彼此。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "只是有一件事，我从来没跟任何人说过。"
+		},
+		{
+		  "cmd": "bg",
+		  "asset": "bg_street_rain",
+		  "fade": 1.5
+		},
+		{
+		  "cmd": "bgm",
+		  "action": "crossfade",
+		  "track": "bgm_rain",
+		  "fade": 3.0
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "每一个下雨的夜晚，我家门口的台阶上，都会出现一朵白色的栀子花。新鲜的，带着露水，端端正正地放着。"
+		},
+		{
+		  "cmd": "cgshow",
+		  "id": "cg_wilted",
+		  "fade": 0.8
+		},
+		{
+		  "cmd": "cg",
+		  "id": "cg_wilted"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我搬过三次家。换过两座城市。花，从来没有迟到过。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "监控里永远只有一团模糊的、打着伞的白影。她从不靠近门，从不逗留。放下花，站一会儿，走掉。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她在数。我知道她在数。她说过，数一辈子，就在那里一辈子。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "而我在每个雨夜把花捡进来，插进清水里，坐在它旁边，一直坐到天亮。我不知道这算不算是某种回答。我只知道，我们两个人，就这样隔着一整片黑暗的雨，互相「守候」着，谁也不肯先走一步。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "—— END「雨夜栀子」——"
+		},
+		{
+		  "cmd": "jump",
+		  "target": "credits"
+		}
+	  ]
+	},
+	"end4_branch": {
+	  "commands": [
+		{
+		  "cmd": "se",
+		  "sound": "se_stinger",
+		  "volume": 0.8
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "「别过来。」"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我后退了一步。鞋底蹭过天台粗糙的地面，那一点声响在死寂里被放大了无数倍。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "dark"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "安栀伸出的手，停在了半空。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "「你已经疯了。那些东西……定位器、照片、学姐的事……这不是爱，安栀。这是病。离我远一点，也离你自己这种样子远一点。」"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我说得很慢，很稳。我为自己声音里的镇定感到骄傲。很多年后我才明白，那不是镇定，那是残忍被磨得锋利之后特有的那种安静。"
+		},
+		{
+		  "cmd": "show",
+		  "character": "anzhi",
+		  "emotion": "broken"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "疯了。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "……嗯。他们也都这么说。妈妈疯了。安栀也疯了。我们家的女人，爱一个人，就是疯。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她慢慢地把手收回去，把掌心里那枚栀子花发夹，轻轻放在了天台的水泥围栏上。那个动作温柔得像在放一个熟睡的婴儿。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "前辈。妈妈留下的东西，我守了十六年。现在我不想守了。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "因为守一件东西，就要看着它。可我以后，再也看不见你了呀。"
+		},
+		{
+		  "cmd": "se",
+		  "sound": "se_heartbeat",
+		  "volume": 1.0
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她朝我笑了一下。那是我见过的、她所有笑容里，最像孩子的一个。"
+		},
+		{
+		  "cmd": "say",
+		  "character": "anzhi",
+		  "text": "晚安，前辈。早点休息。以后没有人提醒你添衣服了，要自己看天气预报哦。"
+		},
+		{
+		  "cmd": "hide",
+		  "character": "anzhi"
+		},
+		{
+		  "cmd": "bgm",
+		  "action": "stop",
+		  "fade": 3.0
+		},
+		{
+		  "cmd": "bg",
+		  "asset": "bg_corridor_night",
+		  "fade": 2.0
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她转身走进楼梯间。我在天台上站了很久，久到夕阳彻底沉下去，久到铁丝网上的天空一格一格地黑透。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "围栏上那枚发夹，我最终没有拿。第二天它就不见了。清洁阿姨说，没看见什么发夹，只扫走了一地被踩碎的白花瓣。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "安栀再也没有出现过。没有短信，没有栀子花，没有雨夜的白影。她消失得比许薇还要干净，干净得像是被这个世界退回了一件无人认领的行李。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她的公寓我去过一次。房东说退租很久了。屋子空空的，打扫得一尘不染，只有窗台上留着一排干枯的栀子花枝，和一只装着清水的、空荡荡的玻璃杯。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "杯子旁边压着一张字条，还是那种清秀得近乎拘谨的字迹：「对不起，把你弄丢了。」"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "一年后的雨夜，我路过那家便利店，鬼使神差地在屋檐下站了一会儿。"
+		},
+		{
+		  "cmd": "bg",
+		  "asset": "bg_convenience_rain",
+		  "fade": 1.5
+		},
+		{
+		  "cmd": "bgm",
+		  "action": "play",
+		  "track": "bgm_rain",
+		  "fade": 2.0
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "有个没带伞的女孩小跑过来，问能不能「借我站一站」。我愣了很久，说，好。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "我们并排站着看雨。女孩随口说：雨声真好听，但是一个人听的话，会难过。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "那一瞬间，我忽然控制不住地发起抖来。因为我终于听懂了那句话——"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "她早就把结局告诉过我了。从我们相遇的第一分钟起。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "雨声里，我好像又听见那支很老的摇篮曲，断断续续的，从很深很深的水底传上来。这一次，再没有人为我停下了。"
+		},
+		{
+		  "cmd": "cgshow",
+		  "id": "cg_wilted",
+		  "fade": 0.8
+		},
+		{
+		  "cmd": "cg",
+		  "id": "cg_wilted"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "—— BAD END「枯萎」——"
+		},
+		{
+		  "cmd": "jump",
+		  "target": "credits"
+		}
+	  ]
+	},
+	"credits": {
+	  "commands": [
+		{
+		  "cmd": "bg",
+		  "color": "#000000",
+		  "fade": 2.5
+		},
+		{
+		  "cmd": "bgm",
+		  "action": "crossfade",
+		  "track": "bgm_menu",
+		  "fade": 3.0
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "《栀笼》 Gardenia Cage"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "编剧 / 演出 / 制作：交互式文本引擎\n音乐：Kevin MacLeod（incompetech.com，Licensed under CC BY 4.0）\n图像：AI 生成"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "栀子花的花语——「一生的守候」。"
+		},
+		{
+		  "cmd": "narrate",
+		  "text": "谢谢你的游玩。愿所有被锁在衣柜里的孩子，都能等到那扇打开的门。"
+		}
 	  ]
 	}
   }

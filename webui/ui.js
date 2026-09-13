@@ -40,6 +40,51 @@ let storyBarVisible = false;
 let storyScenes = [];
 let storyState = null;
 let storyScrubbing = false;
+let menuOpen = false;       // 主菜单（标题界面）是否显示中
+let menuHasSaves = false;
+
+// ========== 主菜单 ==========
+const mainMenu = $("main-menu");
+const menuContinueBtn = $("menu-continue");
+
+function openMenu(hasSaves) {
+  menuOpen = true;
+  menuHasSaves = !!hasSaves;
+  menuContinueBtn.disabled = !menuHasSaves;
+  mainMenu.classList.remove("hidden");
+  document.body.classList.add("menu-open");
+  send("panel_opened", { panel: "menu" });
+}
+
+function closeMenu() {
+  if (!menuOpen) return;
+  menuOpen = false;
+  mainMenu.classList.add("hidden");
+  document.body.classList.remove("menu-open");
+  send("panel_closed", { panel: "menu" });
+}
+
+$("menu-start").addEventListener("click", (e) => {
+  e.stopPropagation();
+  send("menu_new_game"); // 引擎回包 hide_menu 后再真正隐藏
+});
+menuContinueBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  if (!menuHasSaves) return;
+  send("menu_continue");
+});
+$("menu-gallery").addEventListener("click", (e) => {
+  e.stopPropagation();
+  send("menu_gallery");
+});
+$("menu-settings").addEventListener("click", (e) => {
+  e.stopPropagation();
+  send("menu_settings");
+});
+$("menu-quit").addEventListener("click", (e) => {
+  e.stopPropagation();
+  send("menu_quit");
+});
 
 // ========== 打字机 ==========
 function startDialogue(speaker, text, color) {
@@ -281,7 +326,17 @@ function renderGallery() {
     items.forEach((name) => {
       const div = document.createElement("div");
       div.className = "gallery-item";
-      div.textContent = name;
+      // CG 页签直接显示缩略图（res://webui/ 相对路径解析到 res://assets/cg/）
+      if (galleryTab === "cgs") {
+        const img = document.createElement("img");
+        img.className = "gallery-thumb";
+        img.src = "../assets/cg/" + encodeURIComponent(name) + ".png";
+        img.alt = name;
+        div.appendChild(img);
+      }
+      const label = document.createElement("div");
+      label.textContent = name;
+      div.appendChild(label);
       grid.appendChild(div);
     });
   }
@@ -412,6 +467,7 @@ ctxMenu.querySelectorAll(".ctx-item").forEach((item) => {
 let autoOn = false;
 
 function handleAdvance() {
+  if (menuOpen) return;
   if (currentPanel) return;
   hideContextMenu();
   if (typing) { finishTyping(); return; }
@@ -420,6 +476,7 @@ function handleAdvance() {
 }
 
 document.addEventListener("click", (e) => {
+  if (menuOpen) return;
   if (overlay.contains(e.target) || ctxMenu.contains(e.target)) return;
   if (e.target.closest("#topbar")) return;
   if (e.target.closest("#story-bar")) return;
@@ -427,6 +484,7 @@ document.addEventListener("click", (e) => {
 });
 
 document.addEventListener("wheel", (e) => {
+  if (menuOpen) return;
   if (currentPanel) return;
   if (e.target.closest("#story-bar")) return;
   if (e.deltaY > 0) handleAdvance();
@@ -434,7 +492,7 @@ document.addEventListener("wheel", (e) => {
 
 document.addEventListener("contextmenu", (e) => {
   e.preventDefault();
-  if (currentPanel) return;
+  if (menuOpen) return;
   if (ctxMenu.classList.contains("hidden")) showContextMenu(e.clientX, e.clientY);
   else hideContextMenu();
 });
@@ -446,7 +504,7 @@ document.addEventListener("keydown", (e) => {
     case "Enter":
       e.preventDefault();
       if (e.target.closest("#story-bar")) break;
-      if (!currentPanel) handleAdvance();
+      if (!menuOpen && !currentPanel) handleAdvance();
       break;
     case "Escape":
       if (currentPanel) closePanel();
@@ -490,6 +548,12 @@ document.addEventListener("message", (e) => {
       cps = msg.cps || 40;
       autoOn = !!msg.auto;
       autoIndicator.classList.toggle("hidden", !autoOn);
+      break;
+    case "show_menu":
+      openMenu(msg.hasSaves);
+      break;
+    case "hide_menu":
+      closeMenu();
       break;
     case "dialogue":
       startDialogue(msg.speaker, msg.text, msg.color);

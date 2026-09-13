@@ -171,6 +171,9 @@ namespace 交互式文本
 						FlushPending();
 						SendInit();
 						SendStoryMeta();
+						// 引擎处于主菜单待命状态时，命令 Web 端显示标题界面
+						if (_core != null && !_core.GameStarted)
+							SendMainMenu();
 						break;
 					case "advance":
 						if (_core.IsTyping) Send(new { type = "skip_typing" });
@@ -211,6 +214,25 @@ namespace 交互式文本
 					case "skip_end":
 						_core.IsSkipReadMode = false;
 						break;
+					case "menu_new_game":
+						// 主菜单「开始游戏」：隐藏菜单，从头开始剧情
+						_openPanel = string.Empty;
+						Send(new { type = "hide_menu" });
+						_core.StartNewGame();
+						break;
+					case "menu_continue":
+						// 主菜单「读取存档」：打开读档面板（覆盖在菜单之上）
+						OpenPanel("load");
+						break;
+					case "menu_settings":
+						OpenPanel("settings");
+						break;
+					case "menu_gallery":
+						OpenPanel("gallery");
+						break;
+					case "menu_quit":
+						GetTree().Quit();
+						break;
 					case "story_seek":
 						_storyManager?.Seek(
 							doc.RootElement.GetProperty("sceneId").GetString(),
@@ -228,7 +250,26 @@ namespace 交互式文本
 			var data = SaveLoadManager.Load(slot);
 			if (data == null) return;
 			CloseAll();
+			// 从主菜单读档时，同时隐藏标题界面并进入游戏状态
+			Send(new { type = "hide_menu" });
+			_core.MarkGameStarted();
 			_core.ApplySaveData(data);
+		}
+
+		/// <summary>向 Web 端推送主菜单显示指令（附是否有可用存档），并播放标题音乐。</summary>
+		private void SendMainMenu()
+		{
+			bool hasSaves = false;
+			for (int i = 0; i < SlotCount; i++)
+			{
+				if (SaveLoadManager.Load(i) != null)
+				{
+					hasSaves = true;
+					break;
+				}
+			}
+			Audio.AudioManager.Instance?.PlayBgm("bgm_menu", 2.0f, true);
+			Send(new { type = "show_menu", hasSaves });
 		}
 
 		// ========== 面板数据供给 ==========

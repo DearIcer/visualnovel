@@ -42,10 +42,20 @@ namespace 交互式文本.Audio
 			if (_currentTrack == track && _current.Playing)
 				return true;
 
-			string path = $"res://assets/bgm/{track}.ogg";
-			if (!ResourceLoader.Exists(path))
+			// 依次尝试 ogg / mp3 / wav，任一格式存在即可
+			string path = string.Empty;
+			foreach (string ext in new[] { "ogg", "mp3", "wav" })
 			{
-				GD.PushWarning($"BGM 资源未找到: {track}");
+				string candidate = $"res://assets/bgm/{track}.{ext}";
+				if (ResourceLoader.Exists(candidate))
+				{
+					path = candidate;
+					break;
+				}
+			}
+			if (string.IsNullOrEmpty(path))
+			{
+				GD.PushWarning($"BGM 资源未找到: {track}（尝试了 .ogg/.mp3/.wav）");
 				return false;
 			}
 
@@ -58,6 +68,10 @@ namespace 交互式文本.Audio
 
 			if (stream is AudioStreamOggVorbis ogg)
 				ogg.Loop = loop;
+			else if (stream is AudioStreamMP3 mp3)
+				mp3.Loop = loop;
+			else if (stream is AudioStreamWav wavStream)
+				wavStream.LoopMode = loop ? AudioStreamWav.LoopModeEnum.Forward : AudioStreamWav.LoopModeEnum.Disabled;
 
 			var previous = _current;
 			_current = _current == _trackA ? _trackB : _trackA;

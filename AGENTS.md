@@ -8,6 +8,8 @@
 
 游戏剧情通过 **JSON 脚本**（`story/main.json`）驱动，引擎解析并逐条执行指令，实现对话、立绘、背景、BGM/SE/语音、选择支、变量、存档/读档、历史回顾、设置与鉴赏（CG/音乐/语音解锁）等完整功能。
 
+**当前作品**：《栀笼》（Gardenia Cage）——病娇系心理恐怖视觉小说。启动后先显示 Web 端主菜单（开始游戏/读取存档/鉴赏/设置/退出，由 `VNCore.ShowMainMenu` 控制），点击「开始游戏」后从 `StartSceneId`（`pro0_monologue`）进入剧情。剧本约 1.6 万字、33 个场景块、3 个结局（TRUE「栀子的花期」/ NORMAL「雨夜栀子」/ BAD「枯萎」）。
+
 ## 目录结构
 
 ```
@@ -16,9 +18,16 @@ project.godot          # Godot 工程配置（主场景、Autoload、渲染设�
 scenes/                # 场景文件
   Main.tscn            # 主场景（入口）：VNCore + Stage（背景/角色）+ UI（WebView + 桥接节点）
 webui/                 # Web UI 前端（纯 HTML/CSS/JS，无构建步骤）
-  index.html           # UI 骨架：顶部按钮栏、对话框、选择支、全屏面板、右键菜单
-  style.css            # 深色毛玻璃主题样式（CSS 变量 --accent 等可调配比色）
-  ui.js                # 打字机状态机、面板渲染、输入捕获、IPC 收发
+  index.html           # UI 骨架：主菜单、顶部按钮栏、对话框、选择支、全屏面板、右键菜单
+  style.css            # 病娇主题样式（血色栀子：--accent 血红、故障标题、暗角呼吸遮罩）
+  ui.js                # 打字机状态机、主菜单逻辑、面板渲染、输入捕获、IPC 收发
+tools/                 # 资产生成工具（非游戏运行依赖）
+  gen_assets.sh        # 按清单批量调用 apimart 生图脚本
+  gen_ref.py           # 带参考图生图（绕过 Windows 命令行长度限制）
+  chroma_key.py        # 立绘绿幕抠图（numpy 向量化 + 去绿边 + 裁剪）
+  make_se.py           # 合成音效（心跳/手机震动/敲门/刺响，numpy 生成 wav）
+  manifest_bg.txt / manifest_sprites.txt  # 生图清单
+assets_raw/            # AI 生图原始输出（处理后部署到 assets/，保留作源稿）
 scripts/               # C# 源码（全部位于 交互式文本.* 命名空间下）
   Engine/              # 核心引擎
     VNCore.cs          # 主控制器：挂在主场景根节点，驱动剧情流程、输入、状态管理
@@ -39,11 +48,14 @@ scripts/               # C# 源码（全部位于 交互式文本.* 命名空间
     WebUI.cs           # 核心桥：C#↔JS JSON 消息收发、面板数据供给（历史/存读档/设置/鉴赏）
     UIManager.cs       # 面板管理桥：保留 Instance/IsAnyUIOpen/Show*/CloseAll，转发 WebUI
     DialogueBox.cs     # 对话框桥：保留 ShowDialogue/ShowChoices 等签名，转发 WebUI
-story/main.json        # 剧情脚本（characters + scenes/commands）
+story/main.json        # 剧情脚本（characters + scenes/commands），《栀笼》完整剧本
 assets/                # 资源
-  backgrounds/         # 背景图（PNG）
-  characters/<角色id>/ # 立绘，按 角色id/表情名.png 组织（如 shiori/smile.png）
-  bgm/ se/ voice/ cg/  # 对应音频与 CG 资源（指令按文件名引用）
+  backgrounds/         # 背景图（PNG，AI 生成；title_main.png 为主菜单背景）
+  characters/<角色id>/ # 立绘，按 角色id/表情名.png 组织（anzhi 有 normal/smile/shy/dark/yandere/cry/broken 七种差分）
+  bgm/                 # BGM（mp3，Kevin MacLeod / incompetech.com，CC BY 4.0）
+  se/                  # 音效（wav，tools/make_se.py 合成）
+  cg/                  # 全屏 CG（cgshow 指令展示，鉴赏页签显示缩略图）
+  voice/               # 语音（暂未使用）
 addons/godot_wry/      # Godot WRY WebView GDExtension（驱动整个 Web UI 层）
 .godot/                # Godot 编辑器缓存（勿提交，勿手改）
 ```
@@ -74,8 +86,9 @@ addons/godot_wry/      # Godot WRY WebView GDExtension（驱动整个 Web UI 层
 | `set` | 设置变量 | `name`、`value` |
 | `if` | 条件判断（MVP：仅简单比较，无完整块语法） | `name`、`op`、`value` |
 | `cg` / `music` / `vo_unlock` | 解锁鉴赏内容 | `id` |
+| `cgshow` / `cghide` | 展示/收起全屏 CG（覆盖背景与立绘；随后的 `bg` 或 `show` 指令会自动收起） | `id`、`fade` |
 
-资源路径约定：背景 `res://assets/backgrounds/{asset}.png`；立绘 `res://assets/characters/{character}/{emotion}.png`；音效 `res://assets/se/{sound}.wav`。新指令应在 `CommandRunner.Execute` 的 switch 中注册。
+资源路径约定：背景 `res://assets/backgrounds/{asset}.png`；立绘 `res://assets/characters/{character}/{emotion}.png`；CG `res://assets/cg/{id}.png`；BGM `res://assets/bgm/{track}.(ogg|mp3|wav)`（按此顺序探测）；音效 `res://assets/se/{sound}.wav`。新指令应在 `CommandRunner.Execute` 的 switch 中注册。
 
 ## 架构要点
 
@@ -83,7 +96,9 @@ addons/godot_wry/      # Godot WRY WebView GDExtension（驱动整个 Web UI 层
 - **C# ↔ JS 通信**：C# → JS 用 `WebView.Call("post_message", json)`，JS 侧 `document.addEventListener('message', e => JSON.parse(e.detail))`；JS → C# 用 `window.ipc.postMessage(json)`，C# 侧连接 `ipc_message` 信号（`WebUI.OnIpcMessage` 统一分发，消息均带 `type` 字段）。新增 UI 功能时在 `WebUI.cs` 的 switch 与 `webui/ui.js` 的 message switch 中成对注册。
 - **打字机在 JS 端**：`webui/ui.js` 逐字渲染，打完发 `typing_complete` → `VNCore.OnDialogueComplete()`；打字中点击本地补全，完成后点击才发 `advance`。
 - **输入由 Web 端捕获**：`forward_input_events=false`，点击/空格/滚轮/H/A/Ctrl/Esc/右键均由 `ui.js` 捕获并经 IPC 通知引擎；`VNCore._UnhandledInput` 的输入处理仅作兜底。面板打开时 JS 不再发送 `advance`，C# 侧 `UIManager.IsAnyUIOpen`（由 JS 的 `panel_opened/panel_closed` 维护）用于引擎兜底判断。
-- **运行时入口**：`VNCore._Ready()` 注册输入动作 → 加载剧情 JSON → 从 `StartSceneId` 开始 `RunNextCommand()` 循环执行指令。非阻塞指令自动推进，`say`/`narrate`/`choice` 等阻塞指令等待输入（`IsWaitingForInput` / `IsTyping` / `IsTransitioning` 标志控制）。
+- **运行时入口**：`VNCore._Ready()` 注册输入动作 → 加载剧情 JSON。若 `ShowMainMenu=true`（默认），引擎待命并播放 `bgm_menu`，等待 Web 端主菜单的 `menu_new_game` / `load_slot` 消息（`StartNewGame()` / `ApplySaveData` 置 `GameStarted=true`）；否则直接 `RunNextCommand()`。主菜单阶段 `_UnhandledInput` 全部忽略。
+- **主菜单消息对**：C# 发 `show_menu{hasSaves}` / `hide_menu`；JS 发 `menu_new_game` / `menu_continue` / `menu_settings` / `menu_gallery` / `menu_quit`。菜单打开期间 JS 发 `panel_opened{panel:"menu"}` 阻断引擎输入。
+- **指令执行**：非阻塞指令自动推进，`say`/`narrate`/`choice` 等阻塞指令等待输入（`IsWaitingForInput` / `IsTyping` / `IsTransitioning` 标志控制）。全屏 CG 由 `CgOverlay`（Stage 层最上）承载，状态记入 `StageSnapshot.CgPath`，读档时恢复。
 - **输入动作**在代码中动态注册（不在 InputMap 中配置）：`vn_advance`（空格/回车/左键/滚轮下）、`vn_history`(H)、`vn_auto`(A)、`vn_skip`(Ctrl)、`vn_menu`(Esc)。`UIManager` 面板打开时会阻断剧情推进输入。
 - **存档**：`GameState` 所有字段必须可序列化（`System.Text.Json`，`Variant` 通过 `VariantConverter` 处理）。新增状态字段时需同步考虑 `SaveData`、`VNCore.ApplySaveData` 与读档恢复逻辑（舞台/音频快照用于读档复现演出）。
 - **音频**：`AudioManager` 为 Autoload 单例（`AudioManager.Instance`），运行时自动创建 BGM/SE/Voice 三条总线；设置界面的音量通过 `ApplyVolumes()` 应用（设置数据由 WebUI 在 `apply_settings` 消息中应用）。

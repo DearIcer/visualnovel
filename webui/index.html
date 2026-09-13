@@ -3,10 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>交互式文本 UI</title>
+  <title>栀笼 Gardenia Cage</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- 主菜单（标题界面） -->
+  <div id="main-menu" class="hidden">
+    <div class="menu-shade"></div>
+    <div class="menu-content">
+      <h1 id="menu-title" data-text="栀 笼">栀 笼</h1>
+      <div id="menu-subtitle">— Gardenia Cage —</div>
+      <div id="menu-tagline">「一生的守候。」</div>
+      <nav class="menu-buttons">
+        <button id="menu-start" class="menu-btn">开始游戏</button>
+        <button id="menu-continue" class="menu-btn">读取存档</button>
+        <button id="menu-gallery" class="menu-btn">鉴赏</button>
+        <button id="menu-settings" class="menu-btn">设置</button>
+        <button id="menu-quit" class="menu-btn">退出</button>
+      </nav>
+      <div id="menu-footnote">本作包含心理恐怖元素 · 请酌情游玩</div>
+    </div>
+  </div>
+
   <!-- 顶部菜单按钮栏 -->
   <div id="topbar">
     <div id="auto-indicator" class="hidden">▶ 自动</div>
@@ -53,6 +71,9 @@
       <div id="panel-body"></div>
     </div>
   </div>
+
+  <!-- 全屏氛围遮罩（暗角 + 血色呼吸） -->
+  <div id="vignette"></div>
 
   <!-- 右键菜单 -->
   <div id="context-menu" class="hidden">

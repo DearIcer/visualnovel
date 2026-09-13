@@ -9,8 +9,14 @@ namespace 交互式文本.Engine
     /// </summary>
     public partial class VNCore : Node
     {
-        [Export] public string StartSceneId = "start";
+        [Export] public string StartSceneId = "pro0_monologue";
         [Export] public string StoryFile = "res://story/main.json";
+
+        /// <summary>启动时是否先显示主菜单（由 Web UI 渲染标题界面），false 则直接进入剧情。</summary>
+        [Export] public bool ShowMainMenu = true;
+
+        /// <summary>是否已经开始游戏（主菜单点开始或读档后置为 true）。</summary>
+        public bool GameStarted { get; private set; } = false;
 
         public ScriptParser Parser { get; private set; } = new();
         public GameState State { get; private set; } = new();
@@ -27,6 +33,8 @@ namespace 交互式文本.Engine
         public DialogueBox DialogueBox { get; private set; }
         public Node2D CharacterStage { get; private set; }
         public TextureRect Background { get; private set; }
+        /// <summary>全屏 CG 展示层（覆盖背景与立绘，由 cgshow/cghide 指令驱动）。</summary>
+        public TextureRect CgOverlay { get; private set; }
         public CanvasLayer TransitionLayer { get; private set; }
 
         /// <summary>立绘高度占屏幕高度的比例（常见视觉小说约为 0.85~0.95）。</summary>
@@ -51,6 +59,19 @@ namespace 交互式文本.Engine
             CharacterStage = GetNode<Node2D>("Stage/Characters");
             Background = GetNode<TextureRect>("Stage/Background");
 
+            // 全屏 CG 层：挂在 Stage 最上层（盖住背景与立绘），初始隐藏
+            CgOverlay = new TextureRect
+            {
+                Name = "CgOverlay",
+                AnchorsPreset = (int)Control.LayoutPreset.FullRect,
+                ExpandMode = TextureRect.ExpandModeEnum.IgnoreSize,
+                StretchMode = TextureRect.StretchModeEnum.KeepAspectCovered,
+                MouseFilter = Control.MouseFilterEnum.Ignore,
+                Modulate = new Color(1, 1, 1, 0),
+                Visible = false
+            };
+            GetNode<CanvasLayer>("Stage").AddChild(CgOverlay);
+
             Error err = Parser.LoadFromJson(StoryFile);
             if (err != Error.Ok)
             {
@@ -65,7 +86,36 @@ namespace 交互式文本.Engine
 
             ApplyVolumes();
             WebUI.Instance?.SendStoryMeta();
+
+            if (ShowMainMenu)
+            {
+                // 主菜单由 Web UI 渲染：等待 JS 的 menu_new_game / load_slot 消息再开始。
+                GD.Print("主菜单待命中，等待玩家开始游戏。");
+            }
+            else
+            {
+                GameStarted = true;
+                RunNextCommand();
+            }
+        }
+
+        /// <summary>从主菜单开始新游戏。</summary>
+        public void StartNewGame()
+        {
+            if (GameStarted) return;
+            GameStarted = true;
+            State.CurrentSceneId = StartSceneId;
+            State.CurrentCommandIndex = 0;
+            IsWaitingForInput = false;
+            IsTyping = false;
+            _advanceRequested = false;
             RunNextCommand();
+        }
+
+        /// <summary>读档开始时标记游戏已进入进行状态（供 WebUI 调用）。</summary>
+        public void MarkGameStarted()
+        {
+            GameStarted = true;
         }
 
         public override void _Process(double delta)
@@ -100,6 +150,10 @@ namespace 交互式文本.Engine
 
         public override void _UnhandledInput(InputEvent @event)
         {
+            // 主菜单阶段不响应任何剧情输入
+            if (!GameStarted)
+                return;
+
             // 任意 UI 面板打开时，阻断剧情推进输入
             if (UIManager.Instance != null && UIManager.Instance.IsAnyUIOpen)
                 return;
@@ -373,6 +427,12 @@ namespace 交互式文本.Engine
             foreach (var child in CharacterStage.GetChildren())
                 child.Free();
 
+            // 恢复全屏 CG
+            if (!string.IsNullOrEmpty(stage.CgPath))
+                ShowCg(stage.CgPath, 0f);
+            else
+                HideCg(0f);
+
             foreach (var kv in stage.Characters)
             {
                 var ch = kv.Value;
@@ -416,6 +476,7 @@ namespace 交互式文本.Engine
 
             State.Stage = new StageSnapshot();
             State.Audio = new AudioSnapshot();
+            HideCg(0f);
             Audio.AudioManager.Instance?.StopBgm(0f);
         }
 
@@ -444,6 +505,56 @@ namespace 交互式文本.Engine
             State.Audio.BgmLoop = channel.CurrentLoop;
             State.Audio.BgmPosition = channel.IsPlaying ? channel.CurrentPosition : 0f;
             State.Audio.BgmPlaying = channel.IsPlaying && !string.IsNullOrEmpty(channel.CurrentTrack);
+        }
+
+        /// <summary>
+        /// 展示全屏 CG（res://assets/cg/{id}.png），带淡入。会记录到舞台快照用于存档。
+        /// </summary>
+        public void ShowCg(string id, float fade)
+        {
+            if (string.IsNullOrEmpty(id) || CgOverlay == null) return;
+
+            var texture = GD.Load<Texture2D>($"res://assets/cg/{id}.png");
+            if (texture == null)
+            {
+                GD.PushWarning($"未找到 CG 资源: {id}.png");
+                return;
+            }
+
+            State.Stage.CgPath = id;
+            CgOverlay.Texture = texture;
+            CgOverlay.Visible = true;
+
+            if (fade <= 0f)
+            {
+                CgOverlay.Modulate = Colors.White;
+                return;
+            }
+            CgOverlay.Modulate = new Color(1, 1, 1, 0);
+            var tween = CgOverlay.CreateTween();
+            tween.TweenProperty(CgOverlay, "modulate:a", 1.0f, fade);
+        }
+
+        /// <summary>隐藏全屏 CG，带淡出。</summary>
+        public void HideCg(float fade)
+        {
+            State.Stage.CgPath = string.Empty;
+            if (CgOverlay == null || !CgOverlay.Visible) return;
+
+            if (fade <= 0f)
+            {
+                CgOverlay.Visible = false;
+                CgOverlay.Texture = null;
+                CgOverlay.Modulate = new Color(1, 1, 1, 0);
+                return;
+            }
+            var tween = CgOverlay.CreateTween();
+            tween.TweenProperty(CgOverlay, "modulate:a", 0.0f, fade);
+            tween.TweenCallback(Callable.From(() =>
+            {
+                CgOverlay.Visible = false;
+                CgOverlay.Texture = null;
+            }));
         }
 
         /// <summary>
@@ -599,7 +710,21 @@ namespace 交互式文本.Engine
                             break;
                         case "bgm":
                             if (!string.IsNullOrEmpty(command.GetString("track")))
-                                path = $"res://assets/bgm/{command.GetString("track")}.ogg";
+                            {
+                                // BGM 支持 ogg/mp3/wav，任一存在即视为有效
+                                string trackName = command.GetString("track");
+                                bool found = false;
+                                foreach (string ext in new[] { "ogg", "mp3", "wav" })
+                                {
+                                    if (ResourceLoader.Exists($"res://assets/bgm/{trackName}.{ext}"))
+                                    {
+                                        found = true;
+                                        break;
+                                    }
+                                }
+                                if (found) continue;
+                                path = $"res://assets/bgm/{trackName}.(ogg|mp3|wav)";
+                            }
                             break;
                         case "se":
                             if (!string.IsNullOrEmpty(command.GetString("sound")))
@@ -607,6 +732,10 @@ namespace 交互式文本.Engine
                             break;
                         case "voice":
                             path = command.GetString("path");
+                            break;
+                        case "cgshow":
+                            if (!string.IsNullOrEmpty(command.GetString("id")))
+                                path = $"res://assets/cg/{command.GetString("id")}.png";
                             break;
                         case "show":
                             string character = command.GetString("character");
