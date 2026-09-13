@@ -47,6 +47,9 @@ assets/                # 资源
   characters/<角色id>/ # 立绘，按 角色id/表情名.png 组织（如 a_wan/smile.png）
   bgm/ se/ voice/      # 对应音频资源（指令按文件名引用；BGM 为 .ogg，SE 为 .wav）
 addons/godot_wry/      # Godot WRY WebView GDExtension（驱动整个 Web UI 层）
+tools/story-editor/    # 剧情编辑器（纯前端 HTML/CSS/JS，Chrome/Edge 打开 index.html 即用；
+                       # 通过 File System Access API 读写 story/*.json，不参与游戏运行与导出，
+                       # 不被 Godot 工程引用；smoke-test.js 为 Node 冒烟测试：node smoke-test.js）
 .godot/                # Godot 编辑器缓存（勿提交，勿手改）
 ```
 
@@ -77,7 +80,7 @@ addons/godot_wry/      # Godot WRY WebView GDExtension（驱动整个 Web UI 层
 | `if` | 条件判断（MVP：仅简单比较，无完整块语法） | `name`、`op`、`value` |
 | `cg` / `music` / `vo_unlock` | 解锁鉴赏内容 | `id` |
 
-资源路径约定：背景 `res://assets/backgrounds/{asset}.png`；立绘 `res://assets/characters/{character}/{emotion}.png`；音效 `res://assets/se/{sound}.wav`。新指令应在 `CommandRunner.Execute` 的 switch 中注册。
+资源路径约定：背景 `res://assets/backgrounds/{asset}.png`；立绘 `res://assets/characters/{character}/{emotion}.png`；音效 `res://assets/se/{sound}.wav`。新指令应在 `CommandRunner.Execute` 的 switch 中注册，并同步在 `tools/story-editor/editor.js` 的 `CMD_DEFS` 中登记，保证剧情编辑器能编辑与校验新指令。
 
 ## 架构要点
 
