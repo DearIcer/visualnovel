@@ -54,6 +54,55 @@ body::after {
   position: absolute; inset: 0;
   background: radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.75) 100%);
 }
+
+/* ---- 主菜单动态效果：雾层 + 纸灰余烬 ---- */
+.title-fog {
+  position: absolute;
+  left: -30%; right: -30%;
+  height: 45%;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 50%, rgba(190, 195, 205, 0.10) 0%, rgba(190, 195, 205, 0.04) 45%, transparent 70%);
+  filter: blur(6px);
+}
+.fog-a {
+  bottom: -8%;
+  animation: fog-drift-a 26s ease-in-out infinite alternate;
+}
+.fog-b {
+  bottom: 18%;
+  opacity: 0.7;
+  animation: fog-drift-b 34s ease-in-out infinite alternate;
+}
+@keyframes fog-drift-a {
+  from { transform: translateX(-6%) scaleY(1); }
+  to   { transform: translateX(6%) scaleY(1.15); }
+}
+@keyframes fog-drift-b {
+  from { transform: translateX(7%) scaleY(1.1); }
+  to   { transform: translateX(-7%) scaleY(0.95); }
+}
+
+#ember-layer {
+  position: absolute; inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.ember {
+  position: absolute;
+  bottom: -12px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 190, 120, 0.9) 0%, rgba(200, 60, 40, 0.55) 55%, transparent 75%);
+  opacity: 0;
+  animation-name: ember-rise;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes ember-rise {
+  0%   { transform: translate(0, 0) scale(1); opacity: 0; }
+  8%   { opacity: 0.85; }
+  60%  { opacity: 0.5; }
+  100% { transform: translate(var(--sway, 40px), -105vh) scale(0.4); opacity: 0; }
+}
 .title-content {
   position: absolute; inset: 0;
   display: flex; flex-direction: column;

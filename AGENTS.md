@@ -6,7 +6,7 @@
 
 **交互式文本** 是一个基于 **Godot 4.7（.NET / C# 版，Godot.NET.Sdk）** 开发的视觉小说（Visual Novel）引擎项目。目标框架为 **.NET 8**，渲染使用 **GL Compatibility**，Windows 下渲染设备驱动为 **d3d12**。
 
-当前游戏为 **《青灯引》**：聊斋风中式恐怖视觉小说（约 1 小时流程，3 个结局），日系动漫画风。游戏启动后先进入**主菜单（标题画面）**，由 `webui/` 前端渲染；点击「开始游戏」后 JS 发 `menu_start`，C# 侧 `VNCore.StartGame()` 才开始执行剧情。`VNCore.GameStarted` 门控剧情输入与指令执行；右键菜单「回到标题」发 `return_to_title` 触发 `VNCore.ReturnToTitle()` 重置状态并回主菜单。
+当前游戏为 **《青灯引》**：聊斋风中式恐怖视觉小说（约 1 小时流程，3 个结局），日系动漫画风。游戏启动后先进入**主菜单（标题画面）**，由 `webui/` 前端渲染（含雾层/余烬动态效果，播放 `VNCore.MenuBgmTrack` 指定的标题 BGM）；点击「开始游戏」后 JS 发 `menu_start`，C# 侧 `VNCore.StartGame()` 才开始执行剧情。`VNCore.GameStarted` 门控剧情输入与指令执行；右键菜单「回到标题」发 `return_to_title` 触发 `VNCore.ReturnToTitle()` 重置状态并回主菜单。
 
 游戏剧情通过 **JSON 脚本**（`story/main.json`）驱动，引擎解析并逐条执行指令，实现对话、立绘、背景、BGM/SE/语音、选择支、变量、存档/读档、历史回顾、设置与鉴赏（CG/音乐/语音解锁）等完整功能。
 

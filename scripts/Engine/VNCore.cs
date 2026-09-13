@@ -23,6 +23,9 @@ namespace 交互式文本.Engine
         public bool IsSkipReadMode { get; set; } = false;
         public bool IsTransitioning { get; set; } = false;
 
+        /// <summary>主菜单背景音乐曲目名。</summary>
+        public const string MenuBgmTrack = "tender";
+
         /// <summary>是否已离开主菜单进入剧情。主菜单状态下不执行指令、不响应推进输入。</summary>
         public bool GameStarted { get; set; } = false;
 
@@ -69,6 +72,7 @@ namespace 交互式文本.Engine
             ApplyVolumes();
             WebUI.Instance?.SendStoryMeta();
             // 主菜单优先：等待 WebUI 的 menu_start 消息后再开始执行剧情。
+            Audio.AudioManager.Instance?.PlayBgm(MenuBgmTrack, 2.0f);
         }
 
         /// <summary>从主菜单开始新游戏：进入剧情流程并执行第一条指令。</summary>
@@ -92,6 +96,7 @@ namespace 交互式文本.Engine
             DialogueBox?.ClearDialogue();
             DialogueBox?.ClearChoices();
             ResetStageForDebugSeek();
+            Audio.AudioManager.Instance?.PlayBgm(MenuBgmTrack, 2.0f);
 
             State = new GameState();
             State.CurrentSceneId = StartSceneId;

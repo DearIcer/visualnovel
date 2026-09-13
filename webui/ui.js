@@ -73,6 +73,24 @@ document.querySelectorAll(".menu-btn").forEach((btn) => {
 // 初始处于主菜单
 showTitleScreen();
 
+// 主菜单余烬粒子：随机位置/大小/时长，循环上升飘散
+(function spawnEmbers() {
+  const layer = $("ember-layer");
+  if (!layer) return;
+  for (let i = 0; i < 26; i++) {
+    const ember = document.createElement("span");
+    ember.className = "ember";
+    const size = 3 + Math.random() * 5;
+    ember.style.width = size + "px";
+    ember.style.height = size + "px";
+    ember.style.left = Math.random() * 100 + "%";
+    ember.style.setProperty("--sway", (Math.random() * 120 - 60).toFixed(0) + "px");
+    ember.style.animationDuration = (9 + Math.random() * 9).toFixed(1) + "s";
+    ember.style.animationDelay = (-Math.random() * 18).toFixed(1) + "s";
+    layer.appendChild(ember);
+  }
+})();
+
 // ========== 打字机 ==========
 function startDialogue(speaker, text, color) {
   clearChoices();
