@@ -43,17 +43,17 @@ const test = `
 ;(function runTests() {
   const assert = (cond, msg) => { if (!cond) throw new Error('断言失败: ' + msg); };
 
-  // 1. 加载项目自带的 main.json
+  // 1. 加载项目自带的 main.json（断言随当前分支剧情数据动态计算）
   const main = JSON.parse(MAIN_JSON);
   loadDoc(main, 'main.json');
-  assert(sceneOrder.length === 4, '应解析出 4 个场景, 实际 ' + sceneOrder.length);
+  assert(sceneOrder.length === Object.keys(main.scenes).length, '场景数不一致, 实际 ' + sceneOrder.length);
   assert(currentScene === 'start', '当前场景应为 start');
   assert(validate(false) === true, '自带 main.json 应通过校验, 问题: ' + JSON.stringify(lastIssues));
 
   // 2. 序列化应保持场景顺序与结构
   const out = JSON.parse(serializeDoc());
-  assert(JSON.stringify(Object.keys(out.scenes)) === JSON.stringify(['start','sweet_path','yandere_path','ending_intro']), '场景顺序不一致');
-  assert(out.characters.shiori.displayName === '千织', '角色数据丢失');
+  assert(JSON.stringify(Object.keys(out.scenes)) === JSON.stringify(Object.keys(main.scenes)), '场景顺序不一致');
+  assert(out.characters.wanqing.displayName === '林晚晴', '角色数据丢失');
 
   // 3. 构造问题脚本应被校验捕获
   loadDoc({
