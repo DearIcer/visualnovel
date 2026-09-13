@@ -23,6 +23,7 @@ const storyTotal = $("story-total");
 const storySceneSelect = $("story-scene-select");
 const storyJumpScene = $("story-jump-scene");
 const storyCommandLabel = $("story-command-label");
+const titleScreen = $("title-screen");
 
 // ========== 状态 ==========
 let cps = 40;               // 打字速度（字符/秒）
@@ -40,6 +41,37 @@ let storyBarVisible = false;
 let storyScenes = [];
 let storyState = null;
 let storyScrubbing = false;
+
+// ========== 主菜单 ==========
+function showTitleScreen() {
+  clearDialogue();
+  clearChoices();
+  hideContextMenu();
+  document.body.classList.add("menu-open");
+  titleScreen.classList.remove("hidden");
+}
+
+function hideTitleScreen() {
+  document.body.classList.remove("menu-open");
+  titleScreen.classList.add("hidden");
+}
+
+function isTitleVisible() {
+  return !titleScreen.classList.contains("hidden");
+}
+
+document.querySelectorAll(".menu-btn").forEach((btn) => {
+  btn.onclick = (e) => {
+    e.stopPropagation();
+    const action = btn.dataset.menu;
+    if (action === "start") send("menu_start");
+    else if (action === "quit") send("menu_quit");
+    else send("open_panel", { panel: action });
+  };
+});
+
+// 初始处于主菜单
+showTitleScreen();
 
 // ========== 打字机 ==========
 function startDialogue(speaker, text, color) {
@@ -404,6 +436,7 @@ ctxMenu.querySelectorAll(".ctx-item").forEach((item) => {
     if (action === "close") return;
     if (action === "auto") { send("toggle_auto"); return; }
     if (action === "story") { toggleStoryBar(); return; }
+    if (action === "title") { send("return_to_title"); return; }
     send("open_panel", { panel: action });
   };
 });
@@ -412,6 +445,7 @@ ctxMenu.querySelectorAll(".ctx-item").forEach((item) => {
 let autoOn = false;
 
 function handleAdvance() {
+  if (isTitleVisible()) return;
   if (currentPanel) return;
   hideContextMenu();
   if (typing) { finishTyping(); return; }
@@ -434,6 +468,7 @@ document.addEventListener("wheel", (e) => {
 
 document.addEventListener("contextmenu", (e) => {
   e.preventDefault();
+  if (isTitleVisible()) return;
   if (currentPanel) return;
   if (ctxMenu.classList.contains("hidden")) showContextMenu(e.clientX, e.clientY);
   else hideContextMenu();
@@ -541,6 +576,12 @@ document.addEventListener("message", (e) => {
     case "close_all":
       if (currentPanel) { currentPanel = null; overlay.classList.add("hidden"); }
       hideContextMenu();
+      break;
+    case "game_started":
+      hideTitleScreen();
+      break;
+    case "show_title":
+      showTitleScreen();
       break;
   }
 });

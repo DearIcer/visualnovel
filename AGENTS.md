@@ -6,6 +6,8 @@
 
 **交互式文本** 是一个基于 **Godot 4.7（.NET / C# 版，Godot.NET.Sdk）** 开发的视觉小说（Visual Novel）引擎项目。目标框架为 **.NET 8**，渲染使用 **GL Compatibility**，Windows 下渲染设备驱动为 **d3d12**。
 
+当前游戏为 **《青灯引》**：聊斋风中式恐怖视觉小说（约 1 小时流程，3 个结局），日系动漫画风。游戏启动后先进入**主菜单（标题画面）**，由 `webui/` 前端渲染；点击「开始游戏」后 JS 发 `menu_start`，C# 侧 `VNCore.StartGame()` 才开始执行剧情。`VNCore.GameStarted` 门控剧情输入与指令执行；右键菜单「回到标题」发 `return_to_title` 触发 `VNCore.ReturnToTitle()` 重置状态并回主菜单。
+
 游戏剧情通过 **JSON 脚本**（`story/main.json`）驱动，引擎解析并逐条执行指令，实现对话、立绘、背景、BGM/SE/语音、选择支、变量、存档/读档、历史回顾、设置与鉴赏（CG/音乐/语音解锁）等完整功能。
 
 ## 目录结构
@@ -16,9 +18,9 @@ project.godot          # Godot 工程配置（主场景、Autoload、渲染设�
 scenes/                # 场景文件
   Main.tscn            # 主场景（入口）：VNCore + Stage（背景/角色）+ UI（WebView + 桥接节点）
 webui/                 # Web UI 前端（纯 HTML/CSS/JS，无构建步骤）
-  index.html           # UI 骨架：顶部按钮栏、对话框、选择支、全屏面板、右键菜单
-  style.css            # 深色毛玻璃主题样式（CSS 变量 --accent 等可调配比色）
-  ui.js                # 打字机状态机、面板渲染、输入捕获、IPC 收发
+  index.html           # UI 骨架：主菜单（标题画面）、顶部按钮栏、对话框、选择支、全屏面板、右键菜单
+  style.css            # 中式恐怖主题样式（血朱/骨白/墨色，CSS 变量 --accent 等可调配比色）
+  ui.js                # 主菜单状态、打字机状态机、面板渲染、输入捕获、IPC 收发
 scripts/               # C# 源码（全部位于 交互式文本.* 命名空间下）
   Engine/              # 核心引擎
     VNCore.cs          # 主控制器：挂在主场景根节点，驱动剧情流程、输入、状态管理
@@ -39,11 +41,11 @@ scripts/               # C# 源码（全部位于 交互式文本.* 命名空间
     WebUI.cs           # 核心桥：C#↔JS JSON 消息收发、面板数据供给（历史/存读档/设置/鉴赏）
     UIManager.cs       # 面板管理桥：保留 Instance/IsAnyUIOpen/Show*/CloseAll，转发 WebUI
     DialogueBox.cs     # 对话框桥：保留 ShowDialogue/ShowChoices 等签名，转发 WebUI
-story/main.json        # 剧情脚本（characters + scenes/commands）
+story/main.json        # 《青灯引》剧情脚本（characters + scenes/commands，44 场景 / 3 结局）
 assets/                # 资源
-  backgrounds/         # 背景图（PNG）
-  characters/<角色id>/ # 立绘，按 角色id/表情名.png 组织（如 shiori/smile.png）
-  bgm/ se/ voice/ cg/  # 对应音频与 CG 资源（指令按文件名引用）
+  backgrounds/         # 背景图（PNG；剧情 CG 也放这里，以 cg_ 前缀命名，用 bg 指令展示）
+  characters/<角色id>/ # 立绘，按 角色id/表情名.png 组织（如 a_wan/smile.png）
+  bgm/ se/ voice/      # 对应音频资源（指令按文件名引用；BGM 为 .ogg，SE 为 .wav）
 addons/godot_wry/      # Godot WRY WebView GDExtension（驱动整个 Web UI 层）
 .godot/                # Godot 编辑器缓存（勿提交，勿手改）
 ```
@@ -83,7 +85,7 @@ addons/godot_wry/      # Godot WRY WebView GDExtension（驱动整个 Web UI 层
 - **C# ↔ JS 通信**：C# → JS 用 `WebView.Call("post_message", json)`，JS 侧 `document.addEventListener('message', e => JSON.parse(e.detail))`；JS → C# 用 `window.ipc.postMessage(json)`，C# 侧连接 `ipc_message` 信号（`WebUI.OnIpcMessage` 统一分发，消息均带 `type` 字段）。新增 UI 功能时在 `WebUI.cs` 的 switch 与 `webui/ui.js` 的 message switch 中成对注册。
 - **打字机在 JS 端**：`webui/ui.js` 逐字渲染，打完发 `typing_complete` → `VNCore.OnDialogueComplete()`；打字中点击本地补全，完成后点击才发 `advance`。
 - **输入由 Web 端捕获**：`forward_input_events=false`，点击/空格/滚轮/H/A/Ctrl/Esc/右键均由 `ui.js` 捕获并经 IPC 通知引擎；`VNCore._UnhandledInput` 的输入处理仅作兜底。面板打开时 JS 不再发送 `advance`，C# 侧 `UIManager.IsAnyUIOpen`（由 JS 的 `panel_opened/panel_closed` 维护）用于引擎兜底判断。
-- **运行时入口**：`VNCore._Ready()` 注册输入动作 → 加载剧情 JSON → 从 `StartSceneId` 开始 `RunNextCommand()` 循环执行指令。非阻塞指令自动推进，`say`/`narrate`/`choice` 等阻塞指令等待输入（`IsWaitingForInput` / `IsTyping` / `IsTransitioning` 标志控制）。
+- **运行时入口**：`VNCore._Ready()` 注册输入动作 → 加载剧情 JSON → 进入主菜单等待（`GameStarted=false`）。JS 点「开始游戏」发 `menu_start` → `VNCore.StartGame()` → 从 `StartSceneId` 开始 `RunNextCommand()` 循环执行指令；主菜单读档（`load_slot`）也会置 `GameStarted` 并恢复演出。非阻塞指令自动推进，`say`/`narrate`/`choice` 等阻塞指令等待输入（`IsWaitingForInput` / `IsTyping` / `IsTransitioning` 标志控制）。
 - **输入动作**在代码中动态注册（不在 InputMap 中配置）：`vn_advance`（空格/回车/左键/滚轮下）、`vn_history`(H)、`vn_auto`(A)、`vn_skip`(Ctrl)、`vn_menu`(Esc)。`UIManager` 面板打开时会阻断剧情推进输入。
 - **存档**：`GameState` 所有字段必须可序列化（`System.Text.Json`，`Variant` 通过 `VariantConverter` 处理）。新增状态字段时需同步考虑 `SaveData`、`VNCore.ApplySaveData` 与读档恢复逻辑（舞台/音频快照用于读档复现演出）。
 - **音频**：`AudioManager` 为 Autoload 单例（`AudioManager.Instance`），运行时自动创建 BGM/SE/Voice 三条总线；设置界面的音量通过 `ApplyVolumes()` 应用（设置数据由 WebUI 在 `apply_settings` 消息中应用）。

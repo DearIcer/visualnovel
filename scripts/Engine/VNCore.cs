@@ -23,6 +23,9 @@ namespace 交互式文本.Engine
         public bool IsSkipReadMode { get; set; } = false;
         public bool IsTransitioning { get; set; } = false;
 
+        /// <summary>是否已离开主菜单进入剧情。主菜单状态下不执行指令、不响应推进输入。</summary>
+        public bool GameStarted { get; set; } = false;
+
         // 节点引用
         public DialogueBox DialogueBox { get; private set; }
         public Node2D CharacterStage { get; private set; }
@@ -65,7 +68,49 @@ namespace 交互式文本.Engine
 
             ApplyVolumes();
             WebUI.Instance?.SendStoryMeta();
+            // 主菜单优先：等待 WebUI 的 menu_start 消息后再开始执行剧情。
+        }
+
+        /// <summary>从主菜单开始新游戏：进入剧情流程并执行第一条指令。</summary>
+        public void StartGame()
+        {
+            if (GameStarted)
+                return;
+
+            GameStarted = true;
+            State.CurrentSceneId = StartSceneId;
+            State.CurrentCommandIndex = 0;
             RunNextCommand();
+        }
+
+        /// <summary>回到主菜单：清空舞台/音频/输入状态并重置游戏状态。</summary>
+        public void ReturnToTitle()
+        {
+            CancelTransition();
+            Audio.AudioManager.Instance?.StopBgm(0f);
+            Audio.AudioManager.Instance?.StopVoice();
+            DialogueBox?.ClearDialogue();
+            DialogueBox?.ClearChoices();
+            ResetStageForDebugSeek();
+
+            State = new GameState();
+            State.CurrentSceneId = StartSceneId;
+            State.CurrentCommandIndex = 0;
+
+            GameStarted = false;
+            IsAutoMode = false;
+            IsSkipAllMode = false;
+            IsSkipReadMode = false;
+            IsWaitingForInput = false;
+            IsTyping = false;
+            _advanceRequested = false;
+            _autoTimer = 0.0;
+            _skipTimer = 0.0;
+            _redirectRequested = false;
+            _skipNextCommand = false;
+
+            WebUI.Instance?.Send(new { type = "auto_state", on = false });
+            NotifyStoryProgress();
         }
 
         public override void _Process(double delta)
@@ -100,6 +145,10 @@ namespace 交互式文本.Engine
 
         public override void _UnhandledInput(InputEvent @event)
         {
+            // 主菜单状态下不响应剧情输入
+            if (!GameStarted)
+                return;
+
             // 任意 UI 面板打开时，阻断剧情推进输入
             if (UIManager.Instance != null && UIManager.Instance.IsAnyUIOpen)
                 return;
@@ -143,6 +192,9 @@ namespace 交互式文本.Engine
 
         public void Advance()
         {
+            if (!GameStarted)
+                return;
+
             if (IsWaitingForInput)
             {
                 IsWaitingForInput = false;

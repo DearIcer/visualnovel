@@ -7,6 +7,24 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- 主菜单（标题画面） -->
+  <div id="title-screen">
+    <div class="title-bg"></div>
+    <div class="title-vignette"></div>
+    <div class="title-content">
+      <div class="title-main">青灯引</div>
+      <div class="title-sub">—— 敛芳园夜话 ——</div>
+      <div class="title-menu">
+        <button class="menu-btn" data-menu="start">开始游戏</button>
+        <button class="menu-btn" data-menu="load">读取存档</button>
+        <button class="menu-btn" data-menu="gallery">鉴赏</button>
+        <button class="menu-btn" data-menu="settings">设置</button>
+        <button class="menu-btn" data-menu="quit">退出游戏</button>
+      </div>
+      <div class="title-note">中元夜，灯引魂归</div>
+    </div>
+  </div>
+
   <!-- 顶部菜单按钮栏 -->
   <div id="topbar">
     <div id="auto-indicator" class="hidden">▶ 自动</div>
@@ -64,6 +82,7 @@
     <div class="ctx-item" data-action="story">剧情管理器</div>
     <div class="ctx-sep"></div>
     <div class="ctx-item" data-action="auto"><span id="ctx-auto-check"></span>自动模式</div>
+    <div class="ctx-item" data-action="title">回到标题</div>
     <div class="ctx-item" data-action="close">关闭菜单</div>
   </div>
 

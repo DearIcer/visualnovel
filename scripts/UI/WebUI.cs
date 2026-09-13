@@ -172,6 +172,18 @@ namespace 交互式文本
 						SendInit();
 						SendStoryMeta();
 						break;
+					case "menu_start":
+						_core.StartGame();
+						Send(new { type = "game_started" });
+						break;
+					case "menu_quit":
+						GetTree().Quit();
+						break;
+					case "return_to_title":
+						CloseAll();
+						_core.ReturnToTitle();
+						Send(new { type = "show_title" });
+						break;
 					case "advance":
 						if (_core.IsTyping) Send(new { type = "skip_typing" });
 						else _core.Advance();
@@ -228,6 +240,9 @@ namespace 交互式文本
 			var data = SaveLoadManager.Load(slot);
 			if (data == null) return;
 			CloseAll();
+			// 主菜单中读档时，视为已开始游戏（JS 侧隐藏标题画面）。
+			_core.GameStarted = true;
+			Send(new { type = "game_started" });
 			_core.ApplySaveData(data);
 		}
 
