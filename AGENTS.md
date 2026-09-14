@@ -43,7 +43,7 @@ scripts/               # C# 源码（全部位于 交互式文本.* 命名空间
     DialogueBox.cs     # 对话框桥：保留 ShowDialogue/ShowChoices 等签名，转发 WebUI
 story/main.json        # 《青灯引》剧情脚本（characters + scenes/commands，44 场景 / 3 结局）
 assets/                # 资源
-  backgrounds/         # 背景图（PNG；剧情 CG 也放这里，以 cg_ 前缀命名，用 bg 指令展示）
+  backgrounds/         # 背景图（PNG；剧情 CG 也放这里，以 cg_ 前缀命名，用 bg 指令展示；切换到 cg_ 背景时引擎自动隐藏场上全部立绘）
   characters/<角色id>/ # 立绘，按 角色id/表情名.png 组织（如 a_wan/smile.png）
   bgm/ se/ voice/      # 对应音频资源（指令按文件名引用；BGM 为 .ogg，SE 为 .wav）
 addons/godot_wry/      # Godot WRY WebView GDExtension（驱动整个 Web UI 层）

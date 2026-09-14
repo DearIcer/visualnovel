@@ -216,13 +216,11 @@ body.menu-open #story-bar { display: none !important; }
   margin-left: 2px;
 }
 
-#auto-indicator {
-  padding: 6px 14px;
-  font-size: 13px;
+#auto-toggle.active {
   color: #f3e9d2;
   font-weight: bold;
   background: linear-gradient(135deg, #7c1a24, #a8232f);
-  border-radius: 2px;
+  border-color: rgba(243, 233, 210, 0.35);
   animation: pulse 1.2s ease-in-out infinite;
 }
 @keyframes pulse { 50% { opacity: 0.65; } }

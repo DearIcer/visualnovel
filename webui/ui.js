@@ -15,7 +15,7 @@ const overlay = $("panel-overlay");
 const panelTitle = $("panel-title");
 const panelBody = $("panel-body");
 const ctxMenu = $("context-menu");
-const autoIndicator = $("auto-indicator");
+const autoToggle = $("auto-toggle");
 const storyBar = $("story-bar");
 const storyPosition = $("story-position");
 const storyProgress = $("story-progress");
@@ -521,13 +521,17 @@ document.addEventListener("keyup", (e) => {
   if (e.key === "Control") send("skip_end");
 });
 
-// 顶部按钮
-document.querySelectorAll(".top-btn:not(#story-toggle)").forEach((btn) => {
+// 顶部按钮（带 data-panel 的打开面板；自动按钮单独处理）
+document.querySelectorAll(".top-btn[data-panel]").forEach((btn) => {
   btn.onclick = (e) => {
     e.stopPropagation();
     send("open_panel", { panel: btn.dataset.panel });
   };
 });
+autoToggle.onclick = (e) => {
+  e.stopPropagation();
+  send("toggle_auto");
+};
 
 // 面板关闭按钮 / 点击遮罩空白处
 $("panel-close").onclick = closePanel;
@@ -542,7 +546,7 @@ document.addEventListener("message", (e) => {
     case "init":
       cps = msg.cps || 40;
       autoOn = !!msg.auto;
-      autoIndicator.classList.toggle("hidden", !autoOn);
+      autoToggle.classList.toggle("active", autoOn);
       break;
     case "dialogue":
       startDialogue(msg.speaker, msg.text, msg.color);
@@ -561,7 +565,7 @@ document.addEventListener("message", (e) => {
       break;
     case "auto_state":
       autoOn = !!msg.on;
-      autoIndicator.classList.toggle("hidden", !autoOn);
+      autoToggle.classList.toggle("active", autoOn);
       break;
     case "story_meta":
       storyScenes = msg.scenes || [];

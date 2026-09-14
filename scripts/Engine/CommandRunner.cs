@@ -144,6 +144,16 @@ namespace 交互式文本.Engine
                 }
             }
 
+            // CG 背景（cg_ 前缀）自带角色演出，切换时隐藏场上全部立绘避免叠加
+            if (texture != null && asset.StartsWith("cg_", StringComparison.Ordinal))
+            {
+                foreach (var kv in _core.State.Stage.Characters)
+                {
+                    _core.CharacterStage.GetNodeOrNull<Sprite2D>(kv.Key)?.Hide();
+                    kv.Value.Visible = false;
+                }
+            }
+
             _core.State.Stage.BackgroundColor = color;
             _core.State.Stage.BackgroundPath = asset;
         }
