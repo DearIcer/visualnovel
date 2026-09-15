@@ -61,7 +61,7 @@ tools/godot-wry-android/ # godot_wry 的 Android 支持（Rust fork + Kotlin 粘
 
 ## 构建与运行
 
-- **构建**：`dotnet build`（等价于 Godot 编辑器中的 Build；需要 .NET 8 SDK 与 Godot .NET 版）。注意 C# **程序集名为 `InteractiveText`（ASCII 限定，Android 端 MonoVM 不支持非 ASCII 程序集名），命名空间仍为中文**；csproj/sln 文件名与程序集名一致，sln 需包含 `ExportDebug`/`ExportRelease` 配置（编辑器会自动维护）。
+- **构建**：`dotnet build InteractiveText.sln`（等价于 Godot 编辑器中的 Build；需要 .NET 8 SDK 与 Godot .NET 版。sln 与 csproj 并存时裸 `dotnet build` 会报歧义，需指定 sln）。注意 C# **程序集名为 `InteractiveText`（ASCII 限定，Android 端 MonoVM 不支持非 ASCII 程序集名），命名空间仍为中文**；csproj/sln 文件名与程序集名一致，sln 需包含 `ExportDebug`/`ExportRelease` 配置（编辑器会自动维护）。
 - **运行**：用 Godot 4.7 .NET 版编辑器打开项目并运行（主场景 `scenes/Main.tscn`），或 `godot --path .`（需自行确保命令行 Godot 版本为 .NET 版）。
 - **导出/部署**：Windows 使用 Godot 编辑器标准的「项目 → 导出」流程；Android 需使用自定义 Gradle 构建并集成 Kotlin 粘合层，完整步骤见 `tools/godot-wry-android/README.md`（导出预设已内置 `Android`，包名 `com.example.interactivetext`）。**注意**：`webui/`（HTML/CSS/JS）不是 Godot 资源，必须依赖 `export_presets.cfg` 的 `include_filter="*.html, *.css, *.js, webui/*"` 才会打进 PCK，否则导出的游戏会黑屏并提示找不到 `res://webui/index.html`。修改过滤配置后需重新导出。
 - **测试**：项目目前**没有自动化测试框架或测试用例**。验证方式为构建通过 + 在编辑器中运行游戏手动验证剧情流程。

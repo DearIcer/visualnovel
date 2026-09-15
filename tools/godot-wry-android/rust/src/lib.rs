@@ -337,6 +337,9 @@ impl WebView {
                     let body = req.body().as_str();
                     
                     if let Ok(json_value) = serde_json::from_str::<serde_json::Value>(body) {
+                        // 输入转发（_mouse_* / _key_*）仅桌面端需要：Android 上触摸由 WebView 原生处理，
+                        // 且 IPC 回调不在 Godot 主线程，访问节点会触发线程检查错误。
+                        if !cfg!(target_os = "android") {
                         if let Some(event_type) = json_value.get("type").and_then(|t| t.as_str()) {
                             let global_pos = base.get_global_position();
 
@@ -477,6 +480,7 @@ impl WebView {
                                 
                                 _ => {}
                             }
+                        }
                         }
                     }
                     
