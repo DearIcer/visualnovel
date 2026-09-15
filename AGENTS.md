@@ -4,7 +4,7 @@
 
 ## 项目概览
 
-**交互式文本** 是一个基于 **Godot 4.7（.NET / C# 版，Godot.NET.Sdk）** 开发的视觉小说（Visual Novel）引擎项目。目标框架为 **.NET 8**，渲染使用 **GL Compatibility**，Windows 下渲染设备驱动为 **d3d12**。
+**交互式文本** 是一个基于 **Godot 4.7（.NET / C# 版，Godot.NET.Sdk）** 开发的视觉小说（Visual Novel）引擎项目。目标框架为 **.NET 8**，渲染使用 **GL Compatibility**，Windows 下渲染设备驱动为 **d3d12**。支持导出 Windows 与 Android（arm64/arm32）。
 
 当前游戏为 **《青灯引》**：聊斋风中式恐怖视觉小说（约 1 小时流程，3 个结局），日系动漫画风。游戏启动后先进入**主菜单（标题画面）**，由 `webui/` 前端渲染（含雾层/余烬动态效果，播放 `VNCore.MenuBgmTrack` 指定的标题 BGM）；点击「开始游戏」后 JS 发 `menu_start`，C# 侧 `VNCore.StartGame()` 才开始执行剧情。`VNCore.GameStarted` 门控剧情输入与指令执行；右键菜单「回到标题」发 `return_to_title` 触发 `VNCore.ReturnToTitle()` 重置状态并回主菜单。
 
@@ -54,14 +54,16 @@ tools/voice-gen/       # 配音生成工具（Python，独立 .venv）：generat
                        # Qwen3-TTS（http://127.0.0.1:8000，gradio API /run_instruct）为每条
                        # say/narrate 生成 assets/voice/{scene}_{index:03d}.wav（可断点续跑）；
                        # inject_voice.py 把对应 voice 指令注入 story/main.json（自动备份 .bak，幂等）
+tools/godot-wry-android/ # godot_wry 的 Android 支持（Rust fork + Kotlin 粘合层 + 构建脚本，
+                         # 详见其 README.md；包名 com.example.interactivetext 为编译期常量）
 .godot/                # Godot 编辑器缓存（勿提交，勿手改）
 ```
 
 ## 构建与运行
 
-- **构建**：`dotnet build`（等价于 Godot 编辑器中的 Build；需要 .NET 8 SDK 与 Godot .NET 版）。
+- **构建**：`dotnet build`（等价于 Godot 编辑器中的 Build；需要 .NET 8 SDK 与 Godot .NET 版）。注意 C# **程序集名为 `InteractiveText`（ASCII 限定，Android 端 MonoVM 不支持非 ASCII 程序集名），命名空间仍为中文**；csproj/sln 文件名与程序集名一致，sln 需包含 `ExportDebug`/`ExportRelease` 配置（编辑器会自动维护）。
 - **运行**：用 Godot 4.7 .NET 版编辑器打开项目并运行（主场景 `scenes/Main.tscn`），或 `godot --path .`（需自行确保命令行 Godot 版本为 .NET 版）。
-- **导出/部署**：使用 Godot 编辑器标准的「项目 → 导出」流程。**注意**：`webui/`（HTML/CSS/JS）不是 Godot 资源，必须依赖 `export_presets.cfg` 的 `include_filter="*.html, *.css, *.js, webui/*"` 才会打进 PCK，否则导出的游戏会黑屏并提示找不到 `res://webui/index.html`。修改过滤配置后需重新导出。
+- **导出/部署**：Windows 使用 Godot 编辑器标准的「项目 → 导出」流程；Android 需使用自定义 Gradle 构建并集成 Kotlin 粘合层，完整步骤见 `tools/godot-wry-android/README.md`（导出预设已内置 `Android`，包名 `com.example.interactivetext`）。**注意**：`webui/`（HTML/CSS/JS）不是 Godot 资源，必须依赖 `export_presets.cfg` 的 `include_filter="*.html, *.css, *.js, webui/*"` 才会打进 PCK，否则导出的游戏会黑屏并提示找不到 `res://webui/index.html`。修改过滤配置后需重新导出。
 - **测试**：项目目前**没有自动化测试框架或测试用例**。验证方式为构建通过 + 在编辑器中运行游戏手动验证剧情流程。
 
 ## 剧情脚本格式（story/*.json）

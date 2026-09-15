@@ -1,0 +1,6 @@
+# 固定工具链：gdext 锁定提交（d4fb159）与 Rust >= 1.89 不兼容
+# （trait 对象裸指针转换的生命周期检查收紧，rust-lang/rust#141402）。
+[toolchain]
+channel = "1.85.1"
+targets = ["aarch64-linux-android", "armv7-linux-androideabi"]
+profile = "minimal"
