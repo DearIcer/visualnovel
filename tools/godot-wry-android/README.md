@@ -45,22 +45,36 @@ cd tools/godot-wry-android/rust
 
 ## 二、导出 Android（Godot 编辑器侧）
 
-前置：安装 Godot .NET 版的 **Android 导出模板**（编辑器 → 管理导出模板），
-并在 编辑器设置 → 导出 → Android 中配置好 SDK 路径。
+**关键前提：mono 版 Android 导出模板**。本项目是 C# 工程，而当前
+`%APPDATA%/Godot/export_templates/4.7.2.rc/` 与引擎 `bin/` 下的 Android 模板均为
+**非 mono 构建**（`libgodot_android.so` 未编入 mono 模块，C# 无法运行）。需要先用
+`module_mono_enabled=yes` 重新构建 Android 模板：
+
+```bash
+# 在引擎源码目录（需 Android SDK/NDK 环境变量就绪）
+scons platform=android target=template_debug module_mono_enabled=yes generate_apk=yes
+scons platform=android target=template_release module_mono_enabled=yes generate_apk=yes
+```
+
+构建产物（`bin/android_debug.apk`、`bin/android_release.apk`、`bin/android_source.zip`）
+复制到 `%APPDATA%/Godot/export_templates/4.7.2.rc/` 覆盖同名文件，然后**重新安装构建模板**
+（项目 → 安装 Android 构建模板）并重跑下面的集成脚本。
+
+其余前置：编辑器设置 → 导出 → Android 中配置好 JDK 17 与 Android SDK 路径。
 
 1. 编辑器菜单：**项目 → 安装 Android 构建模板**（生成 `android/build/`）。
-2. 将本目录的 Kotlin 粘合层复制进构建模板：
+2. 运行一键集成脚本（复制 Kotlin 粘合层、改写主 Activity、追加 webkit 依赖与
+   manifest 构建期改写任务）：
+   ```bash
+   ./tools/godot-wry-android/integrate.sh
    ```
-   把 android/java/com 整个复制到 android/build/src/main/java/ 下
-   ```
-3. 编辑 `android/build/src/main/AndroidManifest.xml`：
-   - 主 `<activity android:name="...">` 改为 `com.example.interactivetext.WryActivity`
-   - `<activity-alias android:targetActivity="...">` 同步改为 `com.example.interactivetext.WryActivity`
-4. 编辑 `android/build/build.gradle`，在 `dependencies {}` 中追加：
-   ```gradle
-   implementation "androidx.webkit:webkit:1.12.1"
-   ```
-5. 使用导出预设 **Android**（已启用 Gradle 构建、arm64-v8a + armeabi-v7a）导出 APK。
+3. 使用导出预设 **Android**（已启用 Gradle 构建、arm64-v8a + armeabi-v7a）导出 APK。
+
+> 注意：Godot 导出器每次导出都会重新生成 `android/build/src/<debug|release>/AndroidManifest.xml`
+> 并把主 Activity 硬编码为 `.GodotApp`，且其优先级高于 `src/main/AndroidManifest.xml`。
+> 因此集成脚本在 `build.gradle` 中注入了一个构建期任务，在 manifest 合并前自动把生成的
+> manifest 改写为 `WryActivity`——请勿删除 `build.gradle` 中标记为
+> `godot_wry Android 支持` 的段落。
 
 ## 工作原理
 
@@ -78,3 +92,18 @@ cd tools/godot-wry-android/rust
 - 网页内文件选择器（`<input type="file">` 的相机捕获）如需使用，
   需在 Manifest 中额外注册 `{package}.fileprovider`（本项目 UI 未用到）。
 - 触摸输入由 WebView 原生处理；`forward_input_events` 的键鼠转发是为桌面设计的，Android 保持 `false`。
+
+## 排障记录（本游戏实际踩过的坑）
+
+1. **C# 程序集名必须只用 ASCII 字符**。Godot 4.7 在 Android 上用 MonoVM 模拟 CoreCLR
+   宿主 API（`coreclr_create_delegate`），其垫片会把非 ASCII 程序集名按 ANSI 解码，
+   导致 `GodotPlugins.Game.Main` 委托创建失败（日志：`Failed to get GodotPlugins
+   initialization function pointer` → `Failed to load hostfxr` → 进程 abort）。
+   本项目因此将 `dotnet/project/assembly_name` 与 csproj/sln 都改为 `InteractiveText`
+   （**命名空间不受影响，代码中仍可用中文**）。
+2. **导出时 dotnet publish 需要 `<程序集名>.sln`，且 sln 必须包含
+   `ExportDebug`/`ExportRelease` 解决方案配置**，否则 publish 被跳过/失败，
+   APK 中不会有任何 .NET 程序集（启动时引擎初始化即 SIGSEGV）。
+   编辑器重新打开项目时也会自动维护该 sln。
+3. Android 导出要求开启 `rendering/textures/vram_compression/import_etc2_astc`
+   （已在 project.godot 中配置）。

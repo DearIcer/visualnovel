@@ -1,0 +1,10 @@
+<Project Sdk="Godot.NET.Sdk/4.7.2-rc">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <RootNamespace>交互式文本</RootNamespace>
+    <!-- Android 端 MonoVM 的 coreclr 垫片不支持非 ASCII 程序集名（会按 ANSI 解码导致程序集加载失败），
+         因此程序集名使用 ASCII；命名空间不受影响，保持中文。 -->
+    <AssemblyName>InteractiveText</AssemblyName>
+  </PropertyGroup>
+</Project>

@@ -4,7 +4,7 @@
 
 ## 项目概览
 
-**交互式文本** 是一个基于 **Godot 4.7（.NET / C# 版，Godot.NET.Sdk）** 开发的视觉小说（Visual Novel）引擎项目。目标框架为 **.NET 8**，渲染使用 **GL Compatibility**，Windows 下渲染设备驱动为 **d3d12**。
+**交互式文本** 是一个基于 **Godot 4.7（.NET / C# 版，Godot.NET.Sdk）** 开发的视觉小说（Visual Novel）引擎项目。目标框架为 **.NET 8**，渲染使用 **GL Compatibility**，Windows 下渲染设备驱动为 **d3d12**。支持导出 Windows 与 Android（arm64/arm32）。
 
 游戏剧情通过 **JSON 脚本**（`story/main.json`）驱动，引擎解析并逐条执行指令，实现对话、立绘、背景、BGM/SE/语音、选择支、变量、存档/读档、历史回顾、设置与鉴赏（CG/音乐/语音解锁）等完整功能。
 
@@ -55,7 +55,7 @@ tools/godot-wry-android/ # godot_wry 的 Android 支持（Rust fork + Kotlin 粘
 
 ## 构建与运行
 
-- **构建**：`dotnet build`（等价于 Godot 编辑器中的 Build；需要 .NET 8 SDK 与 Godot .NET 版）。
+- **构建**：`dotnet build`（等价于 Godot 编辑器中的 Build；需要 .NET 8 SDK 与 Godot .NET 版）。注意 C# **程序集名为 `InteractiveText`（ASCII 限定，Android 端 MonoVM 不支持非 ASCII 程序集名），命名空间仍为中文**；csproj/sln 文件名与程序集名一致，sln 需包含 `ExportDebug`/`ExportRelease` 配置（编辑器会自动维护）。
 - **运行**：用 Godot 4.7 .NET 版编辑器打开项目并运行（主场景 `scenes/Main.tscn`），或 `godot --path .`（需自行确保命令行 Godot 版本为 .NET 版）。
 - **导出/部署**：Windows 使用 Godot 编辑器标准的「项目 → 导出」流程；Android 需使用自定义 Gradle 构建并集成 Kotlin 粘合层，完整步骤见 `tools/godot-wry-android/README.md`（导出预设已内置 `Android`，包名 `com.example.interactivetext`）。
 - **测试**：项目目前**没有自动化测试框架或测试用例**。验证方式为构建通过 + 在编辑器中运行游戏手动验证剧情流程。
