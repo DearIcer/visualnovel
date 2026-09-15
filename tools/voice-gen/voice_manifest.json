@@ -1,0 +1,3422 @@
+[
+  {
+    "id": "start_006",
+    "scene": "start",
+    "index": 6,
+    "cmd": "narrate",
+    "character": "",
+    "text": "光绪二十三年，秋。我离开槐荫村，已经整整七年了。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "start_007",
+    "scene": "start",
+    "index": 7,
+    "cmd": "narrate",
+    "character": "",
+    "text": "七年前我背着画箱去府城投师，祖母站在村口的老槐树下送我。她什么也没说，只往我怀里塞了一包桂花糖。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "start_008",
+    "scene": "start",
+    "index": 8,
+    "cmd": "narrate",
+    "character": "",
+    "text": "那是我最后一次见她。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "start_009",
+    "scene": "start",
+    "index": 9,
+    "cmd": "narrate",
+    "character": "",
+    "text": "半月前接到家书，说祖母病故。信是福伯代笔的，字迹抖得厉害，只在末尾添了一句——",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "start_010",
+    "scene": "start",
+    "index": 10,
+    "cmd": "narrate",
+    "character": "",
+    "text": "「少爷，老夫人走得不踏实。您若回来，千万赶在入夜前进村。」",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "start_011",
+    "scene": "start",
+    "index": 11,
+    "cmd": "narrate",
+    "character": "",
+    "text": "「走得不踏实」——乡下人忌讳这五个字，轻易不写进信里。我连夜雇车往回赶，车夫却只肯送到山外的渡口，给双倍的钱也不肯再进一步。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "start_012",
+    "scene": "start",
+    "index": 12,
+    "cmd": "narrate",
+    "character": "",
+    "text": "他说，槐荫村的山道，入夜后是「东西」走的，不是人走的。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "start_014",
+    "scene": "start",
+    "index": 14,
+    "cmd": "narrate",
+    "character": "",
+    "text": "可我到底还是迟了。山道上的雾浓得像化不开的棉絮，乌鸦蹲在枯枝上，一声接一声地叫。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "start_015",
+    "scene": "start",
+    "index": 15,
+    "cmd": "narrate",
+    "character": "",
+    "text": "行李压得肩膀生疼。我裹紧长衫往上走，鞋底的草屑和泥越来越厚。这条路上小时候跑过千百遍，闭着眼都认得，今夜却长得没有尽头。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "start_016",
+    "scene": "start",
+    "index": 16,
+    "cmd": "narrate",
+    "character": "",
+    "text": "走过第三道山梁时，我远远望见山坳里浮着一点昏黄的灯火。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "start_017",
+    "scene": "start",
+    "index": 17,
+    "cmd": "narrate",
+    "character": "",
+    "text": "那点灯火一动不动，像是已经等了很久很久。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "start_018",
+    "scene": "start",
+    "index": 18,
+    "cmd": "narrate",
+    "character": "",
+    "text": "风里隐约有烧纸的味道。也是，七月过半，家家都在给故人送钱。我紧了紧衣领，朝着灯火走去。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "start_021",
+    "scene": "start",
+    "index": 21,
+    "cmd": "narrate",
+    "character": "",
+    "text": "走近了才看清，是个提灯的老人。灯罩上贴着白纸，纸上用墨写着一个「顾」字。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "start_022",
+    "scene": "start",
+    "index": 22,
+    "cmd": "say",
+    "character": "fubo",
+    "text": "……是砚秋少爷吧？",
+    "speaker": "Uncle Fu",
+    "instruct": "苍老沙哑的男声，年迈仆人的口吻"
+  },
+  {
+    "id": "start_023",
+    "scene": "start",
+    "index": 23,
+    "cmd": "say",
+    "character": "fubo",
+    "text": "老奴福伯。老夫人灵前还缺个摔盆的人，全村就盼着您回来呢。",
+    "speaker": "Uncle Fu",
+    "instruct": "苍老沙哑的男声，年迈仆人的口吻"
+  },
+  {
+    "id": "gate_warm_001",
+    "scene": "gate_warm",
+    "index": 1,
+    "cmd": "say",
+    "character": "fubo",
+    "text": "少爷还记得老奴……唉，人老了，可不就一年一个模样。",
+    "speaker": "Uncle Fu",
+    "instruct": "苍老沙哑的男声，年迈仆人的口吻"
+  },
+  {
+    "id": "gate_warm_002",
+    "scene": "gate_warm",
+    "index": 2,
+    "cmd": "say",
+    "character": "fubo",
+    "text": "倒是您，跟老夫人信里说的一样，成了体面的画师了。老夫人屋里挂着您寄回来的山水，逢人就说是孙儿画的。",
+    "speaker": "Uncle Fu",
+    "instruct": "苍老沙哑的男声，年迈仆人的口吻"
+  },
+  {
+    "id": "gate_warm_003",
+    "scene": "gate_warm",
+    "index": 3,
+    "cmd": "narrate",
+    "character": "",
+    "text": "他提起灯笼照了照我的脸，浑浊的眼睛里泛着些水光，很快又别过头去。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "gate_warm_004",
+    "scene": "gate_warm",
+    "index": 4,
+    "cmd": "say",
+    "character": "fubo",
+    "text": "走吧，回园。老夫人……候了您好些日子了。",
+    "speaker": "Uncle Fu",
+    "instruct": "苍老沙哑的男声，年迈仆人的口吻"
+  },
+  {
+    "id": "gate_cold_001",
+    "scene": "gate_cold",
+    "index": 1,
+    "cmd": "say",
+    "character": "fubo",
+    "text": "……也好。夜里山路不干净，是该早些回去。",
+    "speaker": "Uncle Fu",
+    "instruct": "苍老沙哑的男声，年迈仆人的口吻"
+  },
+  {
+    "id": "gate_cold_002",
+    "scene": "gate_cold",
+    "index": 2,
+    "cmd": "narrate",
+    "character": "",
+    "text": "福伯应了一声，提起灯笼走在前头。他的影子被灯光拉得很长，不知怎的，比旁人的影子淡上许多。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "gate_cold_003",
+    "scene": "gate_cold",
+    "index": 3,
+    "cmd": "narrate",
+    "character": "",
+    "text": "一路上他没再说话。只有灯笼罩子被风吹得哗哗响，像有人跟在灯后头，一路翻着一本看不见的书。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "gate_002",
+    "scene": "gate",
+    "index": 2,
+    "cmd": "narrate",
+    "character": "",
+    "text": "顾家的老宅叫敛芳园，是曾祖手里盖下的，到祖母这一辈，已经传了四代。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "gate_003",
+    "scene": "gate",
+    "index": 3,
+    "cmd": "narrate",
+    "character": "",
+    "text": "小时候我在这园里跑过整个夏天，摸鱼、上树、偷供桌上的果子，被祖母追着打了半个园子。如今再看，只觉得陌生。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "gate_004",
+    "scene": "gate",
+    "index": 4,
+    "cmd": "narrate",
+    "character": "",
+    "text": "大门两侧挂着白幡，夜风一过，幡尾扫过门环，沙沙地响。可白幡底下，偏偏还点着两盏红灯笼。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "gate_005",
+    "scene": "gate",
+    "index": 5,
+    "cmd": "narrate",
+    "character": "",
+    "text": "红烛在白幡底下烧着，光晕一圈红一圈白，把门口的石狮子照得半喜半丧。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "gate_006",
+    "scene": "gate",
+    "index": 6,
+    "cmd": "narrate",
+    "character": "",
+    "text": "白事挂红灯，我从没听说过这样的规矩。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "gate_007",
+    "scene": "gate",
+    "index": 7,
+    "cmd": "say",
+    "character": "fubo",
+    "text": "是老夫人临终前吩咐的。她说——红白一起挂，园里那位才分得清，哪盏灯是引路的，哪盏灯是留人的。",
+    "speaker": "Uncle Fu",
+    "instruct": "苍老沙哑的男声，年迈仆人的口吻"
+  },
+  {
+    "id": "gate_008",
+    "scene": "gate",
+    "index": 8,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我听不懂这句话。福伯也没有解释，只伸手推门。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "gate_010",
+    "scene": "gate",
+    "index": 10,
+    "cmd": "narrate",
+    "character": "",
+    "text": "门轴发出一声长长的呻吟。院子里黑黢黢的，惟独正厅亮着，烛火透过窗纸，把两个人的影子投在廊下——",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "gate_011",
+    "scene": "gate",
+    "index": 11,
+    "cmd": "narrate",
+    "character": "",
+    "text": "可廊下分明只有福伯一个。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "gate_012",
+    "scene": "gate",
+    "index": 12,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我揉了揉眼再看，窗纸上只剩一道影子了。也许是我连日赶路，眼花了。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "gate_013",
+    "scene": "gate",
+    "index": 13,
+    "cmd": "say",
+    "character": "fubo",
+    "text": "少爷，先去给老夫人磕个头吧。她在厅里……候着您呢。",
+    "speaker": "Uncle Fu",
+    "instruct": "苍老沙哑的男声，年迈仆人的口吻"
+  },
+  {
+    "id": "spirit_hall_002",
+    "scene": "spirit_hall",
+    "index": 2,
+    "cmd": "narrate",
+    "character": "",
+    "text": "正厅设了灵堂。白烛高烧，棺木停在正中，棺前的供桌上立着祖母的遗像。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "spirit_hall_003",
+    "scene": "spirit_hall",
+    "index": 3,
+    "cmd": "narrate",
+    "character": "",
+    "text": "供桌上摆着三牲果品，香炉里积了厚厚一层香灰。看得出，这几日来吊唁的人不少，可此刻厅里空荡荡的，一个人也没有。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "spirit_hall_004",
+    "scene": "spirit_hall",
+    "index": 4,
+    "cmd": "narrate",
+    "character": "",
+    "text": "遗像里的祖母穿着寿衣，抿着嘴，还是我记忆里那个严厉的模样。画像是请城里最好的画师绘的，连她眉心那道竖纹都分毫不差。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "spirit_hall_005",
+    "scene": "spirit_hall",
+    "index": 5,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我上了三炷香，跪下去磕头。额头触到冰凉的金砖地面时，膝盖忽然一麻——",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "spirit_hall_006",
+    "scene": "spirit_hall",
+    "index": 6,
+    "cmd": "narrate",
+    "character": "",
+    "text": "总觉得那双画出来的眼睛，一直在看我。不是遗像看人那种错觉，是真的、带着分量地，压在我的后颈上。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "spirit_hall_008",
+    "scene": "spirit_hall",
+    "index": 8,
+    "cmd": "say",
+    "character": "fubo",
+    "text": "头七还没过，按规矩，灵前的烛火不能断。老奴年纪大了守不住夜，今晚……要劳动少爷了。",
+    "speaker": "Uncle Fu",
+    "instruct": "苍老沙哑的男声，年迈仆人的口吻"
+  },
+  {
+    "id": "hall_stay_000",
+    "scene": "hall_stay",
+    "index": 0,
+    "cmd": "say",
+    "character": "fubo",
+    "text": "少爷孝顺，老夫人在天之灵会高兴的。",
+    "speaker": "Uncle Fu",
+    "instruct": "苍老沙哑的男声，年迈仆人的口吻"
+  },
+  {
+    "id": "hall_stay_001",
+    "scene": "hall_stay",
+    "index": 1,
+    "cmd": "say",
+    "character": "fubo",
+    "text": "只是夜里若听见什么动静，别应声，也别出门。烛火添勤些，熬到鸡叫就没事了。",
+    "speaker": "Uncle Fu",
+    "instruct": "苍老沙哑的男声，年迈仆人的口吻"
+  },
+  {
+    "id": "hall_stay_002",
+    "scene": "hall_stay",
+    "index": 2,
+    "cmd": "narrate",
+    "character": "",
+    "text": "福伯佝偻着背退出去，脚步声在廊下越去越远，最后轻得像是被夜色吞掉了。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "hall_stay_003",
+    "scene": "hall_stay",
+    "index": 3,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我添了两遍烛泪，跪在蒲团上给祖母烧了些纸钱。火光把我的影子投在棺木上，一晃一晃。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "hall_stay_004",
+    "scene": "hall_stay",
+    "index": 4,
+    "cmd": "narrate",
+    "character": "",
+    "text": "烧到第三叠时，一阵穿堂风掠过，满厅的烛火齐齐矮了下去。风里有股极淡的香气——像桂花，可时令不对，园里的桂树还要再过一个月才开。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "hall_ask_002",
+    "scene": "hall_ask",
+    "index": 2,
+    "cmd": "narrate",
+    "character": "",
+    "text": "福伯端着烛台的手明显抖了一下。烛泪滴在他手背上，他却像没知觉似的。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "hall_ask_003",
+    "scene": "hall_ask",
+    "index": 3,
+    "cmd": "say",
+    "character": "fubo",
+    "text": "……没有了。就老奴一个。",
+    "speaker": "Uncle Fu",
+    "instruct": "苍老沙哑的男声，年迈仆人的口吻"
+  },
+  {
+    "id": "hall_ask_004",
+    "scene": "hall_ask",
+    "index": 4,
+    "cmd": "narrate",
+    "character": "",
+    "text": "他说这话的时候，眼睛望着别处。顺着他的视线看去，是灵堂侧面那条通往后院的、漆黑的穿廊。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "hall_ask_005",
+    "scene": "hall_ask",
+    "index": 5,
+    "cmd": "narrate",
+    "character": "",
+    "text": "穿廊的深处黑得化不开，灯笼的光到了廊口就止步，像是被什么东西一口一口吃掉了。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "hall_ask_006",
+    "scene": "hall_ask",
+    "index": 6,
+    "cmd": "say",
+    "character": "fubo",
+    "text": "少爷早些安置吧。西厢房老奴已经收拾出来了。记住——夜里听见什么，别应声。",
+    "speaker": "Uncle Fu",
+    "instruct": "苍老沙哑的男声，年迈仆人的口吻"
+  },
+  {
+    "id": "first_night_001",
+    "scene": "first_night",
+    "index": 1,
+    "cmd": "narrate",
+    "character": "",
+    "text": "西厢房还是我小时候住的那间。油灯如豆，帐子上积着薄灰，桌上倒扣的茶碗还是我离家那年留下的样式，一切都旧得刚刚好，旧得让人心里发空。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "first_night_002",
+    "scene": "first_night",
+    "index": 2,
+    "cmd": "narrate",
+    "character": "",
+    "text": "墙上挂着一幅我儿时涂鸦的扇面——祖母竟一直留着。扇面上歪歪扭扭画着一棵树，树下两个小人，大手牵着小手。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "first_night_003",
+    "scene": "first_night",
+    "index": 3,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我吹了灯躺下，奔波一日，本该倒头就睡。可灵堂的方向隐隐有火光透进窗纸，提醒着我——祖母就躺在那里，躺在离我不到百步的地方。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "first_night_004",
+    "scene": "first_night",
+    "index": 4,
+    "cmd": "narrate",
+    "character": "",
+    "text": "不知过了多久，半梦半醒之间，我听见了一种声音。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "first_night_006",
+    "scene": "first_night",
+    "index": 6,
+    "cmd": "narrate",
+    "character": "",
+    "text": "嚓。嚓。嚓。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "first_night_007",
+    "scene": "first_night",
+    "index": 7,
+    "cmd": "narrate",
+    "character": "",
+    "text": "像是剪刀裁纸，一下，又一下，不快不慢，就在这院子里的什么地方。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "first_night_008",
+    "scene": "first_night",
+    "index": 8,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我睁开眼，屋里黑透了。那声音却不疾不徐，从容得像做了千百遍——裁纸、折叠、再裁，间或有一声极轻的、满足的叹息。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "first_night_009",
+    "scene": "first_night",
+    "index": 9,
+    "cmd": "narrate",
+    "character": "",
+    "text": "接着，剪纸声里浮起了一个女人的哼唱。调子很软，是江南的《绣荷包》——",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "first_night_010",
+    "scene": "first_night",
+    "index": 10,
+    "cmd": "narrate",
+    "character": "",
+    "text": "「初一到十五，十五的月儿高，那春风摆动，杨呀杨柳梢……」",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "first_night_012",
+    "scene": "first_night",
+    "index": 12,
+    "cmd": "narrate",
+    "character": "",
+    "text": "福伯说过，宅里没有别人。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "first_night_013",
+    "scene": "first_night",
+    "index": 13,
+    "cmd": "narrate",
+    "character": "",
+    "text": "那歌声却越来越近，像是贴着回廊，一寸一寸朝我的窗下移过来。我把被子拉到下巴，手心全是汗。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "first_night_014",
+    "scene": "first_night",
+    "index": 14,
+    "cmd": "narrate",
+    "character": "",
+    "text": "歌声在我的窗外停住了。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "first_night_015",
+    "scene": "first_night",
+    "index": 15,
+    "cmd": "narrate",
+    "character": "",
+    "text": "窗纸上，慢慢浮起一个剪影——长发的轮廓，微微偏着头，像是在隔着窗纸，侧耳听屋里的动静。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "first_night_017",
+    "scene": "first_night",
+    "index": 17,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我不敢出声，连呼吸都放轻了。那剪影在窗纸上停了一袋烟的工夫，然后，抬起了一只手。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "first_night_018",
+    "scene": "first_night",
+    "index": 18,
+    "cmd": "narrate",
+    "character": "",
+    "text": "指尖在窗纸上轻轻叩了两下。笃，笃。轻得像风吹落的桂花砸在纸上。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "night_hide_001",
+    "scene": "night_hide",
+    "index": 1,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我用被子蒙住头，在心里数更。一更，两更……那歌声在窗外停了许久，最后轻轻叹了口气。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "night_hide_002",
+    "scene": "night_hide",
+    "index": 2,
+    "cmd": "narrate",
+    "character": "",
+    "text": "那声叹息近得仿佛就贴在我的耳边，带着一股若有若无的、陈旧的花粉香气。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "night_hide_004",
+    "scene": "night_hide",
+    "index": 4,
+    "cmd": "narrate",
+    "character": "",
+    "text": "后半夜，剪纸声又响了一阵，慢慢远了。我睁眼熬到天蒙蒙亮，才发现枕边多了一样东西——",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "night_hide_005",
+    "scene": "night_hide",
+    "index": 5,
+    "cmd": "narrate",
+    "character": "",
+    "text": "一枚剪纸。红纸剪的并蒂莲，刀工细得惊人，莲心处还点着两粒胭脂。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "night_hide_006",
+    "scene": "night_hide",
+    "index": 6,
+    "cmd": "narrate",
+    "character": "",
+    "text": "窗户是从里面闩着的。门也是从里面顶着的。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "night_hide_007",
+    "scene": "night_hide",
+    "index": 7,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我把那枚剪纸翻来覆去看了许多遍。纸是新的，浆糊的气味还没散净。剪它的人，昨夜就在这间屋里。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "night_out_002",
+    "scene": "night_out",
+    "index": 2,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我点起油灯推开门。回廊很长，风从尽头灌进来，灯焰缩成一点，几乎要灭。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "night_out_003",
+    "scene": "night_out",
+    "index": 3,
+    "cmd": "narrate",
+    "character": "",
+    "text": "歌声停了。剪纸声也停了。整条回廊安静得能听见自己的心跳。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "night_out_005",
+    "scene": "night_out",
+    "index": 5,
+    "cmd": "narrate",
+    "character": "",
+    "text": "廊外的月光把栏杆的影子投在地上，一格一格，像谁用墨笔画出来的牢。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "night_out_006",
+    "scene": "night_out",
+    "index": 6,
+    "cmd": "narrate",
+    "character": "",
+    "text": "就在我准备退回去的时候，廊柱后面飘出一角白色的衣袂。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "night_out_007",
+    "scene": "night_out",
+    "index": 7,
+    "cmd": "narrate",
+    "character": "",
+    "text": "一个女人背对着我站在廊下，长发垂到腰际，发尾系着一条洗得发白的绢带。她手里捏着一沓红纸，指节白得没有一丝血色。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "night_out_008",
+    "scene": "night_out",
+    "index": 8,
+    "cmd": "narrate",
+    "character": "",
+    "text": "她脚下没有影子。月光照着她，却径直穿了过去，落在她身后的青砖上。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "night_out_009",
+    "scene": "night_out",
+    "index": 9,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我举灯的手一颤，灯油泼出来烫在手背上。她像是听见了，慢慢转过身来——",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "courtyard_meet_004",
+    "scene": "courtyard_meet",
+    "index": 4,
+    "cmd": "narrate",
+    "character": "",
+    "text": "月光落在庭院里。她撑着一把红纸伞，站在那口古井旁边，伞沿压得很低，露出一截雪白的下颌。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "courtyard_meet_005",
+    "scene": "courtyard_meet",
+    "index": 5,
+    "cmd": "narrate",
+    "character": "",
+    "text": "夜太静了，静得我能看清伞面上绘的那枝桃花——艳得近乎放肆，像是要把整条命都开在这一夜里。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "courtyard_meet_008",
+    "scene": "courtyard_meet",
+    "index": 8,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "……你看得见我？",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "courtyard_meet_009",
+    "scene": "courtyard_meet",
+    "index": 9,
+    "cmd": "narrate",
+    "character": "",
+    "text": "她开口的第一句话，竟是这样一句。声音很轻，带着一点不易察觉的颤抖，像是怕惊动了什么。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "courtyard_meet_010",
+    "scene": "courtyard_meet",
+    "index": 10,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "真好。已经……很久没有人看得见我了。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "courtyard_meet_011",
+    "scene": "courtyard_meet",
+    "index": 11,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "我叫阿纨。借住在这园子里的。顾老夫人病着的那半年，是我在床前伺候的汤药。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "meet_gentle_002",
+    "scene": "meet_gentle",
+    "index": 2,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "老夫人是睡着走的。走之前她拉着我的手，说她孙儿会回来，说他画的一手好画，说他小时候最怕黑。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "meet_gentle_003",
+    "scene": "meet_gentle",
+    "index": 3,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "她还说，园子里冷，让我替她……多照看你几日。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "meet_gentle_004",
+    "scene": "meet_gentle",
+    "index": 4,
+    "cmd": "narrate",
+    "character": "",
+    "text": "她说这些话的时候眉眼弯弯的，月光落在她脸上，那张脸好看得几乎透明。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "meet_wary_002",
+    "scene": "meet_wary",
+    "index": 2,
+    "cmd": "narrate",
+    "character": "",
+    "text": "她捏着伞柄的手指紧了紧，伞面微微一斜，遮住了半张脸。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "meet_wary_003",
+    "scene": "meet_wary",
+    "index": 3,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "……顾家人不喜欢提起我。也难怪。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "meet_wary_004",
+    "scene": "meet_wary",
+    "index": 4,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "你只管当我是个守宅子的下人就好。我不会碍着你的。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "meet_end_000",
+    "scene": "meet_end",
+    "index": 0,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "老夫人病着的时候，夜里常常咳醒。我就坐在床边给她顺气，听她讲古。讲得最多的，是你。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "meet_end_001",
+    "scene": "meet_end",
+    "index": 1,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "她说你三岁就会拿炭条在墙上画猫，画得有鼻子有眼。她说打你手心的时候，你咬着牙不哭，她转过身倒先掉了泪。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "meet_end_002",
+    "scene": "meet_end",
+    "index": 2,
+    "cmd": "narrate",
+    "character": "",
+    "text": "这些事，连我自己都记不真了。她学给我听的时候，连祖母说话时微微撇嘴的神气都学得十足。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "meet_end_003",
+    "scene": "meet_end",
+    "index": 3,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "夜里风大，你回房去吧。明天……明天你还会来院子里吗？",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "meet_end_004",
+    "scene": "meet_end",
+    "index": 4,
+    "cmd": "narrate",
+    "character": "",
+    "text": "她问得小心翼翼，那双黑沉沉的眼睛却一眨不眨地望着我，像是要把我的回答整个吞下去。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "meet_end_005",
+    "scene": "meet_end",
+    "index": 5,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我鬼使神差地点了头。她笑了，转身走进月光的深处，红伞一点一点淡下去，最后连脚步声也没有留下。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "meet_end_006",
+    "scene": "meet_end",
+    "index": 6,
+    "cmd": "narrate",
+    "character": "",
+    "text": "那一夜后半夜，剪纸声没有再响。我睡得意外的安稳，梦里是小时候的夏天，祖母摇着蒲扇，满园的桂花开得正好。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "next_morning_003",
+    "scene": "next_morning",
+    "index": 3,
+    "cmd": "narrate",
+    "character": "",
+    "text": "第二日一早，我去灵堂续香。白烛燃了一夜，烛泪堆成了小小的塔。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "next_morning_004",
+    "scene": "next_morning",
+    "index": 4,
+    "cmd": "narrate",
+    "character": "",
+    "text": "三炷香插进炉里，烟雾打着旋往上升。我抬头看祖母的遗像，心脏猛地一缩——",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "next_morning_005",
+    "scene": "next_morning",
+    "index": 5,
+    "cmd": "narrate",
+    "character": "",
+    "text": "遗像变了。昨天还抿着嘴的祖母，嘴角竟微微向下撇着，眉心锁出一道竖纹，像是看见了什么让她焦心至极的东西。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "next_morning_006",
+    "scene": "next_morning",
+    "index": 6,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我凑近了细看，那眉眼分明又和昨日一般无二。也许是烛烟燎的，也许是我眼花了。这世上哪有成精的画。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "next_morning_007",
+    "scene": "next_morning",
+    "index": 7,
+    "cmd": "narrate",
+    "character": "",
+    "text": "辰时起，村里陆续有人来吊唁。我披麻站在灵侧答礼，来的人多，话却都少，放下纸烛，作个揖，匆匆就走。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "next_morning_008",
+    "scene": "next_morning",
+    "index": 8,
+    "cmd": "narrate",
+    "character": "",
+    "text": "没有人跨过后院那道月洞门。我留意到，所有人的脚步，都在月洞门前齐刷刷地绕开，像是那里横着一条看不见的沟。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "next_morning_009",
+    "scene": "next_morning",
+    "index": 9,
+    "cmd": "narrate",
+    "character": "",
+    "text": "只有两个上了年纪的婆婆在廊下多嘴了几句——",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "next_morning_010",
+    "scene": "next_morning",
+    "index": 10,
+    "cmd": "narrate",
+    "character": "",
+    "text": "「顾老太太这一走，园里那位，可就没个人陪了。」「嘘——大白天的，别乱讲。她家孙少爷回来了，总会想办法的。」",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "next_morning_011",
+    "scene": "next_morning",
+    "index": 11,
+    "cmd": "narrate",
+    "character": "",
+    "text": "「想什么办法？二十年了，前前后后请了多少先生，哪个不是连滚带爬下的山……」",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "next_morning_012",
+    "scene": "next_morning",
+    "index": 12,
+    "cmd": "say",
+    "character": "fubo",
+    "text": "两位婆婆，吃茶去罢。",
+    "speaker": "Uncle Fu",
+    "instruct": "苍老沙哑的男声，年迈仆人的口吻"
+  },
+  {
+    "id": "next_morning_013",
+    "scene": "next_morning",
+    "index": 13,
+    "cmd": "narrate",
+    "character": "",
+    "text": "福伯不知什么时候站在了廊口，声音不大，却把那两句闲话拦腰截断了。两个婆婆讪讪地去了。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "next_morning_014",
+    "scene": "next_morning",
+    "index": 14,
+    "cmd": "say",
+    "character": "fubo",
+    "text": "少爷，粥在灶上温着……咦，您脸色怎么这么差？",
+    "speaker": "Uncle Fu",
+    "instruct": "苍老沙哑的男声，年迈仆人的口吻"
+  },
+  {
+    "id": "ask_fubo_002",
+    "scene": "ask_fubo",
+    "index": 2,
+    "cmd": "say",
+    "character": "fubo",
+    "text": "……您昨夜，是不是遇见什么了？",
+    "speaker": "Uncle Fu",
+    "instruct": "苍老沙哑的男声，年迈仆人的口吻"
+  },
+  {
+    "id": "ask_fubo_003",
+    "scene": "ask_fubo",
+    "index": 3,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我把白衣女子的事说了。福伯的脸一寸一寸灰败下去，半晌，他朝祖母的遗像深深作了个揖。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ask_fubo_004",
+    "scene": "ask_fubo",
+    "index": 4,
+    "cmd": "say",
+    "character": "fubo",
+    "text": "老夫人，不是老奴要背主，是少爷自己撞上了。您在天有灵，别怪罪。",
+    "speaker": "Uncle Fu",
+    "instruct": "苍老沙哑的男声，年迈仆人的口吻"
+  },
+  {
+    "id": "ask_fubo_005",
+    "scene": "ask_fubo",
+    "index": 5,
+    "cmd": "say",
+    "character": "fubo",
+    "text": "少爷，这园里的事，得从二十年前说起。老奴嘴笨，说不周全——您去书房，架上有一只黑漆匣子，匣子里的东西，比老奴的嘴说得清楚。",
+    "speaker": "Uncle Fu",
+    "instruct": "苍老沙哑的男声，年迈仆人的口吻"
+  },
+  {
+    "id": "ask_fubo_006",
+    "scene": "ask_fubo",
+    "index": 6,
+    "cmd": "say",
+    "character": "fubo",
+    "text": "那是老夫人锁了二十年的东西。她生前不许任何人碰，可老奴想，她留下它，本就是留给您的。",
+    "speaker": "Uncle Fu",
+    "instruct": "苍老沙哑的男声，年迈仆人的口吻"
+  },
+  {
+    "id": "ask_fubo_007",
+    "scene": "ask_fubo",
+    "index": 7,
+    "cmd": "say",
+    "character": "fubo",
+    "text": "只是您记好：看了之后，无论夜里谁来找您，谁对您笑，都别应承任何事。",
+    "speaker": "Uncle Fu",
+    "instruct": "苍老沙哑的男声，年迈仆人的口吻"
+  },
+  {
+    "id": "ask_fubo_008",
+    "scene": "ask_fubo",
+    "index": 8,
+    "cmd": "say",
+    "character": "fubo",
+    "text": "一个字都别应承。",
+    "speaker": "Uncle Fu",
+    "instruct": "苍老沙哑的男声，年迈仆人的口吻"
+  },
+  {
+    "id": "investigate_001",
+    "scene": "investigate",
+    "index": 1,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我把疑惑咽回肚子里。福伯明显松了口气，伺候我用过早饭，便去准备明日法事用的纸钱了。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "investigate_002",
+    "scene": "investigate",
+    "index": 2,
+    "cmd": "narrate",
+    "character": "",
+    "text": "早饭是一碗白粥、两碟小菜。我吃到一半，筷子忽然顿住了——",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "investigate_004",
+    "scene": "investigate",
+    "index": 4,
+    "cmd": "narrate",
+    "character": "",
+    "text": "粥碗的底上，沉着几片没化开的纸屑。纸上印着铜钱的花纹，是纸钱上剪下来的。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "investigate_005",
+    "scene": "investigate",
+    "index": 5,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我的胃里一阵翻江倒海。这碗粥，是福伯亲手端来的，灶房的火明明还旺着——可那些纸屑就这么安安静静地躺在碗底，像是在嘲笑我。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "investigate_006",
+    "scene": "investigate",
+    "index": 6,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我把碗放下了。我没有声张——若声张了，谁知道端上来的下一碗，又会是什么。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "investigate_007",
+    "scene": "investigate",
+    "index": 7,
+    "cmd": "narrate",
+    "character": "",
+    "text": "这宅子里的答案，得我自己去找。祖母生前最宝贝她书房里那只黑漆匣子，谁都不许碰。小时候我只是多看了一眼，就挨了唯一的一次戒尺。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "study_001",
+    "scene": "study",
+    "index": 1,
+    "cmd": "narrate",
+    "character": "",
+    "text": "书房在园的东北角，多年没人踏足，推开门时灰尘呛得人睁不开眼。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "study_002",
+    "scene": "study",
+    "index": 2,
+    "cmd": "narrate",
+    "character": "",
+    "text": "书架上的书都还在，经史子集，码得一丝不苟。只有最顶层空出一格，积灰的形状方方正正——那里原本放着什么东西，前不久才被人取下来过。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "study_003",
+    "scene": "study",
+    "index": 3,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我踩着凳子够下来那只黑漆匣子。没有锁。匣盖掀开，一股陈年墨香混着樟脑的气味涌出来。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "study_004",
+    "scene": "study",
+    "index": 4,
+    "cmd": "narrate",
+    "character": "",
+    "text": "里面只有三样东西：一册日记，一沓发黄的地契，和一卷用油布包了三层的画。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "study_005",
+    "scene": "study",
+    "index": 5,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我先展开了那卷画。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "study_006",
+    "scene": "study",
+    "index": 6,
+    "cmd": "narrate",
+    "character": "",
+    "text": "画上是一个穿大红嫁衣的女子，工笔重彩，眉眼宛然。画只完成了九分，裙角还留着未填色的白描。可那九分，已经够我认出来了——",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "study_008",
+    "scene": "study",
+    "index": 8,
+    "cmd": "narrate",
+    "character": "",
+    "text": "是阿纨。昨夜月下撑伞的阿纨。连唇边那颗小小的痣都分毫不差。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "study_009",
+    "scene": "study",
+    "index": 9,
+    "cmd": "narrate",
+    "character": "",
+    "text": "画的右下角题着一行小字：「爱女顾纨出阁图，绘于光绪三年」。下款，是曾叔祖的名字。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "study_010",
+    "scene": "study",
+    "index": 10,
+    "cmd": "narrate",
+    "character": "",
+    "text": "顾纨。阿纨。出阁图。光绪三年——那是二十年前。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "study_011",
+    "scene": "study",
+    "index": 11,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我抖着手翻开日记。那是祖母的笔迹，从最初的端正，到后来越来越潦草——",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "study_012",
+    "scene": "study",
+    "index": 12,
+    "cmd": "narrate",
+    "character": "",
+    "text": "「……盐商周家的独子病死了，周老爷出三百两，要娶一个生辰八字相合的活人小姐，与他儿子配阴婚。」",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "study_013",
+    "scene": "study",
+    "index": 13,
+    "cmd": "narrate",
+    "character": "",
+    "text": "「……兄长动了心。三百两，够还顾家在城里欠下的债，还能余下修祖坟的银子。他说，女儿家迟早是别人家的人，嫁谁不是嫁。」",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "study_014",
+    "scene": "study",
+    "index": 14,
+    "cmd": "narrate",
+    "character": "",
+    "text": "「……纨儿跪着哭了一夜，第二天就不哭了，也不吃饭了，只日日坐在窗前绣她的嫁衣。我去看她，她还对我笑，说姑姑，你看这并蒂莲绣得好不好。」",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "study_015",
+    "scene": "study",
+    "index": 15,
+    "cmd": "narrate",
+    "character": "",
+    "text": "「……迎亲那夜，纸扎的花轿停在门口，周家的人说，新娘子上了轿，到了那边再拜堂。纨儿出阁前回头看了我一眼，说，姑姑，我不怪你。」",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "study_016",
+    "scene": "study",
+    "index": 16,
+    "cmd": "narrate",
+    "character": "",
+    "text": "「……我怎么当得起这一声不怪。她是我看着长大的。她娘死得早，她管我叫了十九年的姑姑。」",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "study_018",
+    "scene": "study",
+    "index": 18,
+    "cmd": "narrate",
+    "character": "",
+    "text": "「……第二天，有人在敛芳园的井边发现了她。她穿着自己绣的嫁衣，吊死在那棵老槐树上。那年她十九岁。」",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "study_019",
+    "scene": "study",
+    "index": 19,
+    "cmd": "narrate",
+    "character": "",
+    "text": "「……原来那顶纸花轿抬到半路，她发现轿夫脚下都没有影子。她拼死逃了回来，可顾家的门，那一夜没有为她开。」",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "study_020",
+    "scene": "study",
+    "index": 20,
+    "cmd": "narrate",
+    "character": "",
+    "text": "「……出殡时兄长请了城里最好的纸扎匠，照纨儿的容貌扎了个纸人陪葬。扎纸人的陈师傅说，横死的人执念重，纸人做得越像，越容易把魂引来附着。兄长说，那就扎像些，让她在那边也有个身子。」",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "study_021",
+    "scene": "study",
+    "index": 21,
+    "cmd": "narrate",
+    "character": "",
+    "text": "「……自那以后，园里夜夜有剪纸声。陈师傅再来时脸都白了，说纸人沾了执念，活过来了，劝我们趁七日内烧了。兄长舍不得，罚他永远不许再提。」",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "study_022",
+    "scene": "study",
+    "index": 22,
+    "cmd": "narrate",
+    "character": "",
+    "text": "「……兄长去后，园子归了我。我看得见她。我年轻时给她送了三年饭，她总坐在井边等我，喊我姑姑。后来我老了，怕了。人老了，就怕鬼了，哪怕那鬼是自己看着长大的孩子。」",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "study_024",
+    "scene": "study",
+    "index": 24,
+    "cmd": "narrate",
+    "character": "",
+    "text": "日记的最后一页只有一行字，墨色很新，显然是不久前添上去的——",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "study_025",
+    "scene": "study",
+    "index": 25,
+    "cmd": "narrate",
+    "character": "",
+    "text": "「中元夜，烧了它。放纨儿走。」",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "study_burn_000",
+    "scene": "study_burn",
+    "index": 0,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我捧着日记在书房里坐了一个时辰。窗外的日头偏西，光一点一点从书架上退下去。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "study_burn_001",
+    "scene": "study_burn",
+    "index": 1,
+    "cmd": "narrate",
+    "character": "",
+    "text": "陪葬的纸人还在这园子里。祖母守了这个秘密二十年，怕了一辈子，临死了才敢写下这一句。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "study_burn_002",
+    "scene": "study_burn",
+    "index": 2,
+    "cmd": "narrate",
+    "character": "",
+    "text": "烧了纸人，执念失了依附，阿纨就能走。可「走」是走去哪里？是投胎，还是魂飞魄散？日记里没有写。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "study_see_001",
+    "scene": "study_see",
+    "index": 1,
+    "cmd": "narrate",
+    "character": "",
+    "text": "怪不得。怪不得她开口第一句是「你看得见我」。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "study_see_002",
+    "scene": "study_see",
+    "index": 2,
+    "cmd": "narrate",
+    "character": "",
+    "text": "福伯看不见她。村里人看不见她。祖母老了以后，也不肯再看她了。二十年来，这座园子里日日夜夜与她擦肩的，没有一个人看得见她。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "study_see_003",
+    "scene": "study_see",
+    "index": 3,
+    "cmd": "narrate",
+    "character": "",
+    "text": "只有我。七年来第一个踏进园子的、年轻的活人。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "study_see_004",
+    "scene": "study_see",
+    "index": 4,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我把日记和画原样包好放回匣中，心里却压上了一块比棺木还沉的东西。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "second_night_002",
+    "scene": "second_night",
+    "index": 2,
+    "cmd": "narrate",
+    "character": "",
+    "text": "入夜，我还是走到了庭院里。我告诉自己是为了求证，可心里清楚，我是来见她的。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "second_night_003",
+    "scene": "second_night",
+    "index": 3,
+    "cmd": "narrate",
+    "character": "",
+    "text": "看完那本日记之后，「阿纨」这个名字在我心里已经不再是月夜里的一个谜，而是一个十九岁的、会绣并蒂莲的姑娘。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "second_night_005",
+    "scene": "second_night",
+    "index": 5,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "你来了。我数着更声等你，还以为你不会来了。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "second_night_006",
+    "scene": "second_night",
+    "index": 6,
+    "cmd": "narrate",
+    "character": "",
+    "text": "她今夜没有撑伞，坐在井边的石凳上，膝上摊着一块红绸，手里拈着针线。月光穿过她的发梢，竟在地上落不下影子。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "second_night_007",
+    "scene": "second_night",
+    "index": 7,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我假装没有看见那块空荡荡的地面，在她对面的石凳坐下。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "second_night_008",
+    "scene": "second_night",
+    "index": 8,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "你看，这是并蒂莲。我们那里的规矩，嫁衣上的花样要新娘子自己绣，绣完了，这辈子的姻缘就定了。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "second_night_009",
+    "scene": "second_night",
+    "index": 9,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "我绣了整整三年。绣完了，才知道要嫁的是个牌位。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "second_night_010",
+    "scene": "second_night",
+    "index": 10,
+    "cmd": "narrate",
+    "character": "",
+    "text": "她说得平静，像在说别人的事。针尖穿过红绸，发出极轻极轻的声响。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "second_night_011",
+    "scene": "second_night",
+    "index": 11,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "小时候我娘教我，针脚要密，心思要正，绣出来的东西才压得住福气。我娘死得早，女红是姑姑——就是你祖母——接着教的。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "second_night_012",
+    "scene": "second_night",
+    "index": 12,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "她教我的时候可凶了，错一针就要拆重来。如今想来，那些挨骂的下午，倒是我这辈子最亮堂的日子。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "night_warm_002",
+    "scene": "night_warm",
+    "index": 2,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "冷啊。井里的冬天最冷，槐树落叶的时候第二冷。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "night_warm_003",
+    "scene": "night_warm",
+    "index": 3,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "后来就不觉得了。人要是冷得太久，就会忘了暖是什么滋味——直到有人再问你一句，冷不冷。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "night_warm_004",
+    "scene": "night_warm",
+    "index": 4,
+    "cmd": "narrate",
+    "character": "",
+    "text": "她抬起头看我，眼眶是红的，却没有眼泪。我后来才明白，她是哭不出来的。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "night_probe_002",
+    "scene": "night_probe",
+    "index": 2,
+    "cmd": "narrate",
+    "character": "",
+    "text": "她穿针的手停住了。过了很久，她把针别回绸子上，一寸一寸抚平裙角。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "night_probe_003",
+    "scene": "night_probe",
+    "index": 3,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "我在等一个肯看我的人。等到了，就不等了。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "night_probe_004",
+    "scene": "night_probe",
+    "index": 4,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "你祖母看得见我。她年轻时给我送过三年的饭，后来她老了，怕我了，就只剩送饭，不肯再看我了。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "night_probe_005",
+    "scene": "night_probe",
+    "index": 5,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "饭我每顿都吃的。她放在月洞门口，我趁热吃。虽然……尝不出味道。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "paper_lesson_000",
+    "scene": "paper_lesson",
+    "index": 0,
+    "cmd": "narrate",
+    "character": "",
+    "text": "沉默了一会儿，她忽然从袖中抽出一沓红纸和一把小小的银剪，献宝似的捧到我面前。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "paper_lesson_002",
+    "scene": "paper_lesson",
+    "index": 2,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "你会画画，手一定稳。我教你剪纸吧？剪个最简单的，囍字。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "paper_lesson_003",
+    "scene": "paper_lesson",
+    "index": 3,
+    "cmd": "narrate",
+    "character": "",
+    "text": "不等我推辞，她已经把纸塞进我手里，绕到我身后，虚虚地拢着我的手腕，一下一下带着我走。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "paper_lesson_004",
+    "scene": "paper_lesson",
+    "index": 4,
+    "cmd": "narrate",
+    "character": "",
+    "text": "她的手很凉。那种凉不刺骨，倒像腊月里井水湃过的玉。隔着一层袖子，凉意还是一点一点渗过来。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "paper_lesson_005",
+    "scene": "paper_lesson",
+    "index": 5,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "横要平，竖要直，转折的地方手腕要顿一下——对，就是这样。你学得真快。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "paper_lesson_006",
+    "scene": "paper_lesson",
+    "index": 6,
+    "cmd": "narrate",
+    "character": "",
+    "text": "一张囍字剪完，展开来，竟有模有样。她接过去，对着月光看了又看，忽然轻轻笑出声。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "paper_lesson_007",
+    "scene": "paper_lesson",
+    "index": 7,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "我教过许多人。教过姑姑，教过园里的小丫头，她们都学不会。原来不是我教得不好，是她们的手太急了。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "paper_lesson_008",
+    "scene": "paper_lesson",
+    "index": 8,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "这张我收下了。就当是……你送我的。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "paper_lesson_009",
+    "scene": "paper_lesson",
+    "index": 9,
+    "cmd": "narrate",
+    "character": "",
+    "text": "她把那张囍字平平整整地夹进贴身的衣襟里，动作珍重得像在收一纸婚书。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "night_meal_000",
+    "scene": "night_meal",
+    "index": 0,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "你晚饭没用好吧？我给你留了碗莲子羹，在灶上温着，我去端来。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "night_meal_001",
+    "scene": "night_meal",
+    "index": 1,
+    "cmd": "narrate",
+    "character": "",
+    "text": "她起身往东厨去了。不多时端来一只青瓷碗，碗里的莲子羹热气腾腾，甜香扑鼻。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "night_meal_002",
+    "scene": "night_meal",
+    "index": 2,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我道了谢，接过碗。她双手拢在袖子里，满眼期盼地看着我，像个等着被夸奖的孩子。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "night_meal_003",
+    "scene": "night_meal",
+    "index": 3,
+    "cmd": "narrate",
+    "character": "",
+    "text": "青瓷碗是温的，羹香是甜的。这一切都真实得不容置疑。我低头喝了一口。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "night_meal_006",
+    "scene": "night_meal",
+    "index": 6,
+    "cmd": "narrate",
+    "character": "",
+    "text": "入口没有味道。一点味道都没有。那口「羹」滑进喉咙的时候，我尝到了灰烬和浆糊的气息——",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "night_meal_007",
+    "scene": "night_meal",
+    "index": 7,
+    "cmd": "narrate",
+    "character": "",
+    "text": "热气是假的，甜香是假的，这一碗玲珑的莲子羹，从头到尾，是一碗烧给死人的供品。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "night_meal_008",
+    "scene": "night_meal",
+    "index": 8,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我死死掐着自己的手腕，把那口东西咽了下去，然后抬起头，对她笑了笑。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "night_meal_009",
+    "scene": "night_meal",
+    "index": 9,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "好喝吗？",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "meal_lie_002",
+    "scene": "meal_lie",
+    "index": 2,
+    "cmd": "narrate",
+    "character": "",
+    "text": "她的眼睛一下子亮了，笑得眉眼弯弯。那一刻我忽然分不清，她是十九岁吊死的顾纨，还是只是一个想给人做碗羹的姑娘。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "meal_lie_003",
+    "scene": "meal_lie",
+    "index": 3,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "那我天天做给你喝。反正……我有的是工夫。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "meal_truth_002",
+    "scene": "meal_truth",
+    "index": 2,
+    "cmd": "narrate",
+    "character": "",
+    "text": "她怔住了。拢在袖子里的手慢慢抽出来，看着自己那双白得透明的手。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "meal_truth_003",
+    "scene": "meal_truth",
+    "index": 3,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "……尝不出来。我做什么都尝不出味道了。甜的，咸的，都隔着一层纸。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "meal_truth_004",
+    "scene": "meal_truth",
+    "index": 4,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "对不起。委屈你了。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "meal_truth_005",
+    "scene": "meal_truth",
+    "index": 5,
+    "cmd": "narrate",
+    "character": "",
+    "text": "她把那碗灰烬端回去倒掉，背影单薄得像一张随时会被夜风吹走的纸。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "mirror_002",
+    "scene": "mirror",
+    "index": 2,
+    "cmd": "narrate",
+    "character": "",
+    "text": "亥时末，她送我到西厢房门口，却不肯走，说想借我的铜镜照一照——她说她二十年没有照过镜子了。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "mirror_003",
+    "scene": "mirror",
+    "index": 3,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "死人的时候是什么样子，我早就忘了。要是脸上的胭脂花了，鬓角的头发乱了，多难看。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "mirror_004",
+    "scene": "mirror",
+    "index": 4,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我把妆匣里那面铜镜取出来。烛火跳了一下。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "mirror_008",
+    "scene": "mirror",
+    "index": 8,
+    "cmd": "narrate",
+    "character": "",
+    "text": "镜子里有烛台，有床帐，有我。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "mirror_009",
+    "scene": "mirror",
+    "index": 9,
+    "cmd": "narrate",
+    "character": "",
+    "text": "没有她。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "mirror_010",
+    "scene": "mirror",
+    "index": 10,
+    "cmd": "narrate",
+    "character": "",
+    "text": "她就站在我身侧，离镜面不过一尺，笑得温柔。可那面磨得发亮的铜镜里，她站的地方空空如也，只有一片烛火照不透的黑。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "mirror_011",
+    "scene": "mirror",
+    "index": 11,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "照不见呢。果然，还是照不见。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "mirror_012",
+    "scene": "mirror",
+    "index": 12,
+    "cmd": "narrate",
+    "character": "",
+    "text": "她轻声说，语气里没有怨，只有一种被证实了千百次的疲惫。我看见镜中的自己面无血色，而她侧过头，直直地望进我的眼睛——",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "mirror_015",
+    "scene": "mirror",
+    "index": 15,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "砚秋，你怕我吗？",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "mirror_soft_002",
+    "scene": "mirror_soft",
+    "index": 2,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "孤单……是啊，孤单。二十年了，你是第一个不怕我的人。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "mirror_soft_004",
+    "scene": "mirror_soft",
+    "index": 4,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "那你能不能，再多陪我几日？就几日。等过了中元，我……我就放你走。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "mirror_soft_005",
+    "scene": "mirror_soft",
+    "index": 5,
+    "cmd": "narrate",
+    "character": "",
+    "text": "她说「放你走」三个字的时候，声音轻得像一声叹息。我没有深想，点了点头。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "mirror_soft_006",
+    "scene": "mirror_soft",
+    "index": 6,
+    "cmd": "narrate",
+    "character": "",
+    "text": "很多年后我才懂得，那一晚我点下的头，在她心里称出了整整一条人命的斤两。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "mirror_hard_002",
+    "scene": "mirror_hard",
+    "index": 2,
+    "cmd": "narrate",
+    "character": "",
+    "text": "她脸上的笑意一点一点褪干净了。烛火无风自动，在她身后拉出长长的、扭曲的黑影。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "mirror_hard_003",
+    "scene": "mirror_hard",
+    "index": 3,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "走？我能走到哪里去？坟里的身子烂了，纸做的身子锁在这园里——",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "mirror_hard_004",
+    "scene": "mirror_hard",
+    "index": 4,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "你也叫我走。连你也叫我走。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "mirror_hard_005",
+    "scene": "mirror_hard",
+    "index": 5,
+    "cmd": "narrate",
+    "character": "",
+    "text": "她退后一步，身影淡进了黑暗里，只余下一句轻飘飘的话，在我耳边盘了整夜——",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "mirror_hard_006",
+    "scene": "mirror_hard",
+    "index": 6,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "中元夜快到了。到时候，你就会明白的。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "mirror_fear_002",
+    "scene": "mirror_fear",
+    "index": 2,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我后退的那一步很轻，可她看见了。她低头看着我怀里露出一角的日记，忽然什么都明白了。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "mirror_fear_003",
+    "scene": "mirror_fear",
+    "index": 3,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "你都知道了。是她留下的字，对不对？她答应过要帮我，最后还是只想烧了我。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "mirror_fear_004",
+    "scene": "mirror_fear",
+    "index": 4,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "你们顾家的人，都一样。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "mirror_fear_005",
+    "scene": "mirror_fear",
+    "index": 5,
+    "cmd": "narrate",
+    "character": "",
+    "text": "她没有发怒。她只是站在那里，一点一点变冷，像一炉慢慢熄掉的火。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "fubo_truth_003",
+    "scene": "fubo_truth",
+    "index": 3,
+    "cmd": "narrate",
+    "character": "",
+    "text": "第三天是祖母的「接三」法事。和尚们念了一天的经，铙钹声一阵一阵，把满院的纸幡震得簌簌作响。傍晚散去后，灵堂里只剩下我和福伯。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "fubo_truth_004",
+    "scene": "fubo_truth",
+    "index": 4,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我把日记和那卷《出阁图》放在了供桌上。事到如今，没什么好瞒的了。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "fubo_truth_006",
+    "scene": "fubo_truth",
+    "index": 6,
+    "cmd": "say",
+    "character": "fubo",
+    "text": "少爷，您都查到了吧。老奴看您这两天的眼神，就什么都知道了。",
+    "speaker": "Uncle Fu",
+    "instruct": "苍老沙哑的男声，年迈仆人的口吻"
+  },
+  {
+    "id": "fubo_truth_007",
+    "scene": "fubo_truth",
+    "index": 7,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我点头。福伯对着那卷画看了很久，忽然老泪纵横。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "fubo_truth_008",
+    "scene": "fubo_truth",
+    "index": 8,
+    "cmd": "say",
+    "character": "fubo",
+    "text": "姑小姐出阁那年，老奴才十五，在园里当小厮。她上吊那棵槐树，是老奴第一个发现的。她那双绣鞋，一只在脚上，一只掉在井台边……",
+    "speaker": "Uncle Fu",
+    "instruct": "苍老沙哑的男声，年迈仆人的口吻"
+  },
+  {
+    "id": "fubo_truth_009",
+    "scene": "fubo_truth",
+    "index": 9,
+    "cmd": "say",
+    "character": "fubo",
+    "text": "二十年了。老奴夜夜给灵前添烛，夜夜都能听见她在后院剪纸。老奴不敢看，可老奴知道，她不是在吓人——她是在过日子。她只会过日子，别的什么都不会啊。",
+    "speaker": "Uncle Fu",
+    "instruct": "苍老沙哑的男声，年迈仆人的口吻"
+  },
+  {
+    "id": "fubo_truth_010",
+    "scene": "fubo_truth",
+    "index": 10,
+    "cmd": "narrate",
+    "character": "",
+    "text": "老人家用袖子抹了把脸，从怀里摸出一把黄铜钥匙，钥匙上缠着褪色的红绳。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "fubo_truth_011",
+    "scene": "fubo_truth",
+    "index": 11,
+    "cmd": "say",
+    "character": "fubo",
+    "text": "东跨院最里头那间库房，锁了二十年。姑小姐的纸人，就供在那里头。",
+    "speaker": "Uncle Fu",
+    "instruct": "苍老沙哑的男声，年迈仆人的口吻"
+  },
+  {
+    "id": "fubo_truth_012",
+    "scene": "fubo_truth",
+    "index": 12,
+    "cmd": "say",
+    "character": "fubo",
+    "text": "老夫人临终前拉着老奴的手，说了两件事。头一件：中元夜子时，烧了那纸人，念念《往生咒》，放姑小姐投胎去。",
+    "speaker": "Uncle Fu",
+    "instruct": "苍老沙哑的男声，年迈仆人的口吻"
+  },
+  {
+    "id": "fubo_truth_013",
+    "scene": "fubo_truth",
+    "index": 13,
+    "cmd": "say",
+    "character": "fubo",
+    "text": "第二件——她说，若是烧之前，姑小姐先找上了您，那说明二十年的怨气已经让她舍不得走了。到那时，烧纸人是超度，还是断了她最后的念想，就全在少爷您一念之间了。",
+    "speaker": "Uncle Fu",
+    "instruct": "苍老沙哑的男声，年迈仆人的口吻"
+  },
+  {
+    "id": "fubo_truth_014",
+    "scene": "fubo_truth",
+    "index": 14,
+    "cmd": "narrate",
+    "character": "",
+    "text": "他把钥匙塞进我手里。钥匙冰凉，像是刚从井水里捞出来。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "fubo_truth_015",
+    "scene": "fubo_truth",
+    "index": 15,
+    "cmd": "say",
+    "character": "fubo",
+    "text": "老夫人还说，她这辈子对不起两个人。一个是姑小姐，没能拦住那顶纸轿子；一个是您，把您叫回来，卷进这件事里。",
+    "speaker": "Uncle Fu",
+    "instruct": "苍老沙哑的男声，年迈仆人的口吻"
+  },
+  {
+    "id": "fubo_truth_016",
+    "scene": "fubo_truth",
+    "index": 16,
+    "cmd": "say",
+    "character": "fubo",
+    "text": "她说，顾家的债，顾家的人了。少爷，您就是最后那个「了」字。",
+    "speaker": "Uncle Fu",
+    "instruct": "苍老沙哑的男声，年迈仆人的口吻"
+  },
+  {
+    "id": "fubo_truth_017",
+    "scene": "fubo_truth",
+    "index": 17,
+    "cmd": "narrate",
+    "character": "",
+    "text": "福伯提着灯笼走了。我捏着那把钥匙站在灵堂里，祖母遗像的目光沉沉地压在我背上。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "fubo_truth_018",
+    "scene": "fubo_truth",
+    "index": 18,
+    "cmd": "narrate",
+    "character": "",
+    "text": "供桌上的长明灯结了个很大的灯花，啪地爆了一声。老人说，灯花爆，喜事到。可这满堂的白幡底下，我分不清是喜是丧。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "fubo_truth_019",
+    "scene": "fubo_truth",
+    "index": 19,
+    "cmd": "narrate",
+    "character": "",
+    "text": "明日就是中元。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ghost_night_003",
+    "scene": "ghost_night",
+    "index": 3,
+    "cmd": "narrate",
+    "character": "",
+    "text": "中元夜。没有月亮，浓云把天压得很低。整条回廊的灯笼都在风里摇晃，明明灭灭。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ghost_night_004",
+    "scene": "ghost_night",
+    "index": 4,
+    "cmd": "narrate",
+    "character": "",
+    "text": "白天村里人在河边放了河灯，福伯也去放了一盏，灯上写的是姑小姐的名字。他说，先给她指个路，夜里的事，就看我了。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ghost_night_005",
+    "scene": "ghost_night",
+    "index": 5,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我提着灯往东跨院走。身后有脚步声跟着我——不，不是脚步声，是纸被风吹动的那种，哗啦，哗啦。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ghost_night_007",
+    "scene": "ghost_night",
+    "index": 7,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我不敢回头。老人说过，中元夜走夜路，听见什么都不能回头。一回头，肩上的阳火就灭一盏。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ghost_night_008",
+    "scene": "ghost_night",
+    "index": 8,
+    "cmd": "narrate",
+    "character": "",
+    "text": "可那哗啦声越来越近，最后几乎是贴着我的后脑勺响。一个声音轻轻地说——",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ghost_night_009",
+    "scene": "ghost_night",
+    "index": 9,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "你走慢一点。我跟不上。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "ghost_night_010",
+    "scene": "ghost_night",
+    "index": 10,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我的指甲掐进掌心，没有停步，也没有回头。那声音便不再响了，只有风。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ghost_night_013",
+    "scene": "ghost_night",
+    "index": 13,
+    "cmd": "narrate",
+    "character": "",
+    "text": "黄铜钥匙插进锁孔，锈住的锁舌「咔」地一声弹开。库房的门，二十年来第一次开了。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ghost_night_015",
+    "scene": "ghost_night",
+    "index": 15,
+    "cmd": "narrate",
+    "character": "",
+    "text": "灯焰照亮屋子的那一刻，我几乎叫出声来——",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ghost_night_016",
+    "scene": "ghost_night",
+    "index": 16,
+    "cmd": "narrate",
+    "character": "",
+    "text": "满屋都是纸人。纸扎的金童玉女、纸马纸轿、纸的亭台楼阁，一层叠一层，脸上统一画着圆圆的红腮和细细的笑唇。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ghost_night_017",
+    "scene": "ghost_night",
+    "index": 17,
+    "cmd": "narrate",
+    "character": "",
+    "text": "二十年的纸扎供品，一年一年烧不出去，全囤在这间屋子里，囤成了一座纸的城。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ghost_night_018",
+    "scene": "ghost_night",
+    "index": 18,
+    "cmd": "narrate",
+    "character": "",
+    "text": "而在最深处的高台上，端坐着一个穿红嫁衣的纸人。她的脸，是用工笔一笔一笔描出来的——和阿纨一模一样。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ghost_night_020",
+    "scene": "ghost_night",
+    "index": 20,
+    "cmd": "narrate",
+    "character": "",
+    "text": "她的凤冠是真的凤冠，嫁衣是真的嫁衣——是顾纨当年绣了三年的那一件，从遗体上换下来，穿在了这个纸的身子上。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ghost_night_021",
+    "scene": "ghost_night",
+    "index": 21,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我举着灯走近，高台前的供桌上摆着一只青铜火盆，盆里积着二十年的冷灰。火盆旁边，整整齐齐码着一沓红纸剪的并蒂莲。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ghost_night_022",
+    "scene": "ghost_night",
+    "index": 22,
+    "cmd": "narrate",
+    "character": "",
+    "text": "原来她每夜剪的纸，都送到了这里。送到这个「自己」的脚边。一年一沓，一共二十沓。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ghost_night_025",
+    "scene": "ghost_night",
+    "index": 25,
+    "cmd": "narrate",
+    "character": "",
+    "text": "身后，门轴无声地转动了。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ghost_night_026",
+    "scene": "ghost_night",
+    "index": 26,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "你还是来了。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "ghost_night_027",
+    "scene": "ghost_night",
+    "index": 27,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我回过头。门口站着的不再是月下那个温柔的姑娘。她的头发散开，眼睛黑得看不见底，白衣的下摆浸在阴影里，周身缠绕着浓得化不开的怨。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ghost_night_028",
+    "scene": "ghost_night",
+    "index": 28,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "钥匙是顾家的老东西给你的吧？火盆也给你备好了，连引火的纸钱都码在旁边——你们顾家，真是体贴啊。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "ghost_night_029",
+    "scene": "ghost_night",
+    "index": 29,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "二十三年前他们把我塞进纸轿子，二十三年后他们把你叫来，要把我塞进火盆子。一回生，二回熟。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "ghost_night_030",
+    "scene": "ghost_night",
+    "index": 30,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "烧了我，你就清净了。回你的城里，画你的画，娶你的妻，把这座园子和园里二十三年的孤魂，忘得干干净净。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "ghost_night_031",
+    "scene": "ghost_night",
+    "index": 31,
+    "cmd": "narrate",
+    "character": "",
+    "text": "满屋的纸人，在穿堂风里齐齐地、极轻极轻地，把头转向了我。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ghost_night_032",
+    "scene": "ghost_night",
+    "index": 32,
+    "cmd": "narrate",
+    "character": "",
+    "text": "灯焰在我手里晃。火折子就在我怀里。子时快到了。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "final_truth_000",
+    "scene": "final_truth",
+    "index": 0,
+    "cmd": "narrate",
+    "character": "",
+    "text": "可我见过日记里的她。见过那个跪了一夜、第二天安安静静绣嫁衣的十九岁的姑娘。我见过莲子羹底下的灰烬，见过铜镜里的空无。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "final_truth_001",
+    "scene": "final_truth",
+    "index": 1,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我知道她要的不是殉葬，不是这座囚了她二十三年的园子。她要的是一个答案，和一条能走通的路。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "final_bond_000",
+    "scene": "final_bond",
+    "index": 0,
+    "cmd": "narrate",
+    "character": "",
+    "text": "这几日的相处一幕一幕在眼前翻过：月下的红伞，膝上的红绸，那张被她收进衣襟的囍字，那碗没有味道的莲子羹，和她笑着说「那我天天做给你喝」时的眼睛。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "final_bond_001",
+    "scene": "final_bond",
+    "index": 1,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我分不清心里涨满的是怜悯，还是别的什么。我只知道，让我亲手点那把火，我做不到。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "final_fear_000",
+    "scene": "final_fear",
+    "index": 0,
+    "cmd": "narrate",
+    "character": "",
+    "text": "恐惧像井水一样漫过头顶。镜中的空无，粥底的纸钱，廊上多出来的影子——这宅子里的一切都错了，全都错了。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "final_fear_001",
+    "scene": "final_fear",
+    "index": 1,
+    "cmd": "narrate",
+    "character": "",
+    "text": "火盆就在眼前。可我看着门口那双黑沉沉的眼睛，忽然意识到一件更可怕的事：火折子只有一支，而我只有一次机会。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ending_lamp_003",
+    "scene": "ending_lamp",
+    "index": 3,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我吹熄了手里的灯笼。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ending_lamp_004",
+    "scene": "ending_lamp",
+    "index": 4,
+    "cmd": "narrate",
+    "character": "",
+    "text": "黑暗落下来的前一瞬，我看见她怔住了，周身的怨气像退潮一样散了个干净。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ending_lamp_005",
+    "scene": "ending_lamp",
+    "index": 5,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "你说什么？……你再说一遍。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "ending_lamp_006",
+    "scene": "ending_lamp",
+    "index": 6,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我说，我留下来陪你。这四个字出口的时候，满屋的纸人忽然都安静了。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ending_lamp_007",
+    "scene": "ending_lamp",
+    "index": 7,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "你知道吗，我等这句话，等了二十三年。那顶纸轿子没有等来的话，你替它说了。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "ending_lamp_010",
+    "scene": "ending_lamp",
+    "index": 10,
+    "cmd": "narrate",
+    "character": "",
+    "text": "不知从哪里来的红光漫进了屋子。我再看她时，她已换上了一身嫁衣，凤冠上的珠翠随着她的步子轻轻作响。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ending_lamp_011",
+    "scene": "ending_lamp",
+    "index": 11,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "我的嫁衣绣了三年，等这身衣裳派上用场，等了二十三年。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "ending_lamp_012",
+    "scene": "ending_lamp",
+    "index": 12,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "一拜天地——",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "ending_lamp_013",
+    "scene": "ending_lamp",
+    "index": 13,
+    "cmd": "narrate",
+    "character": "",
+    "text": "门外，传来了福伯苍老的、撕心裂肺的呼喊。可那声音越来越远，越来越远，像是从很深的水底传上来的。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ending_lamp_014",
+    "scene": "ending_lamp",
+    "index": 14,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "二拜高堂——",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "ending_lamp_015",
+    "scene": "ending_lamp",
+    "index": 15,
+    "cmd": "narrate",
+    "character": "",
+    "text": "高台上，那个和我有着相同位置、相同命运的纸人新娘，正对着我们，细描的眼睛里，缓缓渗出两道胭脂色的泪。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ending_lamp_016",
+    "scene": "ending_lamp",
+    "index": 16,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "夫妻对拜——",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "ending_lamp_017",
+    "scene": "ending_lamp",
+    "index": 17,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我弯下腰去。指尖触到她的手，凉得像上好的宣纸。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ending_lamp_018",
+    "scene": "ending_lamp",
+    "index": 18,
+    "cmd": "narrate",
+    "character": "",
+    "text": "她替我理了理衣襟，又把我剪的那张囍字，端端正正贴在了库房的门上。烛光把两个囍字照得通红，一张是她的，一张是我的。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ending_lamp_020",
+    "scene": "ending_lamp",
+    "index": 20,
+    "cmd": "narrate",
+    "character": "",
+    "text": "后来，槐荫村的人说，顾家那位回来奔丧的少爷疯了。也有人说，没疯，只是留在了老宅里，守着满园的纸人过日子。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ending_lamp_021",
+    "scene": "ending_lamp",
+    "index": 21,
+    "cmd": "narrate",
+    "character": "",
+    "text": "还有货郎赌咒发誓，说他中元节路过敛芳园，看见园门大敞，一对新人立在门口送客——新郎官面色纸白，新娘子的红嫁衣，艳得像刚绣好的那一夜。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ending_lamp_022",
+    "scene": "ending_lamp",
+    "index": 22,
+    "cmd": "narrate",
+    "character": "",
+    "text": "货郎说，他本来吓得要跑，那新娘子却朝他笑了笑，往他担子里放了一枚剪纸。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ending_lamp_023",
+    "scene": "ending_lamp",
+    "index": 23,
+    "cmd": "narrate",
+    "character": "",
+    "text": "并蒂莲。红纸剪的，莲心处点着两粒胭脂。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ending_lamp_024",
+    "scene": "ending_lamp",
+    "index": 24,
+    "cmd": "narrate",
+    "character": "",
+    "text": "【结局一 · 灯灭】—— 青灯长明，人不归。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ending_release_000",
+    "scene": "ending_release",
+    "index": 0,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我划着了火折子。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ending_release_001",
+    "scene": "ending_release",
+    "index": 1,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "……你要烧了我？",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "ending_release_002",
+    "scene": "ending_release",
+    "index": 2,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我摇头，把祖母日记的最后一页撕下来，凑着火苗点了，举到她面前。火光里，那行字一笔一画地亮起来——",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ending_release_003",
+    "scene": "ending_release",
+    "index": 3,
+    "cmd": "narrate",
+    "character": "",
+    "text": "「中元夜，烧了它。放纨儿走。」",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ending_release_004",
+    "scene": "ending_release",
+    "index": 4,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "姑姑她……到底还是写下来了。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "ending_release_fear_000",
+    "scene": "ending_release_fear",
+    "index": 0,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我的手抖得几乎捏不住火折子。连划了三次，火苗才颤巍巍地站起来。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ending_release_fear_002",
+    "scene": "ending_release_fear",
+    "index": 2,
+    "cmd": "narrate",
+    "character": "",
+    "text": "她没有拦我。她只是站在那里，看着我惊慌失措的样子，眼神一点一点软下去，最后轻轻叹了口气。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ending_release_fear_003",
+    "scene": "ending_release_fear",
+    "index": 3,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "别抖。我不怪你。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "ending_release_fear_004",
+    "scene": "ending_release_fear",
+    "index": 4,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "其实……我也累了。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "release_common_004",
+    "scene": "release_common",
+    "index": 4,
+    "cmd": "narrate",
+    "character": "",
+    "text": "高台上的纸人新娘被投进火盆的那一刻，满屋的纸扎器物同时发出了极轻的、如释重负的沙沙声。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "release_common_005",
+    "scene": "release_common",
+    "index": 5,
+    "cmd": "narrate",
+    "character": "",
+    "text": "火苗窜起来，先是青白色，而后转作温暖的橘红。二十三年的寒气，一寸一寸退出了这间屋子。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "release_common_006",
+    "scene": "release_common",
+    "index": 6,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我跪在火盆边，一字一句地念《往生咒》。福伯教了我一下午，我念得很慢，很认真，一个字都不敢错。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "release_common_009",
+    "scene": "release_common",
+    "index": 9,
+    "cmd": "narrate",
+    "character": "",
+    "text": "阿纨站在火光里，低头看着自己的双手——指尖正在化作细小的、发光的纸灰，打着旋升向房梁，升向夜空。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "release_common_010",
+    "scene": "release_common",
+    "index": 10,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "原来走，是这种滋味。轻的。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "release_common_011",
+    "scene": "release_common",
+    "index": 11,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "砚秋，替我看看明年的桂花。园子里那棵，是我出生那年，姑姑亲手栽的。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "release_common_012",
+    "scene": "release_common",
+    "index": 12,
+    "cmd": "narrate",
+    "character": "",
+    "text": "她回过头来看我。火光映在她的眼睛里，那双黑沉沉的眼底，二十三年里第一次有了亮。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "release_common_013",
+    "scene": "release_common",
+    "index": 13,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "那张囍字，我带不走，就留在你那里吧。往后你若是娶了妻，把它压在箱底，我不恼的。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "release_common_014",
+    "scene": "release_common",
+    "index": 14,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "还有——谢谢你，看得见我。",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "release_common_015",
+    "scene": "release_common",
+    "index": 15,
+    "cmd": "narrate",
+    "character": "",
+    "text": "她笑了。然后化作满天温热的灰烬，像一场倒放的雪，纷纷扬扬，散进了中元节的夜空。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "release_common_019",
+    "scene": "release_common",
+    "index": 19,
+    "cmd": "narrate",
+    "character": "",
+    "text": "天亮了。我在井边坐了一整夜，怀里抱着她没绣完的那块红绸。并蒂莲开了一半，针脚停在最温柔的地方。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "release_common_020",
+    "scene": "release_common",
+    "index": 20,
+    "cmd": "narrate",
+    "character": "",
+    "text": "出殡那日，我把红绸和那一沓并蒂莲剪纸，一并放进了祖母的棺木旁边。算是姑侄两个，在那一头也有了伴。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "release_common_021",
+    "scene": "release_common",
+    "index": 21,
+    "cmd": "narrate",
+    "character": "",
+    "text": "下葬的时候，风水先生绕着坟头走了三圈，连说了三个「好」字。他说这块地的怨气散了，往后顾家的坟，安生了。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "release_common_022",
+    "scene": "release_common",
+    "index": 22,
+    "cmd": "narrate",
+    "character": "",
+    "text": "离村那天，福伯送我到山口。我回头望了一眼敛芳园，晨雾里，仿佛有个白衣的女子撑着红伞，立在门内，朝我遥遥一拜。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "release_common_023",
+    "scene": "release_common",
+    "index": 23,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我也站定，认认真真地还了一礼。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "release_common_024",
+    "scene": "release_common",
+    "index": 24,
+    "cmd": "narrate",
+    "character": "",
+    "text": "后来我把这段事画成了一卷长卷，取名《青灯引》。画卷的末尾留白了一角，只题了一行小字——",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "release_common_025",
+    "scene": "release_common",
+    "index": 25,
+    "cmd": "narrate",
+    "character": "",
+    "text": "「人心中的灯不灭，走夜路的人，就不算孤魂。」",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "release_common_026",
+    "scene": "release_common",
+    "index": 26,
+    "cmd": "narrate",
+    "character": "",
+    "text": "【结局二 · 青灯引】—— 青灯一盏，引魂归处。自此敛芳园夜夜安宁，再无剪纸声。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ending_fire_004",
+    "scene": "ending_fire",
+    "index": 4,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我打翻了火盆。冷灰泼了满地，火折子脱手飞出去，落在了纸扎的楼台上。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ending_fire_005",
+    "scene": "ending_fire",
+    "index": 5,
+    "cmd": "narrate",
+    "character": "",
+    "text": "火，轰地一声起来了。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ending_fire_006",
+    "scene": "ending_fire",
+    "index": 6,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "你——！",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "ending_fire_007",
+    "scene": "ending_fire",
+    "index": 7,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我撞开她，夺门而出。身后是烈焰腾起的巨响，是纸人燃烧时密集的、像无数人同时惨叫的噼啪声。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ending_fire_008",
+    "scene": "ending_fire",
+    "index": 8,
+    "cmd": "narrate",
+    "character": "",
+    "text": "火光里，她的声音穿透了一切，又哭又笑——",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ending_fire_009",
+    "scene": "ending_fire",
+    "index": 9,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "烧得好！烧得好啊！把这园子烧干净！把顾家的债烧干净！！",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "ending_fire_010",
+    "scene": "ending_fire",
+    "index": 10,
+    "cmd": "say",
+    "character": "a_wan",
+    "text": "可是顾砚秋——火会灭的！灰会冷的！你走到哪里，我就跟到哪里——",
+    "speaker": "Vivian",
+    "instruct": "年轻柔和的女声，略带怯意"
+  },
+  {
+    "id": "ending_fire_013",
+    "scene": "ending_fire",
+    "index": 13,
+    "cmd": "narrate",
+    "character": "",
+    "text": "敛芳园烧了一夜。村里人救到四更天，只抢出半扇烧焦的门板。福伯跪在场院里，一夜白头。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ending_fire_014",
+    "scene": "ending_fire",
+    "index": 14,
+    "cmd": "narrate",
+    "character": "",
+    "text": "没有人怪我。火是从堆纸人的库房里起的，中元夜，纸扎见火，天经地义。只有我知道，那火是我递进去的。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ending_fire_015",
+    "scene": "ending_fire",
+    "index": 15,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我当天就离开了槐荫村，此后再没有回去过。我回了城，继续画我的画，后来还成了家——一切如常。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ending_fire_016",
+    "scene": "ending_fire",
+    "index": 16,
+    "cmd": "narrate",
+    "character": "",
+    "text": "只是每年中元节的夜里，我都会在同一个时刻惊醒。窗外总有剪纸的声音，嚓，嚓，嚓，不快不慢。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ending_fire_017",
+    "scene": "ending_fire",
+    "index": 17,
+    "cmd": "narrate",
+    "character": "",
+    "text": "而枕边的桌上，年年都多一枚新剪的并蒂莲。红纸剪的，莲心处点着两粒胭脂。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ending_fire_018",
+    "scene": "ending_fire",
+    "index": 18,
+    "cmd": "narrate",
+    "character": "",
+    "text": "一年比一年，剪得更像一双并着的人影。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ending_fire_019",
+    "scene": "ending_fire",
+    "index": 19,
+    "cmd": "narrate",
+    "character": "",
+    "text": "去年那一枚，两个人影的手，已经牵在了一起。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "ending_fire_020",
+    "scene": "ending_fire",
+    "index": 20,
+    "cmd": "narrate",
+    "character": "",
+    "text": "【结局三 · 焚园】—— 火能焚其形，不能散其怨。她说过：你走到哪里，我就跟到哪里。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "east_yard_002",
+    "scene": "east_yard",
+    "index": 2,
+    "cmd": "narrate",
+    "character": "",
+    "text": "从书房出来，日头已经偏西。我没有回前院，鬼使神差地，拐上了通往东跨院的那条夹道。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "east_yard_003",
+    "scene": "east_yard",
+    "index": 3,
+    "cmd": "narrate",
+    "character": "",
+    "text": "夹道两边的墙很高，墙头探出几竿枯竹，风一过，竹影扫在墙上，像无数只抓挠的手。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "east_yard_004",
+    "scene": "east_yard",
+    "index": 4,
+    "cmd": "narrate",
+    "character": "",
+    "text": "东跨院的院门比我想象中小，黑漆剥落，门上贴着一张符纸。符纸被二十年的风雨泡得发白，只剩中间一个朱砂画的字还红得刺眼——",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "east_yard_005",
+    "scene": "east_yard",
+    "index": 5,
+    "cmd": "narrate",
+    "character": "",
+    "text": "「镇」。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "east_yard_006",
+    "scene": "east_yard",
+    "index": 6,
+    "cmd": "narrate",
+    "character": "",
+    "text": "门上挂着一把黄铜大锁，锁眼被蜡封死了。钥匙在福伯那里，而福伯此刻在前院准备法事。我把耳朵贴在门板上。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "east_yard_008",
+    "scene": "east_yard",
+    "index": 8,
+    "cmd": "narrate",
+    "character": "",
+    "text": "嚓。嚓。嚓。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "east_yard_009",
+    "scene": "east_yard",
+    "index": 9,
+    "cmd": "narrate",
+    "character": "",
+    "text": "又是剪纸声。就在这扇门后面，不疾不徐，一下，又一下。大白天的，日头还挂在西边的墙头上，她就这样旁若无人地剪着她的纸。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "east_yard_010",
+    "scene": "east_yard",
+    "index": 10,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我忽然想起日记里的话——她不是在吓人，她是在过日子。裁剪、折叠、收进怀里，一年一沓，送到「自己」脚边。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "east_yard_011",
+    "scene": "east_yard",
+    "index": 11,
+    "cmd": "narrate",
+    "character": "",
+    "text": "一个人要把日子过成什么样子，才会在死后二十年，还夜夜做着生前最后的那件活计？",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "east_yard_012",
+    "scene": "east_yard",
+    "index": 12,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我在门外站了很久，直到剪纸声停了。门内极轻地响了一声，像是有人把剪刀收进了袖子，又像是，有人隔着门板，也把耳朵贴了上来。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "east_yard_013",
+    "scene": "east_yard",
+    "index": 13,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我们隔着一扇门，谁也没有出声。暮色漫下来的时候，我悄悄退了出去，靴底踩过落叶，竟不敢发出一点声响。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "lantern_prep_002",
+    "scene": "lantern_prep",
+    "index": 2,
+    "cmd": "narrate",
+    "character": "",
+    "text": "中元节的白天，村里家家户户都在扎河灯。福伯在院子里摆开竹篾和油纸，教我做灯。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "lantern_prep_004",
+    "scene": "lantern_prep",
+    "index": 4,
+    "cmd": "say",
+    "character": "fubo",
+    "text": "灯骨要扎得正，灯才漂得稳。人心正了，引的路才不会歪。",
+    "speaker": "Uncle Fu",
+    "instruct": "苍老沙哑的男声，年迈仆人的口吻"
+  },
+  {
+    "id": "lantern_prep_005",
+    "scene": "lantern_prep",
+    "index": 5,
+    "cmd": "narrate",
+    "character": "",
+    "text": "老人家的手满是裂口，竹篾在他指间却服服帖帖。我们扎了一上午，扎了满满一竹篮莲花灯。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "lantern_prep_006",
+    "scene": "lantern_prep",
+    "index": 6,
+    "cmd": "narrate",
+    "character": "",
+    "text": "歇晌的时候，他望着篮子最大最白的那一盏，忽然开了口。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "lantern_prep_007",
+    "scene": "lantern_prep",
+    "index": 7,
+    "cmd": "say",
+    "character": "fubo",
+    "text": "这盏是给姑小姐的。二十年了，年年都给她扎一盏，年年都不敢写她的名字，只敢在心里念。",
+    "speaker": "Uncle Fu",
+    "instruct": "苍老沙哑的男声，年迈仆人的口吻"
+  },
+  {
+    "id": "lantern_prep_008",
+    "scene": "lantern_prep",
+    "index": 8,
+    "cmd": "say",
+    "character": "fubo",
+    "text": "今年写上吧。她要是肯走，总得让她认得自己的路。",
+    "speaker": "Uncle Fu",
+    "instruct": "苍老沙哑的男声，年迈仆人的口吻"
+  },
+  {
+    "id": "lantern_prep_009",
+    "scene": "lantern_prep",
+    "index": 9,
+    "cmd": "narrate",
+    "character": "",
+    "text": "他用小楷在灯壁上写下「顾纨」两个字，笔锋收得很轻，像怕弄疼了谁。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "lantern_prep_010",
+    "scene": "lantern_prep",
+    "index": 10,
+    "cmd": "say",
+    "character": "fubo",
+    "text": "少爷，老奴多嘴一句。那位姑小姐，生前是个顶顶和善的人。见着蚂蚁搬家都要绕着走的人。",
+    "speaker": "Uncle Fu",
+    "instruct": "苍老沙哑的男声，年迈仆人的口吻"
+  },
+  {
+    "id": "lantern_prep_011",
+    "scene": "lantern_prep",
+    "index": 11,
+    "cmd": "say",
+    "character": "fubo",
+    "text": "她如今成了「那个」，不是她的错。是活人欠她的。您夜里……无论做什么，都别恨她。",
+    "speaker": "Uncle Fu",
+    "instruct": "苍老沙哑的男声，年迈仆人的口吻"
+  },
+  {
+    "id": "lantern_prep_012",
+    "scene": "lantern_prep",
+    "index": 12,
+    "cmd": "narrate",
+    "character": "",
+    "text": "黄昏时，全村人都去了河边。一盏一盏河灯放进水里，烛光连成长长的一条，缓缓向下游淌去，像把整条银河搬到了人间。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "lantern_prep_013",
+    "scene": "lantern_prep",
+    "index": 13,
+    "cmd": "narrate",
+    "character": "",
+    "text": "我亲手把那盏写着「顾纨」的灯放进水里。它打了个旋，稳稳地立住了，灯光在墨色的水面上，亮得格外倔强。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "lantern_prep_014",
+    "scene": "lantern_prep",
+    "index": 14,
+    "cmd": "narrate",
+    "character": "",
+    "text": "福伯站在我旁边，双手合十，嘴唇无声地动着。我不知道他念的是《往生咒》，还是一个老人藏了二十年的、说不出口的道歉。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  },
+  {
+    "id": "lantern_prep_015",
+    "scene": "lantern_prep",
+    "index": 15,
+    "cmd": "narrate",
+    "character": "",
+    "text": "天彻底黑透了。回园的路上，谁都没有说话。子时快到了。",
+    "speaker": "Ryan",
+    "instruct": "低沉平稳的男声旁白，略带悬疑感"
+  }
+]

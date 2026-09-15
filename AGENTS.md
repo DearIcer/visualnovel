@@ -50,6 +50,10 @@ addons/godot_wry/      # Godot WRY WebView GDExtension（驱动整个 Web UI 层
 tools/story-editor/    # 剧情编辑器（纯前端 HTML/CSS/JS，Chrome/Edge 打开 index.html 即用；
                        # 通过 File System Access API 读写 story/*.json，不参与游戏运行与导出，
                        # 不被 Godot 工程引用；smoke-test.js 为 Node 冒烟测试：node smoke-test.js）
+tools/voice-gen/       # 配音生成工具（Python，独立 .venv）：generate_voice.py 调用本地
+                       # Qwen3-TTS（http://127.0.0.1:8000，gradio API /run_instruct）为每条
+                       # say/narrate 生成 assets/voice/{scene}_{index:03d}.wav（可断点续跑）；
+                       # inject_voice.py 把对应 voice 指令注入 story/main.json（自动备份 .bak，幂等）
 .godot/                # Godot 编辑器缓存（勿提交，勿手改）
 ```
 
@@ -69,7 +73,7 @@ tools/story-editor/    # 剧情编辑器（纯前端 HTML/CSS/JS，Chrome/Edge �
 | `bg` | 切换背景 | `asset`（assets/backgrounds 下文件名）、`color`、`fade` |
 | `bgm` | 背景音乐 | `action`(play/crossfade/stop)、`track`、`fade`、`loop` |
 | `se` | 音效 | `sound`（assets/se 下 .wav 文件名）、`volume`、`pitch` |
-| `voice` | 语音 | `path` |
+| `voice` | 语音 | `path`（完整 `res://` 路径；配音统一放在 say/narrate 之前一条，由 tools/voice-gen 批量注入） |
 | `show` / `hide` / `move` | 立绘显示/隐藏/移动 | `character`、`position`(left/center/right)、`emotion`、`animation`、`duration` |
 
 > `show` 省略 `position` 时：已登场角色保持当前位置（仅切换表情），新登场角色落到 `defaultPosition`。切换场景/段落时旧角色不会自动退场，需要显式 `hide`，否则立绘会残留叠在新场景上。
