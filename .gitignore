@@ -18,6 +18,10 @@ obj/
 !addons/godot_wry/bin/
 !addons/godot_wry/bin/**
 
+# Rust 交叉编译产物（tools/godot-wry-android）
+tools/godot-wry-android/rust/target/
+tools/godot-wry-android/rust/.cargo/config.toml
+
 # 备份与临时文件
 *.tmp
 *.translation
