@@ -1,3 +1,16 @@
+// ========== 分辨率适配（移动端/小屏） ==========
+// 以桌面设计分辨率 1152x648 为基准：屏幕更小时用 CSS zoom 整体缩小 Web UI，
+// 屏幕更大时保持原样。Chromium/WebView 支持 zoom，且不影响 position:fixed 布局。
+(function fitToScreen() {
+  const DESIGN_W = 1152, DESIGN_H = 648;
+  function applyFit() {
+    const scale = Math.min(window.innerWidth / DESIGN_W, window.innerHeight / DESIGN_H, 1);
+    document.body.style.zoom = scale < 1 ? String(scale) : "";
+  }
+  applyFit();
+  window.addEventListener("resize", applyFit);
+})();
+
 // ========== IPC 桥接 ==========
 function send(type, body) {
   window.ipc.postMessage(JSON.stringify(Object.assign({ type: type }, body || {})));
