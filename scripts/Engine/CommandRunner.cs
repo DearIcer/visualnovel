@@ -370,6 +370,7 @@ namespace 交互式文本.Engine
                 });
             }
             _core.DialogueBox.ShowChoices(options);
+            _core.ChoicesVisible = true;
             _core.IsWaitingForInput = true;
         }
 

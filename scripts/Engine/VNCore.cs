@@ -18,6 +18,8 @@ namespace 交互式文本.Engine
 
         public bool IsWaitingForInput { get; set; } = false;
         public bool IsTyping { get; set; } = false;
+        /// <summary>选择支是否正在显示。显示期间自动播放/快进必须停下等待玩家选择，否则会越过选择支空转场景。</summary>
+        public bool ChoicesVisible { get; set; } = false;
         public bool IsAutoMode { get; set; } = false;
         public bool IsSkipAllMode { get; set; } = false;
         public bool IsSkipReadMode { get; set; } = false;
@@ -70,7 +72,7 @@ namespace 交互式文本.Engine
 
         public override void _Process(double delta)
         {
-            if (IsAutoMode && IsWaitingForInput && !IsTyping && !IsBlockingVoice() && !IsTransitioning)
+            if (IsAutoMode && IsWaitingForInput && !ChoicesVisible && !IsTyping && !IsBlockingVoice() && !IsTransitioning)
             {
                 _autoTimer += delta;
                 if (_autoTimer >= Data.GameConfig.Load().AutoDelay)
@@ -80,7 +82,7 @@ namespace 交互式文本.Engine
                 }
             }
 
-            if ((IsSkipAllMode || IsSkipReadMode) && IsWaitingForInput && !IsTyping && !IsBlockingVoice() && !IsTransitioning)
+            if ((IsSkipAllMode || IsSkipReadMode) && IsWaitingForInput && !ChoicesVisible && !IsTyping && !IsBlockingVoice() && !IsTransitioning)
             {
                 _skipTimer += delta;
                 if (_skipTimer >= Data.GameConfig.Load().SkipDelay)
@@ -232,6 +234,7 @@ namespace 交互式文本.Engine
 
             State.CurrentSceneId = targetSceneId;
             State.CurrentCommandIndex = 0;
+            ChoicesVisible = false;
             IsTyping = false;
             IsWaitingForInput = false;
             _advanceRequested = false;
@@ -281,6 +284,7 @@ namespace 交互式文本.Engine
             IsSkipReadMode = false;
             IsWaitingForInput = false;
             IsTyping = false;
+            ChoicesVisible = false;
             _advanceRequested = false;
             _autoTimer = 0.0;
             _skipTimer = 0.0;
@@ -325,6 +329,7 @@ namespace 交互式文本.Engine
 
             IsWaitingForInput = false;
             IsTyping = false;
+            ChoicesVisible = false;
             _advanceRequested = false;
             _autoTimer = 0.0;
             _skipTimer = 0.0;
